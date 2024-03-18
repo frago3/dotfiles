@@ -1,0 +1,45 @@
+set font "system-ui bold 10"
+set window-height   1058
+set window-width    960
+set guioptions none
+# color
+set recolor-lightcolor  "#fdf5e8"
+set recolor-darkcolor   "#000000"
+set recolor
+
+map r recolor
+map <C-r> rotate
+# set selection-clipboard clipboard
+set window-title-basename   true
+set window-title-page       true
+set statusbar-basename      true
+# set statusbar-home-tilde    true
+# dbus-service                false
+# dbus-raise-window           false
+
+map b toggle_statusbar
+
+set index-fg                    "#d3d3d3"
+set index-bg                    "#000000"
+set inputbar-fg                 "#d3d3d3"
+set inputbar-bg                 "#000000"
+set statusbar-fg                "#d3d3d3"
+set statusbar-bg                "#000000"
+
+set completion-bg               "#000000"
+set completion-fg               "#d3d3d3"
+set completion-group-bg         "#000000"
+set completion-group-fg         "grey"
+set completion-highlight-bg     "#2a2a2a"
+set completion-highlight-fg     "#ffffff"
+set notification-bg             "#000000"
+set notification-fg             "#d3d3d3"
+set notification-error-bg       "#000000"
+set notification-warning-bg     "#000000"
+
+set index-bg                    "#000000"
+set index-fg                    "#d3d3d3"
+set index-active-bg             "#2a2a2a"
+set index-active-fg             "#ffffff"
+set render-loading-bg           "#d3d3d3"
+set render-loading-fg           "#000000"

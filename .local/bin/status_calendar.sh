@@ -1,0 +1,24 @@
+#!/bin/bash
+
+get_calendar()
+{
+
+    local today=$(date '+%e' | tr -d ' ')
+
+    local calendar=$(cal --monday \
+        | sed -e "s/\b$today\b/<span background='lightgrey' foreground='black'>&<\/span>/" \
+            -e '/^[[:space:]]*$/d')
+
+    [ "$today" -ne 1 ] && {
+
+        local pastdays=$(seq -s '|' $((today -1)) )
+
+        local calendar=$(echo "$calendar" \
+            | sed -E "s/\b($pastdays)\b/<span foreground='grey' strikethrough='true'>&<\/span>/g")
+    }
+
+    echo "$calendar"
+}
+
+dunstify --replace=4 '' "<tt>$(get_calendar)</tt>"
+# get_calendar

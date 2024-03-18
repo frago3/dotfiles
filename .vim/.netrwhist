@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/fj/Old/old'
+let g:netrw_dirhist_6='/home/fj/Old'
+let g:netrw_dirhist_5='/home/fj'
+let g:netrw_dirhist_4='/home/fj/Old'
+let g:netrw_dirhist_3='/home/fj/Old/old'
+let g:netrw_dirhist_2='/home/fj/Public/react/svelte-pppardo/src/mokup'
+let g:netrw_dirhist_1='/home/fj/.config/nvim/lua'
+let g:netrw_dirhist_0='/home/fj/.config/nvim'
+let g:netrw_dirhist_9='/home/fj/.config/nvim/lua/plugins'
+let g:netrw_dirhist_8='/home/fj/.config/nvim'

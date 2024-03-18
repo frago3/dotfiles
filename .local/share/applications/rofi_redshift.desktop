@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Terminal=false
+Exec=/home/fj/.local/bin/rofi_redshift.sh
+Name=Redshift
+GenericName=Color temperature adjustment
+Icon=rofi
