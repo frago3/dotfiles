@@ -22,10 +22,12 @@ filter() {
 }
 
 get_dots() {
-  local root
+  local root; local file
+  shopt -s dotglob
   for root in $ROOTS; do
-    find $root -maxdepth 1
+    for file in "$root"/*; do echo $file; done
   done
+  shopt -u dotglob
 }
 
 TARGETS="$(filter "$(get_dots)")"
