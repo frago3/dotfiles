@@ -10,6 +10,7 @@ $HOME/.dotfiles/Imágenes
 IGNORE="
 $HOME/.dotfiles/dots.sh
 $HOME/.dotfiles/.git
+$HOME/.dotfiles/.gitignore
 "
 
 filter() {

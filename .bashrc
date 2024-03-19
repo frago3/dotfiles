@@ -10,7 +10,8 @@ HISTCONTROL=ignoreboth:erasedups
 export FZF_DEFAULT_OPTS='--height 90% --layout=reverse --exact --no-info --preview-window=border-sharp --no-separator --marker="+" --bind=alt-left:preview-page-up,alt-right:preview-page-down,alt-up:preview-up,alt-down:preview-down --color=gutter:-1,marker:110:bold'
 
 # vifm
-alias fm='vifm'
+source ~/.local/bin/fzf_dir.sh && alias f='fileselectorfzf'
+alias ff='vifm'
 [ -n "$VIFM" ] && PS1="fm $PS1"
 
 alias ls='ls --group-directories-first -v --color=auto'
@@ -31,6 +32,3 @@ alias tl='translatetospanish'
 
 # go
 export GOPATH=~/.go
-
-source ~/.local/bin/fzf_directory.sh
-alias ff='fileselectorfzf'
