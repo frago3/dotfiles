@@ -28,27 +28,25 @@ connect()
 
     # network starts with '> ' user is already on that network
     [ "$chosen" = ">   $connected_network" ] && {
-        
-        dunstify 'CONNECTED'
+        dunstify 'Connected'
         return
     }
 
     local security=$(echo "$available_networks" | grep -A 1 "$chosen" | tail -n 1)
 
     # network is open or known
-    if iwctl known-networks list | grep "$chosen" > /dev/null || [ "$security" = 'open' ]
+    if iwctl known-networks list | grep -q "$chosen" || [ "$security" = 'open' ]
     then
 
-        # iwctl station $device connect "$chosen" &&
-        dunstify 'CONNECTED'
+        iwctl station $device connect "$chosen" && dunstify 'Connected'
 
     elif [ "$security" = psk ] || [ "$security" = "8021x" ]
     then
 
-        local passd=$(rofi -dmenu -password -p 'Password  ')
+        # local passd=$(rofi -dmenu -password -p 'Password  ')
+        local passd=$(rofi -dmenu -p 'Password  ')
         [ -n "$passd" ] && {
-            # iwctl --passphrase "$passd" station $device connect "$chosen" &&
-            dunstify 'CONNECTED'
+            iwctl --passphrase "$passd" station $device connect "$chosen" && dunstify 'Connected' || dunstify 'Operation failed'
         }
     fi
 }
@@ -62,9 +60,8 @@ disconnect()
 {
     [ "$connected_network" ] && _confirm "Disconnect from $connected_network" && {
 
-        # iwctl station $device disconnect &&
-        dunstify 'DISCONNECTED'
-    }
+        iwctl station $device disconnect && dunstify 'Disconnected'
+    } || dunstify 'Disconnected'
 }
 
 forget()
@@ -73,22 +70,13 @@ forget()
     local chosen=$(_choose_name "$known_networks" 'Forget network')
     
     [ "$chosen" ] && _confirm "Forget $chosen" && {
-        # iwctl known-networks "$chosen" forget &&
-        dunstify 'FORGOTTEN'
+        iwctl known-networks "$chosen" forget && dunstify 'Forgotten'
     }
 }
 
 case $(printf "Connect\nDisconnect\nForget" | rofi -dmenu -p 'Wifi  ' -i ) in
-    'Connect')
-        connect
-        ;;
-    'Disconnect')
-        disconnect
-        ;;
-    'Forget')
-        forget
-        ;;
-    *)
-        exit 1
-        ;;
+    'Connect') connect ;;
+    'Disconnect') disconnect ;;
+    'Forget') forget ;;
+    *) exit 1 ;;
 esac

@@ -6,8 +6,7 @@ get_wifistatus()
 
     local wifistatus=$(iwctl station wlan0 show)
 
-    # if grep -q 'disconnected' <<< "$wifistatus"
-    if [[ "$wifistatus" =~ 'disconected' ]]
+    if grep -q 'disconnected' <<< "$wifistatus"
     then
         echo 'Status disconnect'
     else

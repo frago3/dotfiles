@@ -7,14 +7,18 @@ $HOME/.dotfiles/.local
 $HOME/.dotfiles/.local/share
 $HOME/.dotfiles/Imágenes
 "
+IGNORE="
+$HOME/.dotfiles/dots.sh
+$HOME/.dotfiles/.git
+"
 
 filter() {
-  awk -v roots="$ROOTS" '
+  awk -v ignore="$ROOTS$IGNORE" '
   { list[$0]++ }
   END {
-    for (key in list) if (!match(roots, key))
-      print key
-  }' <<< "$1" | grep -v $0 | sort
+    for (file in list) if (!match(ignore, file))
+      print file
+  }' <<< "$1" | LC_COLLATE=C sort
 }
 
 get_dots() {
@@ -27,27 +31,26 @@ get_dots() {
 TARGETS="$(filter "$(get_dots)")"
 
 show() {
-  local link_name=''
-  [[ -L $2 ]] && link_name=$2
-  printf "%-38s %s %s\n" "$link_name" '<-' $1
-}
-delete() {
-  [[ ! -L $2 ]] && echo 'delete' $1
+  [ ! -L $link_name ] && link_name=''
+  printf "%-46s %s\n" $target "->  ${link_name:-:(}"
 }
 stow() {
-  [[ ! -L $2 ]] && ln -sv $1 $2
+  [ ! -L $link_name ] && ln -sv $target $link_name
+}
+delete() {
+  [ -L $link_name ] && rm -v $link_name
 }
 
 dots () {
   for target in $TARGETS; do link_name=${target/.dotfiles\//}
-    [ $1 == 'show' ] && show $target $link_name
-    [ $1 == 'stow' ] && stow $target $link_name
-    [ $1 == 'delete' ] && delete $link_name
+  
+    case $1 in
+      stow) stow;;
+      delete) delete;;
+      *) show;;
+    esac
+
   done
 }
 
-case "$1" in
-  delete) dots 'delete';;
-  stow) dots 'stow';;
-  *) dots 'show';;
-esac
+dots $1

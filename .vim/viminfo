@@ -11,13 +11,13 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~Msle0~/\<item\>
+~MSle0~/\<item\>
 
 # Last Substitute Search Pattern:
 ~MSle0&^\.
 
 # Last Substitute String:
-$\~\/\.
+$
 
 # Command Line History (newest to oldest):
 :%s/^\./\~\/\./
@@ -222,16 +222,16 @@ $\~\/\.
 |2,0,1703780201,,"e .bashrc"
 
 # Search String History (newest to oldest):
+? @$
+|2,1,1710807224,,"@$"
+? ^$
+|2,1,1710807224,,"^$"
 ? ^\.
 |2,1,1708712779,,"^\\."
 ? ^\.\/
 |2,1,1708712585,,"^\\.\\/"
 ? \<bash_profile\>
 |2,1,1708712463,,"\\<bash_profile\\>"
-? @$
-|2,1,1707244453,,"@$"
-? ^$
-|2,1,1707244453,,"^$"
 ?/dura
 |2,1,1706723256,47,"dura"
 ?/player
@@ -431,35 +431,35 @@ $\~\/\.
 
 # Registers:
 "0	LINE	0
-	$HOME/.dotfiles/.local/share
-|3,0,0,1,1,0,1710742662,"$HOME/.dotfiles/.local/share"
+	        dunstify 'FORGOTTEN'
+|3,0,0,1,1,0,1710807816,"        dunstify 'FORGOTTEN'"
 "1	LINE	0
-	
-|3,0,1,1,1,0,1710773829,""
+	''
+|3,0,1,1,1,0,1710808322,"''"
 "2	LINE	0
-	  [[ ! -L $2 ]] && echo 'link' $1 $2
-|3,0,2,1,1,0,1710773813,"  [[ ! -L $2 ]] && echo 'link' $1 $2"
+	        dunstify 'FORGOTTEN'
+|3,0,2,1,1,0,1710807822,"        dunstify 'FORGOTTEN'"
 "3	LINE	0
-	$HOME/.dotfiles/Im√°genes/
-|3,0,3,1,1,0,1710742846,"$HOME/.dotfiles/Im√°genes/"
+	    # if [[ "$wifistatus" =~ 'disconected' ]]
+|3,0,3,1,1,0,1710807388,"    # if [[ \"$wifistatus\" =~ 'disconected' ]]"
 "4	LINE	0
-	$HOME/.dotfiles/Im√°genes/
-|3,0,4,1,1,0,1710742725,"$HOME/.dotfiles/Im√°genes/"
+	        echo 'pop'
+|3,0,4,1,1,0,1710807354,"        echo 'pop'"
 "5	LINE	0
-	    
-|3,0,5,1,1,0,1710740077,"    "
+	
+|3,0,5,1,1,0,1710807224,""
 "6	LINE	0
-	   s
-|3,0,6,1,1,0,1710740054,"   s"
+	
+|3,0,6,1,1,0,1710807224,""
 "7	LINE	0
-	    fi
-|3,0,7,1,1,0,1710740042,"    fi"
+	
+|3,0,7,1,1,0,1710807224,""
 "8	LINE	0
-	        printf "%-28s %s %s\n" "" '<-' ${1/$HOME/'~'}
-|3,0,8,1,1,0,1710740042,"        printf \"%-28s %s %s\\n\" \"\" '<-' ${1/$HOME/'~'}"
+	
+|3,0,8,1,1,0,1710807224,""
 "9	LINE	0
-	    else
-|3,0,9,1,1,0,1710740041,"    else"
+	  [ -L $link_name ] && echo 'delete' $link_name
+|3,0,9,1,1,0,1710805784,"  [ -L $link_name ] && echo 'delete' $link_name"
 "f	CHAR	0
 	aFÄ˝aaFÄ˝a
 |3,0,15,0,1,0,1701870982,"aFÄ˝aaFÄ˝a"
@@ -467,340 +467,405 @@ $\~\/\.
 	
 |3,0,26,0,1,0,1700599456,""
 ""-	CHAR	0
-	'dots.sh'
-|3,1,36,0,1,0,1710773884,"'dots.sh'"
+	 || dunstify 'Operation failed'
+|3,1,36,0,1,0,1710808358," || dunstify 'Operation failed'"
 
 # File marks:
-'0  17  25  ~/.dotfiles/dots.sh
-|4,48,17,25,1710773890,"~/.dotfiles/dots.sh"
-'1  40  0  ~/.dotfiles/dots.sh
-|4,49,40,0,1710772475,"~/.dotfiles/dots.sh"
-'2  41  0  ~/.dotfiles/dots.sh
-|4,50,41,0,1710772475,"~/.dotfiles/dots.sh"
-'3  38  0  ~/.dotfiles/dots.sh
-|4,51,38,0,1710770214,"~/.dotfiles/dots.sh"
-'4  38  0  ~/.dotfiles/dots.sh
-|4,52,38,0,1710770214,"~/.dotfiles/dots.sh"
-'5  38  0  ~/.dotfiles/dots.sh
-|4,53,38,0,1710770214,"~/.dotfiles/dots.sh"
-'6  38  0  ~/.dotfiles/dots.sh
-|4,54,38,0,1710770214,"~/.dotfiles/dots.sh"
-'7  8  0  ~/.dotfiles/dots.sh
-|4,55,8,0,1710743236,"~/.dotfiles/dots.sh"
-'8  8  0  ~/.dotfiles/dots.sh
-|4,56,8,0,1710743236,"~/.dotfiles/dots.sh"
-'9  8  0  ~/.dotfiles/dots.sh
-|4,57,8,0,1710743236,"~/.dotfiles/dots.sh"
+'0  10  4  ~/.dotfiles/.local/bin/status_wifi.sh
+|4,48,10,4,1710808781,"~/.dotfiles/.local/bin/status_wifi.sh"
+'1  14  52  ~/.dotfiles/.local/bin/notif_battery
+|4,49,14,52,1710806331,"~/.dotfiles/.local/bin/notif_battery"
+'2  26  28  ~/.dotfiles/.local/bin/fzf_directory.sh
+|4,50,26,28,1710806085,"~/.dotfiles/.local/bin/fzf_directory.sh"
+'3  55  0  ~/.dotfiles/dots.sh
+|4,51,55,0,1710805905,"~/.dotfiles/dots.sh"
+'4  1  0  ~/UTF-8-demo.txt
+|4,52,1,0,1710803517,"~/UTF-8-demo.txt"
+'5  25  33  ~/.dotfiles/.local/bin/fzf_directory.sh
+|4,53,25,33,1710803419,"~/.dotfiles/.local/bin/fzf_directory.sh"
+'6  25  33  ~/.dotfiles/.local/bin/fzf_directory.sh
+|4,54,25,33,1710803419,"~/.dotfiles/.local/bin/fzf_directory.sh"
+'7  40  0  ~/.dotfiles/dots.sh
+|4,55,40,0,1710803109,"~/.dotfiles/dots.sh"
+'8  41  0  ~/.dotfiles/dots.sh
+|4,56,41,0,1710803109,"~/.dotfiles/dots.sh"
+'9  39  0  ~/.dotfiles/dots.sh
+|4,57,39,0,1710803106,"~/.dotfiles/dots.sh"
 
 # Jumplist (newest first):
--'  17  25  ~/.dotfiles/dots.sh
-|4,39,17,25,1710773890,"~/.dotfiles/dots.sh"
--'  40  0  ~/.dotfiles/dots.sh
-|4,39,40,0,1710773802,"~/.dotfiles/dots.sh"
--'  41  0  ~/.dotfiles/dots.sh
-|4,39,41,0,1710772475,"~/.dotfiles/dots.sh"
--'  38  0  ~/.dotfiles/dots.sh
-|4,39,38,0,1710771079,"~/.dotfiles/dots.sh"
--'  38  0  ~/.dotfiles/dots.sh
-|4,39,38,0,1710771079,"~/.dotfiles/dots.sh"
--'  38  0  ~/.dotfiles/dots.sh
-|4,39,38,0,1710770214,"~/.dotfiles/dots.sh"
--'  8  0  ~/.dotfiles/dots.sh
-|4,39,8,0,1710765366,"~/.dotfiles/dots.sh"
--'  8  0  ~/.dotfiles/dots.sh
-|4,39,8,0,1710765366,"~/.dotfiles/dots.sh"
--'  8  0  ~/.dotfiles/dots.sh
-|4,39,8,0,1710765366,"~/.dotfiles/dots.sh"
--'  8  0  ~/.dotfiles/dots.sh
-|4,39,8,0,1710743236,"~/.dotfiles/dots.sh"
--'  44  50  ~/.dotfiles/dots.sh
-|4,39,44,50,1710740217,"~/.dotfiles/dots.sh"
--'  46  50  ~/.dotfiles/dots.sh
-|4,39,46,50,1710740217,"~/.dotfiles/dots.sh"
--'  46  50  ~/.dotfiles/dots.sh
-|4,39,46,50,1710740217,"~/.dotfiles/dots.sh"
--'  46  50  ~/.dotfiles/dots.sh
-|4,39,46,50,1710740217,"~/.dotfiles/dots.sh"
--'  30  29  ~/.dotfiles/dots.sh
-|4,39,30,29,1710740031,"~/.dotfiles/dots.sh"
--'  30  29  ~/.dotfiles/dots.sh
-|4,39,30,29,1710740031,"~/.dotfiles/dots.sh"
--'  30  29  ~/.dotfiles/dots.sh
-|4,39,30,29,1710740031,"~/.dotfiles/dots.sh"
--'  30  29  ~/.dotfiles/dots.sh
-|4,39,30,29,1710740031,"~/.dotfiles/dots.sh"
--'  31  33  ~/.dotfiles/dots.sh
-|4,39,31,33,1710739533,"~/.dotfiles/dots.sh"
--'  31  33  ~/.dotfiles/dots.sh
-|4,39,31,33,1710739533,"~/.dotfiles/dots.sh"
--'  31  33  ~/.dotfiles/dots.sh
-|4,39,31,33,1710739533,"~/.dotfiles/dots.sh"
--'  31  33  ~/.dotfiles/dots.sh
-|4,39,31,33,1710739533,"~/.dotfiles/dots.sh"
--'  32  39  ~/.dotfiles/dots.sh
-|4,39,32,39,1710739532,"~/.dotfiles/dots.sh"
--'  32  39  ~/.dotfiles/dots.sh
-|4,39,32,39,1710739532,"~/.dotfiles/dots.sh"
--'  32  39  ~/.dotfiles/dots.sh
-|4,39,32,39,1710739532,"~/.dotfiles/dots.sh"
--'  32  39  ~/.dotfiles/dots.sh
-|4,39,32,39,1710739532,"~/.dotfiles/dots.sh"
--'  54  0  ~/.dotfiles/dots.sh
-|4,39,54,0,1710738210,"~/.dotfiles/dots.sh"
--'  62  0  ~/.dotfiles/dots.sh
-|4,39,62,0,1710738210,"~/.dotfiles/dots.sh"
--'  56  0  ~/.dotfiles/dots.sh
-|4,39,56,0,1710738210,"~/.dotfiles/dots.sh"
--'  64  0  ~/.dotfiles/dots.sh
-|4,39,64,0,1710738210,"~/.dotfiles/dots.sh"
--'  56  0  ~/.dotfiles/dots.sh
-|4,39,56,0,1710738210,"~/.dotfiles/dots.sh"
--'  64  0  ~/.dotfiles/dots.sh
-|4,39,64,0,1710738210,"~/.dotfiles/dots.sh"
--'  56  0  ~/.dotfiles/dots.sh
-|4,39,56,0,1710738210,"~/.dotfiles/dots.sh"
--'  64  0  ~/.dotfiles/dots.sh
-|4,39,64,0,1710738210,"~/.dotfiles/dots.sh"
--'  48  38  ~/.dotfiles/dots.sh
-|4,39,48,38,1710736611,"~/.dotfiles/dots.sh"
--'  51  6  ~/.dotfiles/dots.sh
-|4,39,51,6,1710736611,"~/.dotfiles/dots.sh"
--'  50  38  ~/.dotfiles/dots.sh
-|4,39,50,38,1710736611,"~/.dotfiles/dots.sh"
--'  53  6  ~/.dotfiles/dots.sh
-|4,39,53,6,1710736611,"~/.dotfiles/dots.sh"
--'  50  38  ~/.dotfiles/dots.sh
-|4,39,50,38,1710736611,"~/.dotfiles/dots.sh"
--'  53  6  ~/.dotfiles/dots.sh
-|4,39,53,6,1710736611,"~/.dotfiles/dots.sh"
--'  50  38  ~/.dotfiles/dots.sh
-|4,39,50,38,1710736611,"~/.dotfiles/dots.sh"
--'  53  6  ~/.dotfiles/dots.sh
-|4,39,53,6,1710736611,"~/.dotfiles/dots.sh"
+-'  10  4  ~/.dotfiles/.local/bin/status_wifi.sh
+|4,39,10,4,1710808781,"~/.dotfiles/.local/bin/status_wifi.sh"
+-'  1  0  ~/.dotfiles/.local/bin/NetrwTreeListing
+|4,39,1,0,1710807224,"~/.dotfiles/.local/bin/NetrwTreeListing"
+-'  1  0  ~/.dotfiles/.local/bin
+|4,39,1,0,1710807224,"~/.dotfiles/.local/bin"
+-'  50  17  ~/.dotfiles/.local/bin/rofi_wifi.sh
+|4,39,50,17,1710807224,"~/.dotfiles/.local/bin/rofi_wifi.sh"
+-'  74  27  ~/.dotfiles/.local/bin/rofi_wifi.sh
+|4,39,74,27,1710806989,"~/.dotfiles/.local/bin/rofi_wifi.sh"
+-'  71  0  ~/.dotfiles/.local/bin/rofi_wifi.sh
+|4,39,71,0,1710806358,"~/.dotfiles/.local/bin/rofi_wifi.sh"
+-'  14  52  ~/.dotfiles/.local/bin/notif_battery
+|4,39,14,52,1710806331,"~/.dotfiles/.local/bin/notif_battery"
+-'  14  52  ~/.dotfiles/.local/bin/notif_battery
+|4,39,14,52,1710806331,"~/.dotfiles/.local/bin/notif_battery"
+-'  1  0  ~/.dotfiles/.local/bin/notif_battery
+|4,39,1,0,1710806307,"~/.dotfiles/.local/bin/notif_battery"
+-'  1  0  ~/.dotfiles/.local/bin/notif_battery
+|4,39,1,0,1710806307,"~/.dotfiles/.local/bin/notif_battery"
+-'  26  28  ~/.dotfiles/.local/bin/fzf_directory.sh
+|4,39,26,28,1710806085,"~/.dotfiles/.local/bin/fzf_directory.sh"
+-'  26  28  ~/.dotfiles/.local/bin/fzf_directory.sh
+|4,39,26,28,1710806085,"~/.dotfiles/.local/bin/fzf_directory.sh"
+-'  26  28  ~/.dotfiles/.local/bin/fzf_directory.sh
+|4,39,26,28,1710806085,"~/.dotfiles/.local/bin/fzf_directory.sh"
+-'  26  28  ~/.dotfiles/.local/bin/fzf_directory.sh
+|4,39,26,28,1710806085,"~/.dotfiles/.local/bin/fzf_directory.sh"
+-'  25  33  ~/.dotfiles/.local/bin/fzf_directory.sh
+|4,39,25,33,1710806063,"~/.dotfiles/.local/bin/fzf_directory.sh"
+-'  25  33  ~/.dotfiles/.local/bin/fzf_directory.sh
+|4,39,25,33,1710806063,"~/.dotfiles/.local/bin/fzf_directory.sh"
+-'  25  33  ~/.dotfiles/.local/bin/fzf_directory.sh
+|4,39,25,33,1710806063,"~/.dotfiles/.local/bin/fzf_directory.sh"
+-'  25  33  ~/.dotfiles/.local/bin/fzf_directory.sh
+|4,39,25,33,1710806063,"~/.dotfiles/.local/bin/fzf_directory.sh"
+-'  55  0  ~/.dotfiles/dots.sh
+|4,39,55,0,1710805905,"~/.dotfiles/dots.sh"
+-'  55  0  ~/.dotfiles/dots.sh
+|4,39,55,0,1710805905,"~/.dotfiles/dots.sh"
+-'  55  0  ~/.dotfiles/dots.sh
+|4,39,55,0,1710805905,"~/.dotfiles/dots.sh"
+-'  55  0  ~/.dotfiles/dots.sh
+|4,39,55,0,1710805905,"~/.dotfiles/dots.sh"
+-'  55  0  ~/.dotfiles/dots.sh
+|4,39,55,0,1710805905,"~/.dotfiles/dots.sh"
+-'  55  0  ~/.dotfiles/dots.sh
+|4,39,55,0,1710805905,"~/.dotfiles/dots.sh"
+-'  55  0  ~/.dotfiles/dots.sh
+|4,39,55,0,1710805905,"~/.dotfiles/dots.sh"
+-'  55  0  ~/.dotfiles/dots.sh
+|4,39,55,0,1710805905,"~/.dotfiles/dots.sh"
+-'  19  42  ~/.dotfiles/dots.sh
+|4,39,19,42,1710805458,"~/.dotfiles/dots.sh"
+-'  19  42  ~/.dotfiles/dots.sh
+|4,39,19,42,1710805458,"~/.dotfiles/dots.sh"
+-'  19  42  ~/.dotfiles/dots.sh
+|4,39,19,42,1710805458,"~/.dotfiles/dots.sh"
+-'  19  42  ~/.dotfiles/dots.sh
+|4,39,19,42,1710805458,"~/.dotfiles/dots.sh"
+-'  19  42  ~/.dotfiles/dots.sh
+|4,39,19,42,1710805458,"~/.dotfiles/dots.sh"
+-'  19  42  ~/.dotfiles/dots.sh
+|4,39,19,42,1710805458,"~/.dotfiles/dots.sh"
+-'  19  42  ~/.dotfiles/dots.sh
+|4,39,19,42,1710805458,"~/.dotfiles/dots.sh"
+-'  19  42  ~/.dotfiles/dots.sh
+|4,39,19,42,1710805458,"~/.dotfiles/dots.sh"
+-'  30  0  ~/.dotfiles/dots.sh
+|4,39,30,0,1710805457,"~/.dotfiles/dots.sh"
+-'  30  0  ~/.dotfiles/dots.sh
+|4,39,30,0,1710805457,"~/.dotfiles/dots.sh"
+-'  30  0  ~/.dotfiles/dots.sh
+|4,39,30,0,1710805457,"~/.dotfiles/dots.sh"
+-'  30  0  ~/.dotfiles/dots.sh
+|4,39,30,0,1710805457,"~/.dotfiles/dots.sh"
+-'  30  0  ~/.dotfiles/dots.sh
+|4,39,30,0,1710805457,"~/.dotfiles/dots.sh"
+-'  30  0  ~/.dotfiles/dots.sh
+|4,39,30,0,1710805457,"~/.dotfiles/dots.sh"
+-'  30  0  ~/.dotfiles/dots.sh
+|4,39,30,0,1710805457,"~/.dotfiles/dots.sh"
+-'  30  0  ~/.dotfiles/dots.sh
+|4,39,30,0,1710805457,"~/.dotfiles/dots.sh"
 -'  46  0  ~/.dotfiles/dots.sh
-|4,39,46,0,1710736607,"~/.dotfiles/dots.sh"
--'  48  0  ~/.dotfiles/dots.sh
-|4,39,48,0,1710736607,"~/.dotfiles/dots.sh"
--'  48  0  ~/.dotfiles/dots.sh
-|4,39,48,0,1710736607,"~/.dotfiles/dots.sh"
--'  48  0  ~/.dotfiles/dots.sh
-|4,39,48,0,1710736607,"~/.dotfiles/dots.sh"
--'  52  8  ~/.dotfiles/dots.sh
-|4,39,52,8,1710736606,"~/.dotfiles/dots.sh"
--'  54  8  ~/.dotfiles/dots.sh
-|4,39,54,8,1710736606,"~/.dotfiles/dots.sh"
--'  54  8  ~/.dotfiles/dots.sh
-|4,39,54,8,1710736606,"~/.dotfiles/dots.sh"
--'  54  8  ~/.dotfiles/dots.sh
-|4,39,54,8,1710736606,"~/.dotfiles/dots.sh"
+|4,39,46,0,1710804910,"~/.dotfiles/dots.sh"
+-'  46  0  ~/.dotfiles/dots.sh
+|4,39,46,0,1710804910,"~/.dotfiles/dots.sh"
+-'  46  0  ~/.dotfiles/dots.sh
+|4,39,46,0,1710804910,"~/.dotfiles/dots.sh"
+-'  46  0  ~/.dotfiles/dots.sh
+|4,39,46,0,1710804910,"~/.dotfiles/dots.sh"
+-'  46  0  ~/.dotfiles/dots.sh
+|4,39,46,0,1710804910,"~/.dotfiles/dots.sh"
+-'  46  0  ~/.dotfiles/dots.sh
+|4,39,46,0,1710804910,"~/.dotfiles/dots.sh"
+-'  46  0  ~/.dotfiles/dots.sh
+|4,39,46,0,1710804910,"~/.dotfiles/dots.sh"
+-'  46  0  ~/.dotfiles/dots.sh
+|4,39,46,0,1710804910,"~/.dotfiles/dots.sh"
+-'  35  27  ~/.dotfiles/dots.sh
+|4,39,35,27,1710803741,"~/.dotfiles/dots.sh"
+-'  40  0  ~/.dotfiles/dots.sh
+|4,39,40,0,1710803741,"~/.dotfiles/dots.sh"
+-'  35  27  ~/.dotfiles/dots.sh
+|4,39,35,27,1710803741,"~/.dotfiles/dots.sh"
+-'  40  0  ~/.dotfiles/dots.sh
+|4,39,40,0,1710803741,"~/.dotfiles/dots.sh"
+-'  35  27  ~/.dotfiles/dots.sh
+|4,39,35,27,1710803741,"~/.dotfiles/dots.sh"
+-'  40  0  ~/.dotfiles/dots.sh
+|4,39,40,0,1710803741,"~/.dotfiles/dots.sh"
+-'  35  27  ~/.dotfiles/dots.sh
+|4,39,35,27,1710803741,"~/.dotfiles/dots.sh"
+-'  40  0  ~/.dotfiles/dots.sh
+|4,39,40,0,1710803741,"~/.dotfiles/dots.sh"
+-'  35  27  ~/.dotfiles/dots.sh
+|4,39,35,27,1710803741,"~/.dotfiles/dots.sh"
+-'  40  0  ~/.dotfiles/dots.sh
+|4,39,40,0,1710803741,"~/.dotfiles/dots.sh"
+-'  35  27  ~/.dotfiles/dots.sh
+|4,39,35,27,1710803741,"~/.dotfiles/dots.sh"
+-'  40  0  ~/.dotfiles/dots.sh
+|4,39,40,0,1710803741,"~/.dotfiles/dots.sh"
+-'  35  27  ~/.dotfiles/dots.sh
+|4,39,35,27,1710803741,"~/.dotfiles/dots.sh"
+-'  40  0  ~/.dotfiles/dots.sh
+|4,39,40,0,1710803741,"~/.dotfiles/dots.sh"
+-'  35  27  ~/.dotfiles/dots.sh
+|4,39,35,27,1710803741,"~/.dotfiles/dots.sh"
+-'  40  0  ~/.dotfiles/dots.sh
+|4,39,40,0,1710803741,"~/.dotfiles/dots.sh"
+-'  32  0  ~/.dotfiles/dots.sh
+|4,39,32,0,1710803714,"~/.dotfiles/dots.sh"
 -'  43  0  ~/.dotfiles/dots.sh
-|4,39,43,0,1710735959,"~/.dotfiles/dots.sh"
--'  45  0  ~/.dotfiles/dots.sh
-|4,39,45,0,1710735959,"~/.dotfiles/dots.sh"
--'  45  0  ~/.dotfiles/dots.sh
-|4,39,45,0,1710735959,"~/.dotfiles/dots.sh"
--'  45  0  ~/.dotfiles/dots.sh
-|4,39,45,0,1710735959,"~/.dotfiles/dots.sh"
--'  42  15  ~/.dotfiles/dots.sh
-|4,39,42,15,1710735958,"~/.dotfiles/dots.sh"
--'  43  15  ~/.dotfiles/dots.sh
-|4,39,43,15,1710735958,"~/.dotfiles/dots.sh"
--'  43  15  ~/.dotfiles/dots.sh
-|4,39,43,15,1710735958,"~/.dotfiles/dots.sh"
--'  43  15  ~/.dotfiles/dots.sh
-|4,39,43,15,1710735958,"~/.dotfiles/dots.sh"
--'  19  62  ~/.dotfiles/dots.sh
-|4,39,19,62,1710731408,"~/.dotfiles/dots.sh"
--'  19  62  ~/.dotfiles/dots.sh
-|4,39,19,62,1710731408,"~/.dotfiles/dots.sh"
--'  19  62  ~/.dotfiles/dots.sh
-|4,39,19,62,1710731408,"~/.dotfiles/dots.sh"
--'  19  62  ~/.dotfiles/dots.sh
-|4,39,19,62,1710731408,"~/.dotfiles/dots.sh"
--'  17  29  ~/.dotfiles/dots.sh
-|4,39,17,29,1710731236,"~/.dotfiles/dots.sh"
--'  17  29  ~/.dotfiles/dots.sh
-|4,39,17,29,1710731236,"~/.dotfiles/dots.sh"
--'  17  29  ~/.dotfiles/dots.sh
-|4,39,17,29,1710731236,"~/.dotfiles/dots.sh"
--'  33  30  ~/.dotfiles/dots.sh
-|4,39,33,30,1710731235,"~/.dotfiles/dots.sh"
--'  33  30  ~/.dotfiles/dots.sh
-|4,39,33,30,1710731235,"~/.dotfiles/dots.sh"
--'  33  30  ~/.dotfiles/dots.sh
-|4,39,33,30,1710731235,"~/.dotfiles/dots.sh"
--'  33  30  ~/.dotfiles/dots.sh
-|4,39,33,30,1710731235,"~/.dotfiles/dots.sh"
--'  10  8  ~/.dotfiles/dots.sh
-|4,39,10,8,1710729700,"~/.dotfiles/dots.sh"
--'  10  8  ~/.dotfiles/dots.sh
-|4,39,10,8,1710729700,"~/.dotfiles/dots.sh"
--'  10  8  ~/.dotfiles/dots.sh
-|4,39,10,8,1710729700,"~/.dotfiles/dots.sh"
--'  10  8  ~/.dotfiles/dots.sh
-|4,39,10,8,1710729700,"~/.dotfiles/dots.sh"
--'  1  0  ~/.dotfiles/dots.sh
-|4,39,1,0,1710722060,"~/.dotfiles/dots.sh"
--'  1  0  ~/.dotfiles/dots.sh
-|4,39,1,0,1710722060,"~/.dotfiles/dots.sh"
--'  1  0  ~/.dotfiles/dots.sh
-|4,39,1,0,1710722060,"~/.dotfiles/dots.sh"
--'  1  0  ~/.dotfiles/dots.sh
-|4,39,1,0,1710722060,"~/.dotfiles/dots.sh"
--'  14  0  ~/dots.sh
-|4,39,14,0,1710707919,"~/dots.sh"
--'  14  0  ~/dots.sh
-|4,39,14,0,1710707919,"~/dots.sh"
--'  14  0  ~/dots.sh
-|4,39,14,0,1710707919,"~/dots.sh"
--'  14  0  ~/dots.sh
-|4,39,14,0,1710707919,"~/dots.sh"
--'  14  0  ~/dots.sh
-|4,39,14,0,1710707919,"~/dots.sh"
--'  14  0  ~/dots.sh
-|4,39,14,0,1710707919,"~/dots.sh"
--'  14  0  ~/dots.sh
-|4,39,14,0,1710707919,"~/dots.sh"
--'  14  0  ~/dots.sh
-|4,39,14,0,1710707919,"~/dots.sh"
--'  21  40  ~/dots.sh
-|4,39,21,40,1710706108,"~/dots.sh"
--'  21  40  ~/dots.sh
-|4,39,21,40,1710706108,"~/dots.sh"
--'  21  40  ~/dots.sh
-|4,39,21,40,1710706108,"~/dots.sh"
--'  21  40  ~/dots.sh
-|4,39,21,40,1710706108,"~/dots.sh"
--'  21  40  ~/dots.sh
-|4,39,21,40,1710706108,"~/dots.sh"
--'  21  40  ~/dots.sh
-|4,39,21,40,1710706108,"~/dots.sh"
--'  21  40  ~/dots.sh
-|4,39,21,40,1710706108,"~/dots.sh"
--'  21  40  ~/dots.sh
-|4,39,21,40,1710706108,"~/dots.sh"
--'  10  39  ~/.local/bin/status_wifi.sh
-|4,39,10,39,1710687567,"~/.local/bin/status_wifi.sh"
--'  10  39  ~/.local/bin/status_wifi.sh
-|4,39,10,39,1710687567,"~/.local/bin/status_wifi.sh"
--'  10  39  ~/.local/bin/status_wifi.sh
-|4,39,10,39,1710687567,"~/.local/bin/status_wifi.sh"
--'  10  39  ~/.local/bin/status_wifi.sh
-|4,39,10,39,1710687567,"~/.local/bin/status_wifi.sh"
--'  10  39  ~/.local/bin/status_wifi.sh
-|4,39,10,39,1710687567,"~/.local/bin/status_wifi.sh"
--'  10  39  ~/.local/bin/status_wifi.sh
-|4,39,10,39,1710687567,"~/.local/bin/status_wifi.sh"
--'  10  39  ~/.local/bin/status_wifi.sh
-|4,39,10,39,1710687567,"~/.local/bin/status_wifi.sh"
+|4,39,43,0,1710803714,"~/.dotfiles/dots.sh"
+-'  32  0  ~/.dotfiles/dots.sh
+|4,39,32,0,1710803714,"~/.dotfiles/dots.sh"
+-'  43  0  ~/.dotfiles/dots.sh
+|4,39,43,0,1710803714,"~/.dotfiles/dots.sh"
+-'  32  0  ~/.dotfiles/dots.sh
+|4,39,32,0,1710803714,"~/.dotfiles/dots.sh"
+-'  43  0  ~/.dotfiles/dots.sh
+|4,39,43,0,1710803714,"~/.dotfiles/dots.sh"
+-'  32  0  ~/.dotfiles/dots.sh
+|4,39,32,0,1710803714,"~/.dotfiles/dots.sh"
+-'  43  0  ~/.dotfiles/dots.sh
+|4,39,43,0,1710803714,"~/.dotfiles/dots.sh"
+-'  32  0  ~/.dotfiles/dots.sh
+|4,39,32,0,1710803714,"~/.dotfiles/dots.sh"
+-'  43  0  ~/.dotfiles/dots.sh
+|4,39,43,0,1710803714,"~/.dotfiles/dots.sh"
+-'  32  0  ~/.dotfiles/dots.sh
+|4,39,32,0,1710803714,"~/.dotfiles/dots.sh"
+-'  43  0  ~/.dotfiles/dots.sh
+|4,39,43,0,1710803714,"~/.dotfiles/dots.sh"
+-'  32  0  ~/.dotfiles/dots.sh
+|4,39,32,0,1710803714,"~/.dotfiles/dots.sh"
+-'  43  0  ~/.dotfiles/dots.sh
+|4,39,43,0,1710803714,"~/.dotfiles/dots.sh"
+-'  32  0  ~/.dotfiles/dots.sh
+|4,39,32,0,1710803714,"~/.dotfiles/dots.sh"
+-'  43  0  ~/.dotfiles/dots.sh
+|4,39,43,0,1710803714,"~/.dotfiles/dots.sh"
+-'  57  0  ~/.dotfiles/dots.sh
+|4,39,57,0,1710803713,"~/.dotfiles/dots.sh"
+-'  57  0  ~/.dotfiles/dots.sh
+|4,39,57,0,1710803713,"~/.dotfiles/dots.sh"
+-'  57  0  ~/.dotfiles/dots.sh
+|4,39,57,0,1710803713,"~/.dotfiles/dots.sh"
+-'  57  0  ~/.dotfiles/dots.sh
+|4,39,57,0,1710803713,"~/.dotfiles/dots.sh"
+-'  57  0  ~/.dotfiles/dots.sh
+|4,39,57,0,1710803713,"~/.dotfiles/dots.sh"
+-'  57  0  ~/.dotfiles/dots.sh
+|4,39,57,0,1710803713,"~/.dotfiles/dots.sh"
+-'  57  0  ~/.dotfiles/dots.sh
+|4,39,57,0,1710803713,"~/.dotfiles/dots.sh"
+-'  57  0  ~/.dotfiles/dots.sh
+|4,39,57,0,1710803713,"~/.dotfiles/dots.sh"
+-'  38  0  ~/.dotfiles/dots.sh
+|4,39,38,0,1710803600,"~/.dotfiles/dots.sh"
+-'  38  0  ~/.dotfiles/dots.sh
+|4,39,38,0,1710803600,"~/.dotfiles/dots.sh"
+-'  38  0  ~/.dotfiles/dots.sh
+|4,39,38,0,1710803600,"~/.dotfiles/dots.sh"
+-'  38  0  ~/.dotfiles/dots.sh
+|4,39,38,0,1710803600,"~/.dotfiles/dots.sh"
+-'  38  0  ~/.dotfiles/dots.sh
+|4,39,38,0,1710803600,"~/.dotfiles/dots.sh"
+-'  38  0  ~/.dotfiles/dots.sh
+|4,39,38,0,1710803600,"~/.dotfiles/dots.sh"
+-'  38  0  ~/.dotfiles/dots.sh
+|4,39,38,0,1710803600,"~/.dotfiles/dots.sh"
+-'  38  0  ~/.dotfiles/dots.sh
+|4,39,38,0,1710803600,"~/.dotfiles/dots.sh"
+-'  1  0  ~/UTF-8-demo.txt
+|4,39,1,0,1710803517,"~/UTF-8-demo.txt"
+-'  1  0  ~/UTF-8-demo.txt
+|4,39,1,0,1710803517,"~/UTF-8-demo.txt"
 
 # History of marks within files (newest to oldest):
 
-> ~/.dotfiles/dots.sh
-	*	1710773887	0
-	"	17	25
-	^	17	26
-	.	17	25
-	+	43	0
-	+	46	0
-	+	47	0
-	+	31	0
-	+	31	48
-	+	48	40
-	+	49	0
-	+	31	31
-	+	31	21
-	+	36	0
-	+	31	27
-	+	31	0
-	+	31	21
-	+	31	3
-	+	31	20
-	+	32	0
-	+	32	34
-	+	32	5
-	+	31	10
-	+	31	0
-	+	36	0
-	+	31	19
-	+	35	0
-	+	49	49
-	+	35	29
-	+	36	0
-	+	35	0
-	+	37	0
-	+	34	3
-	+	49	31
-	+	62	19
-	+	38	10
-	+	38	0
-	+	38	27
-	+	50	37
-	+	62	21
-	+	38	0
-	+	62	10
-	+	62	0
-	+	62	21
-	+	62	0
-	+	62	19
-	+	62	23
-	+	62	0
-	+	62	7
-	+	62	0
-	+	62	21
-	+	55	0
-	+	52	0
-	+	45	0
-	+	31	24
-	+	32	24
-	+	31	19
-	+	32	23
-	+	31	24
-	+	32	24
-	+	31	24
-	+	32	0
-	+	44	0
-	+	47	0
-	+	31	11
-	+	32	0
-	+	31	20
-	+	32	0
-	+	31	9
-	+	31	13
-	+	31	55
-	+	32	41
-	+	31	15
-	+	31	27
-	+	32	0
-	+	31	0
-	+	31	55
-	+	32	50
-	+	31	64
-	+	29	21
-	+	30	7
-	+	29	21
-	+	30	29
-	+	31	0
-	+	32	0
-	+	31	0
-	+	30	4
-	+	31	4
-	+	30	0
-	+	31	0
-	+	44	0
-	+	31	20
-	+	6	25
-	+	20	49
-	+	59	16
-	+	6	27
-	+	7	0
-	+	6	23
+> ~/.dotfiles/.local/bin/status_wifi.sh
+	*	1710808775	0
+	"	10	4
+	.	10	0
+	+	11	21
+	+	14	0
+	+	13	0
+	+	14	0
+	+	13	0
+	+	10	0
 	+	9	0
-	+	11	0
-	+	8	0
-	+	38	0
+	+	10	0
+
+> ~/.dotfiles/.local/bin/rofi_wifi.sh
+	*	1710808707	0
+	"	82	3
+	^	49	74
+	.	49	74
+	+	78	22
+	+	79	17
+	+	79	28
+	+	80	13
+	+	80	20
+	+	81	6
+	+	81	13
+	+	82	0
+	+	32	0
+	+	29	14
+	+	6	0
+	+	25	0
+	+	29	0
+	+	31	0
+	+	47	0
+	+	46	0
+	+	47	33
+	+	38	53
+	+	41	74
+	+	73	48
+	+	41	70
+	+	63	0
+	+	63	72
+	+	63	65
+	+	63	83
+	+	41	0
+	+	41	69
+	+	73	48
+	+	74	0
+	+	63	43
+	+	64	0
+	+	42	0
+	+	31	26
+	+	49	95
+	+	49	76
+	+	50	38
+	+	51	0
+	+	50	9
+	+	49	97
+	+	49	75
+	+	49	74
+
+> ~/.dotfiles/.local/bin/notif_battery
+	*	1710806327	0
+	"	14	52
+	.	14	0
+	+	9	0
+	+	14	0
+
+> ~/.dotfiles/.local/bin/fzf_directory.sh
+	*	1710806070	0
+	"	26	28
+	^	48	0
+	.	26	28
+	+	48	0
+	+	25	33
+	+	26	0
+	+	25	33
+	+	26	28
+
+> ~/.dotfiles/dots.sh
+	*	1710805825	0
+	"	55	0
+	^	15	0
+	.	41	0
+	+	36	1
+	+	57	34
+	+	57	0
+	+	57	16
+	+	35	18
+	+	57	0
+	+	34	0
+	+	34	24
+	+	57	0
+	+	34	0
+	+	57	33
+	+	57	0
+	+	34	18
+	+	34	0
+	+	36	19
+	+	36	0
+	+	35	0
+	+	36	19
+	+	57	0
+	+	36	0
+	+	35	0
+	+	34	0
+	+	34	2
+	+	21	33
+	+	57	0
+	+	41	4
+	+	43	24
+	+	41	8
+	+	43	5
 	+	43	0
-	+	17	25
+	+	37	0
+	+	57	0
+	+	41	0
+	+	38	0
+	+	55	0
+	+	38	0
+	+	41	0
+	+	38	0
+	+	34	17
+	+	34	0
+	+	35	46
+	+	34	17
+	+	35	48
+	+	34	0
+	+	34	16
+	+	35	5
+	+	35	0
+	+	34	16
+	+	35	0
+	+	34	16
+	+	34	2
+	+	34	19
+	+	35	2
+	+	34	16
+	+	34	15
+	+	35	0
+	+	34	0
+	+	45	28
+	+	34	18
+	+	35	31
+	+	46	28
+	+	38	54
+	+	38	20
+	+	41	46
+	+	41	18
+	+	35	33
+	+	46	28
+	+	46	32
+	+	57	0
+	+	46	0
+	+	48	15
+	+	49	19
+	+	50	9
+	+	56	6
+	+	46	11
+	+	46	0
+	+	38	0
+	+	47	4
+	+	52	0
+	+	19	45
+	+	20	15
+	+	14	0
+	+	41	0
+
+> ~/UTF-8-demo.txt
+	*	1710803515	0
+	"	1	0
 
 > /usr/share/vim/vim91/doc/help.txt
 	*	1710736705	0
@@ -1351,10 +1416,6 @@ $\~\/\.
 	+	5	7
 	+	5	13
 	+	5	0
-
-> ~/UTF-8-demo.txt
-	*	1705937624	0
-	"	1	0
 
 > ~/.config/zathura/zathurarc
 	*	1705839686	0
@@ -1974,59 +2035,4 @@ $\~\/\.
 	"	2	0
 	^	2	0
 	.	2	0
-	+	2	0
-
-> ~/.config/nvim/lua/user/mason.lua
-	*	1705030442	0
-	"	1	0
-	^	13	28
-	.	17	0
-	+	17	7
-	+	2	0
-	+	10	13
-	+	10	64
-	+	10	48
-	+	10	31
-	+	10	13
-	+	11	28
-	+	12	0
-	+	10	13
-	+	10	0
-	+	13	28
-	+	10	0
-	+	17	0
-
-> ~/.config/nvim/lua/user/lazy.lua
-	*	1705028989	0
-	"	18	29
-	^	18	30
-	.	18	0
-	+	24	0
-	+	3	0
-	+	17	31
-	+	20	0
-	+	22	20
-	+	17	34
-	+	18	0
-
-> ~/.config/nvim/lua/user/treesitter.lua
-	*	1705026420	0
-	"	31	30
-	^	31	31
-	.	31	56
-	+	116	7
-	+	2	0
-	+	31	44
-	+	43	0
-	+	44	0
-	+	31	56
-
-> ~/.config/nvim/lua/user/launch.lua
-	*	1705025765	0
-	"	1	0
-	^	5	3
-	.	2	0
-	+	5	2
-	+	4	0
-	+	1	0
 	+	2	0

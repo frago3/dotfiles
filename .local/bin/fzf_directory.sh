@@ -22,8 +22,8 @@ fileselectorfzf() {
                             file --mime-type {}
                             ;;
                     esac' \
-                --preview-window=60% \
-                --prompt="  cd $PWD ")
+                --preview-window=70% \
+                --prompt="  $PWD ")
 
         case $(file --mime-type "$selected") in
             *inode/directory)
@@ -45,10 +45,6 @@ fileselectorfzf() {
 
     done
 }
-# cdselectdirectory(){
-#     [ -d "$1" ] && local path="$1"
-#     cd "$(find "${path:-.}" -type d 2> /dev/null | fzf)"
-# }
 
 # /: Directorio.
 # *: Archivo ejecutable.
