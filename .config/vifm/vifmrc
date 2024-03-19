@@ -101,11 +101,12 @@ mark u /usr/
 " The command macros like %f, %F, %d, %D may be used in the commands.
 " The %a macro is ignored.  To use a % you must put %%.
 " Spaces in an app name must be escaped, for example: QuickTime\ Player.app
-
-fileviewer  <application/pdf>,<image/*>,*mp3,<audio/*> echo %c
-filextype   <application/pdf> zathura --fork %c &
-filextype   *.mp3,<audio/*> audacious &
-filextype   <image/*> /home/fj/.local/bin/w_nsxiv.sh %d/%c &
+fileviewer <text/*> cat
+fileviewer <*/javascript>,<*/json> cat
+fileviewer  * echo
+" filextype   <application/pdf> zathura --fork %c &
+" filextype   *.mp3,<audio/*> audacious &
+" filextype   <image/*> /home/fj/.local/bin/w_nsxiv.sh %d/%c &
 
 " Open all other files with default system programs (you can also remove all
 " :file[x]type commands above to ensure they don't interfere with system-wide
