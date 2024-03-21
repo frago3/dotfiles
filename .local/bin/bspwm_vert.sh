@@ -7,9 +7,6 @@ S=688
 get_height(){
     xdotool getactivewindow getwindowgeometry --shell | awk -F = '/HEIGHT/ {print $2}'
 }
-# center_window(){
-#     xdotool getactivewindow windowmove x $(( (L - $(get_height)) / 2 ))
-# }
 set_height(){
     xdotool getactivewindow windowsize x $1
 }
@@ -50,13 +47,7 @@ grow()
 }
 
 case $1 in
-    -shrink)
-        shrink
-        ;;
-    -grow)
-        grow
-        ;;
-    *)
-        exit 1
-        ;;
+    -shrink) shrink ;;
+    -grow) grow ;;
+    *) exit 1 ;;
 esac

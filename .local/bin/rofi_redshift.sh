@@ -8,12 +8,12 @@ do
 
     case $chosen in
         off)
-            redshift -x
-            ;;
+            redshift -x ;;
+        
         [4-6][0-9][0-9][0-9])
-            redshift -PO $chosen
-            ;;
+            redshift -PO $chosen ;;
+        
         *)
-            exit
+            exit ;;
     esac
 done

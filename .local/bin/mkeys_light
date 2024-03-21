@@ -2,22 +2,16 @@
 # Multimedia Keys
 
 case $1 in
-    -up) 
-        brightnessctl -q set +1%
-    ;;
+    -up)
+        brightnessctl -q set +1% ;;
     -down)
-        brightnessctl -qn set 1%-
-    ;;
+        brightnessctl -qn set 1%- ;;
     -min)
-        brightnessctl -q set 1
-    ;;
+        brightnessctl -q set 1 ;;
     -restore)
-        brightnessctl -q set 6%
-    ;;
+        brightnessctl -q set 6% ;;
     *)
-        exit
-    ;;
-
+        exit ;;
 esac
 
 dunstify --replace=4 --urgency=low "B $(brightnessctl g | awk '{ printf "%.2f\n", $0/1000 }')" 

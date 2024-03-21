@@ -9,7 +9,7 @@ fileselectorfzf() {
                 --bind=tab:accept \
                 --bind='right:preview:
                     case $(file --mime-type {}) in
-                        *text/*|*inode/x-empty|*application/javascript|*application/json)
+                        *text/*|*inode/x-empty|*/javascript|*/json|*/x-setupscript)
                             cat {}
                             ;;
                          *inode/directory)

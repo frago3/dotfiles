@@ -9,9 +9,8 @@ _format()
     ##SSID name
     #(psk|open|8021x)
 
-    echo "$(eval $1 \
-        | sed -e 's/[[:cntrl:]]\[[0-9;]*m//g' -e '1,4d' \
-            -e 's/^ *\(\S.*\S\) *\(psk\|open\|8021x\).*$/#\1\n\2/g')"
+    sed -e 's/[[:cntrl:]]\[[0-9;]*m//g' -e '1,4d' \
+        -e 's/^ *\(\S.*\S\) *\(psk\|open\|8021x\).*$/#\1\n\2/g'
 }
 
 _choose_name()
@@ -22,7 +21,7 @@ _choose_name()
 
 connect()
 {
-    local available_networks=$(_format "iwctl station $device get-networks")
+    local available_networks=$(iwctl station $device get-networks | _format)
     local chosen=$(_choose_name "$available_networks" 'Available networks')
     [ -z "$chosen" ] && return
 
@@ -66,7 +65,7 @@ disconnect()
 
 forget()
 {
-    local known_networks=$(_format 'iwctl known-networks list')
+    local known_networks=$(iwctl known-networks list | _format)
     local chosen=$(_choose_name "$known_networks" 'Forget network')
     
     [ "$chosen" ] && _confirm "Forget $chosen" && {
@@ -78,5 +77,5 @@ case $(printf "Connect\nDisconnect\nForget" | rofi -dmenu -p 'Wifi  ' -i ) in
     'Connect') connect ;;
     'Disconnect') disconnect ;;
     'Forget') forget ;;
-    *) exit 1 ;;
+    *) exit 0 ;;
 esac

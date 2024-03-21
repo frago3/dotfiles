@@ -9,16 +9,12 @@ do
 
     case $chosen in
         'Up')
-            $volume -up
-        ;;
+            $volume -up ;;
         'Down')
-            $volume -down
-        ;;
+            $volume -down ;;
         'Mute')
-            $volume -mute
-        ;;
+            $volume -mute ;;
         *)
-            exit
-        ;;
+            exit ;;
     esac
 done

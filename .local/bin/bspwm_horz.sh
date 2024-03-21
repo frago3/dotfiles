@@ -55,13 +55,7 @@ grow()
 }
 
 case $1 in
-    -shrink)
-        shrink
-        ;;
-    -grow)
-        grow
-        ;;
-    *)
-        exit 1
-        ;;
+    -shrink) shrink ;;
+    -grow) grow ;;
+    *) exit 1 ;;
 esac
