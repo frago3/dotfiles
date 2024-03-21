@@ -102,8 +102,9 @@ mark u /usr/
 " The %a macro is ignored.  To use a % you must put %%.
 " Spaces in an app name must be escaped, for example: QuickTime\ Player.app
 fileviewer <text/*> cat
-fileviewer <*/javascript>,<*/json> cat
-fileviewer  * echo
+fileviewer <*/x-setupscript>,<*/javascript>,<*/json> cat
+" fileviewer  * echo
+fileviewer  * file --mime-type
 " filextype   <application/pdf> zathura --fork %c &
 " filextype   *.mp3,<audio/*> audacious &
 " filextype   <image/*> /home/fj/.local/bin/w_nsxiv.sh %d/%c &

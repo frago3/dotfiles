@@ -1,0 +1,1 @@
+return { path = "/home/fj/.dotfiles", documents = {["type"]="leaf",["views"]={[1]={["type"]="view",["module"]="core.emptyview",["scroll"]={["y"]=0,["x"]=0,["to"]={["y"]=0,["x"]=0}},["active"]=true}},["active_view"]=1}, directories = {} }

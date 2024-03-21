@@ -14,46 +14,54 @@ $HOME/.dotfiles/.gitignore
 "
 
 filter() {
-  awk -v ignore="$ROOTS$IGNORE" '
-  { list[$0]++ }
-  END {
-    for (file in list) if (!match(ignore, file))
-      print file
-  }' <<< "$1" | LC_COLLATE=C sort
+    awk -v ignore="$ROOTS$IGNORE" '!match(ignore, $0) {print $0}' <<< "$1" \
+        | LC_COLLATE=C sort
 }
-
 get_dots() {
-  local root; local file
-  shopt -s dotglob
-  for root in $ROOTS; do
-    for file in "$root"/*; do echo $file; done
-  done
-  shopt -u dotglob
+    local root; local file
+    shopt -s dotglob
+    for root in $ROOTS; do
+        for file in "$root"/*; do echo $file; done
+    
+    done; shopt -u dotglob
 }
 
 TARGETS="$(filter "$(get_dots)")"
 
+print() {
+    printf "%-46s %s\n" $1 "$2"
+}
+
 show() {
-  [ ! -L $link_name ] && link_name=''
-  printf "%-46s %s\n" $target "->  ${link_name:-:(}"
+    [ ! -L $link_name ] && {
+
+        [ -e $link_name ] && print $target "     $link_name" || print $target "     :c"
+
+    } || print $target "sym  $link_name"
 }
 stow() {
-  [ ! -L $link_name ] && ln -sv $target $link_name
+    [ ! -L $link_name ] && {
+        
+        [ -e $link_name ] && rm -r $link_name
+        ln -sv $target $link_name
+    }
 }
 delete() {
-  [ -L $link_name ] && rm -v $link_name
+    [ -L $link_name ] && rm -v $link_name
 }
 
 dots () {
-  for target in $TARGETS; do link_name=${target/.dotfiles\//}
-  
-    case $1 in
-      stow) stow;;
-      delete) delete;;
-      *) show;;
-    esac
+    for target in $TARGETS; do link_name=${target/.dotfiles\//}
 
-  done
+        case $1 in
+
+            stow) stow;;
+
+            delete) delete;;
+
+            *) show;;
+        esac
+    done
 }
 
 dots $1
