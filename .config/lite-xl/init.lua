@@ -12,6 +12,7 @@ local style = require "core.style"
 
 -- light theme:
 core.reload_module("colors.vscode-dark")
+
 ------------------------------ Config ----------------------------------------
 
 core.status_view:hide()
@@ -57,8 +58,7 @@ style.code_font = renderer.font.load("/usr/share/fonts/TTF/Hack-Regular.ttf", 14
 style.icon_font = renderer.font.load(DATADIR .. "/fonts/icons.ttf", 14 * SCALE)
 style.icon_big_font = renderer.font.load(DATADIR .. "/fonts/icons.ttf", 14 * SCALE)
 
-
-style.tab_width = common.round(160 * SCALE) 
+style.tab_width = common.round(150 * SCALE) 
 --
 -- DATADIR is the location of the installed Lite XL Lua code, default color
 -- schemes and fonts.

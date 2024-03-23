@@ -14,4 +14,4 @@ case $1 in
         exit ;;
 esac
 
-dunstify --replace=4 --urgency=low "B $(brightnessctl g | awk '{ printf "%.2f\n", $0/1000 }')" 
+dunstify --replace=4 --urgency=low "B $(brightnessctl g | awk '{ printf "%.2f\n", $0/1000 }')"

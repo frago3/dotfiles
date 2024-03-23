@@ -13,8 +13,9 @@ get_calendar()
 
         local pastdays=$(seq -s '|' $((today -1)) )
 
-        local calendar=$(echo "$calendar" \
-            | sed -E "s/\b($pastdays)\b/<span foreground='grey' strikethrough='true'>&<\/span>/g")
+        # local calendar=$(echo "$calendar" \
+        #     | sed -E "s/\b($pastdays)\b/<span foreground='grey' strikethrough='true'>&<\/span>/g")
+        local calendar=$(sed -E "s/\b($pastdays)\b/<span foreground='grey' strikethrough='true'>&<\/span>/g" <<< "$calendar")
     }
 
     echo "$calendar"

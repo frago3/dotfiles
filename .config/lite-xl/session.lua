@@ -1,1 +1,0 @@
-return {recents={[1]="/home/fj/.dotfiles/.local/bin",[2]="/home/fj/.config/lite-xl/colors",[3]="/home/fj",[4]="/home/fj/.dotfiles",[5]="/home/fj/Public/bashscript"}, window={[1]=1300,[2]=1058,[3]=309,[4]=0,["n"]=4}, window_mode="normal", previous_find={[1]="keymap"}, previous_replace={}}

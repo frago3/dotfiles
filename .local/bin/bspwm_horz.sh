@@ -24,10 +24,10 @@ shrink()
 
     elif [ $current_width -gt $M ]; then
         set_width $M
-    
+
     elif [ $current_width -gt $S ]; then
         set_width $S
-    
+
     else
         exit 1
     fi
@@ -36,19 +36,19 @@ shrink()
 grow()
 {
     local current_width=$(get_width)
-    
+
     if [ $current_width -ge $L ] && [ $current_width -lt $XL ]; then
         set_width $XL
-    
+
     elif [ $current_width -ge $M ] && [ $current_width -lt $L ]; then
         set_width $L
 
     elif [ $current_width -ge $S ] && [ $current_width -lt $M ]; then
         set_width $M
-    
+
     elif [ $current_width -lt $S ]; then
         set_width $S
-    
+
     else
         exit 1
     fi

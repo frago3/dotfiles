@@ -10,17 +10,13 @@ fileselectorfzf() {
                 --bind='right:preview:
                     case $(file --mime-type {}) in
                         *text/*|*inode/x-empty|*/javascript|*/json|*/x-setupscript)
-                            cat {}
-                            ;;
+                            cat {} ;;
                          *inode/directory)
-                            command ls -Fv --group-directories-first {}
-                            ;;
+                            command ls -Fv --group-directories-first {} ;;
                          *inode/symlink)
-                            readlink -f {}
-                            ;;
+                            readlink -f {} ;;
                          *)
-                            file --mime-type {}
-                            ;;
+                            file --mime-type {} ;;
                     esac' \
                 --preview-window=70% \
                 --prompt="  $PWD ")

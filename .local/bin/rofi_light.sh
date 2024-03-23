@@ -9,13 +9,13 @@ do
 
     case $chosen in
         'Increase')
-            bright -up ;;
+            $bright -up ;;
         'Decrease')
-            bright -down ;;
+            $bright -down ;;
         'Minimum')
-            bright -min ;;
+            $bright -min ;;
         'Restore')
-            bright -restore ;;
+            $bright -restore ;;
         *)
             exit ;;
     esac

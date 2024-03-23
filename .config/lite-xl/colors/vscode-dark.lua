@@ -5,19 +5,19 @@ local style = require "core.style"
 local common = require "core.common"
 
 
-style.background = { common.color "#141414" }
+-- style.background = { common.color "#161616" }
+style.background = { common.color "#151515" }
 style.background2 = { common.color "#000000" }
 style.background3 = { common.color "#000000" }
-style.text = { common.color "#a8a8a8" }
+style.text = { common.color "#c3c3c3" }
 style.caret = { common.color "#FFFFFF" }
-style.accent = { common.color "#d3d3d3" } -- Text in autocomplete and command, col(>80) in satusbar
-style.dim = { common.color "#555555" } -- Text of nonactive tabs, prefix in log
-style.divider = { common.color "#141414" }
+style.accent = { common.color "#ffffff" } -- Text in autocomplete and command, col(>80) in satusbar
+style.dim = { common.color "#606060" } -- Text of nonactive tabs, prefix in log
+style.divider = { common.color "#000000" }
 style.selection = { common.color "#264F78" }
 style.line_number = { common.color "#707070" }
 style.line_number2 = { common.color "#d3d3d3" } -- Number on line with caret
-style.line_highlight = { common.color "#2a2a2a"}
-style.line_highlight = { common.color "#141414"}
+style.line_highlight = { common.color "#191919"}
 style.scrollbar = { common.color "#404040" }
 style.scrollbar2 = { common.color "#404040" } -- Hovered
 
