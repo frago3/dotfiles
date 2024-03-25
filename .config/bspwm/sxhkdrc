@@ -26,10 +26,10 @@ ctrl + alt + Up
 
 # media keys
 XF86Audio{RaiseVolume,LowerVolume,Mute}
-    $HOME/.local/bin/mkeys_volume {-up,-down,-mute}
+    $HOME/.local/bin/mkeys_volume.sh {-up,-down,-mute}
 
 XF86MonBrightness{Up,Down}
-    $HOME/.local/bin/mkeys_light {-up,-down}
+    $HOME/.local/bin/mkeys_light.sh {-up,-down}
 
 super + p; {c,f,p,w}
     $HOME/.local/bin/status_{calendar,fetch,ps,wifi}.sh
