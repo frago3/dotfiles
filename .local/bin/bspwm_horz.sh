@@ -5,16 +5,14 @@ L=1867
 M=1300
 S=960
 
-get_width(){
-    xdotool getactivewindow getwindowgeometry --shell | awk -F = '/WIDTH/ {print $2}'
-}
+current_width=$(xdotool getactivewindow getwindowgeometry --shell | awk -F = '/WIDTH/ {print $2}')
+
 set_width(){
     xdotool getactivewindow windowsize $1 y
 }
 
 shrink()
 {
-    local current_width=$(get_width)
 
     if [ $current_width -gt $XL ]; then
         set_width $XL
@@ -35,7 +33,6 @@ shrink()
 
 grow()
 {
-    local current_width=$(get_width)
 
     if [ $current_width -ge $L ] && [ $current_width -lt $XL ]; then
         set_width $XL

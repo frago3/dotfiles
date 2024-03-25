@@ -16,9 +16,8 @@ ps_cpu()
             for (comm in col2)
             printf "%15s|%5.1f|%5.1f\n", comm, col2[comm], col3[comm] }' \
         | sort -t'|' -k2,2nr | sed 's/|//g' )
-    
+
     echo "$header$pscpu"
 }
 
 dunstify --replace=2 '' "<tt>$(ps_cpu)</tt>"
-# echo -e "$(ps_cpu)"

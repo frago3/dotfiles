@@ -1,6 +1,6 @@
 #!/bin/bash
 
-bright=$HOME/.local/bin/mkeys_light
+bright=$HOME/.local/bin/mkeys_light.sh
 
 while true
 do

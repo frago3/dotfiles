@@ -32,4 +32,3 @@ case $1 in
     -centervert)
         xdo move -y $(( (screen_height - $(get_height)) / 2 )) ;;
 esac
-

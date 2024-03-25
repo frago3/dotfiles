@@ -10,8 +10,10 @@ path="$HOME/Imágenes/screen/$(date +%y%m%d_%H%M%S%N).png"
 case "$1" in
     -screen)
         shotgun -f png "$path" ;;
+
     -window)
         shotgun -f png -i $(xdo id) "$path" ;;
+
     *)
         exit 1 ;;
 esac

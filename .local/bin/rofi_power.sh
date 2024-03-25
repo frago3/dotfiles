@@ -7,18 +7,17 @@ confirm()
 
 case $(printf "Suspend\nShutdown\nReboot\nExit" | rofi -dmenu -p 'Power  ' -i ) in
     'Reboot')
-        confirm 'Reboot' && sudo systemctl reboot
-        ;;
+        confirm 'Reboot' && sudo systemctl reboot ;;
+
     'Shutdown')
-        confirm 'Shutdown' && sudo systemctl poweroff
-        ;;
+        confirm 'Shutdown' && sudo systemctl poweroff ;;
+
     'Suspend')
-        sudo systemctl suspend
-        ;;
+        sudo systemctl suspend ;;
+
     'Exit')
-        confirm 'Exit' && bspc quit
-        ;;
+        confirm 'Exit' && bspc quit ;;
+
     *)
-        exit 1
-        ;;
+        exit 1 ;;
 esac

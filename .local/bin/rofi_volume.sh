@@ -1,6 +1,6 @@
 #!/bin/bash
 
-volume=$HOME/.local/bin/mkeys_volume
+volume=$HOME/.local/bin/mkeys_volume.sh
 
 while true
 do
@@ -10,10 +10,13 @@ do
     case $chosen in
         'Up')
             $volume -up ;;
+
         'Down')
             $volume -down ;;
+
         'Mute')
             $volume -mute ;;
+
         *)
             exit ;;
     esac
