@@ -50,18 +50,14 @@ delete() {
     [ -L $link_name ] && rm -v $link_name
 }
 
-dots () {
-    for target in $TARGETS; do link_name=${target/.dotfiles\//}
+for target in $TARGETS; do link_name=${target/.dotfiles\//}
 
-        case $1 in
+    case $1 in
 
-            stow) stow;;
+        stow) stow;;
 
-            delete) delete;;
+        delete) delete;;
 
-            *) show;;
-        esac
-    done
-}
-
-dots $1
+        *) show;;
+    esac
+done
