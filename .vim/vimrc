@@ -29,6 +29,7 @@ set tabstop=4                   " tab character width
 set shiftwidth=4                " needs to be the same as tabstop
 set expandtab
 
+set nowrap
 set incsearch                   " enable incremental searching (get feedback as you type)
 set hlsearch                    " highlight all matches of last search
 set wildmenu                    " display completion matches in a status line
@@ -47,8 +48,10 @@ let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 " defines how automatic formatting should be done (see :h fo-table)
 " set formatoptions-=t formatoptions-=o formatoptions+=crqjnl1
 " set formatoptions=crqjnl1
+" noremap <Esc>^[[E <Esc>
+" noremap <kHome> <Esc>
+" nnoremap <kHome> <Esc>
 
-" MAP
 noremap <F2> <Cmd>set number <bar>setlocal relativenumber!<cr>
 nmap <C-s> :update<cr>
 imap <C-s> <Esc>:update<cr>

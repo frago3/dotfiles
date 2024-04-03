@@ -1,0 +1,36 @@
+#! /bin/bash
+
+export QT_QPA_PLATFORMTHEME=qt5ct
+# export SAL_USE_VCLPLUGIN=qt5
+# export SAL_VCL_QT5_USE_CAIRO=1
+export MOZ_USE_XINPUT2=1
+export LESS='FRSXMK --mouse --tilde'
+export SYSTEMD_LESS=$LESS
+
+xsetroot -cursor_name left_ptr &
+$HOME/.fehbg &
+pgrep -x sxhkd > /dev/null || sxhkd -c ~/.config/bspwm/sxhkdrc &
+pgrep -x gebaard > /dev/null || gebaard --background &
+killall polybar
+polybar --quiet &
+
+bspc monitor -d 1 2 3 4
+
+bspc config border_width         1
+bspc config window_gap           0
+
+bspc config focused_border_color    '#2a2a2a'
+bspc config normal_border_color     '#000000'
+bspc config active_border_color     '#000000'
+
+# Geometry: 1918x1058 Position: 0,0
+# Geometry: 1378x1058 Position: 270,0
+# rectangle=WxH+X+Y
+bspc rule -a '*'          state=floating
+bspc rule -a Audacious    border=off
+bspc rule -a Zathura      rectangle=960x1057+480+0
+bspc rule -a Htop         rectangle=1918x1057+0+0
+bspc rule -a XTerm        rectangle=1378x1057+270+0
+bspc rule -a Alacritty    rectangle=1378x1057+270+0
+bspc rule -a Nsxiv        rectangle=1300x994+310+32
+bspc rule -a Links        rectangle=1378x1057+270+0

@@ -1,0 +1,95 @@
+# make sxhkd reload its configuration files:
+super + r
+    pkill -USR1 -x sxhkd
+# restart bspwm
+super + alt + r
+    bspc wm -r
+
+# wm independent hotkeys
+super + {_,shift +} Return
+    {xterm,xterm -e tmux}
+
+super + {_, shift +} w
+    {firefox, firefox --private-window}
+
+super + h
+    xterm -fa monospace:size=10 -class Htop -e htop
+
+super + e
+    pcmanfm-qt
+
+super + space
+    rofi -show drun
+
+ctrl + alt + Up
+    rofi -show window
+
+alt + shift + Tab
+	rofi -show window
+
+# ctrl + alt + BackSpace
+#     killall gebaard; bspc quit
+
+# media keys
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+    $HOME/.local/bin/mkeys_volume.sh {-up,-down,-mute}
+
+XF86MonBrightness{Up,Down}
+    $HOME/.local/bin/mkeys_light.sh {-up,-down}
+
+super + p; {c,f,p,w}
+    $HOME/.local/bin/status_{calendar,fetch,ps,wifi}.sh
+
+super + BackSpace
+    dunstctl close
+
+# super + alt + {3,4}
+#     $HOME/.local/bin/screenshot.sh {-screen,-window}
+
+# bspwm hotkeys
+ctrl + shift + q
+	bspc node --close
+
+# super + f
+ctrl + alt + Return
+    bspc node -t ~fullscreen
+
+# focus/swap
+alt + Tab
+	bspc node -f last.window.local || bspc node -f next.window.local
+
+alt + bracketright
+	bspc desktop -f last.local.occupied
+
+alt + ctrl + {Left, Right}
+	bspc desktop -f {prev.occupied,next.occupied}.local
+
+alt + shift + {Left, Right}
+	bspc node -d {prev,next}.local --follow
+
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# resize window
+super + ctrl + {Left,Right,Up,Down}
+	bspc node --resize {right -270 0, right 270 0, bottom 0 -270, bottom 0 270}
+
+super + ctrl + Escape
+    xdotool getactivewindow windowsize 1918 1057; xdo move -x 0 -y 0
+    # xdotool getactivewindow windowsize 1918 1058; xdo move -x 0 -y 0
+
+super + alt + {Left,Down,Up,Right,KP_Next,KP_Home}
+	bspc node -z {right -20 0,bottom 0 20,bottom 0 -20,right 20 0,bottom_right 20 20,bottom_right -20 -20}
+
+# move window
+super + {Left,Right,Up,Down}
+	bspc node --move {-270 0,270 0,0 -270,0 270}
+
+super + {KP_Home,KP_Prior,KP_End,KP_Next}
+    $HOME/.config/bspwm/scripts/bspwm_move.sh {-topleft,-topright,-bottomleft,-bottomright}
+
+super + Escape
+    $HOME/.config/bspwm/scripts/bspwm_move.sh -center
+
+super + shift + {Left,Right,Up,Down,KP_Home,KP_Prior,KP_End,KP_Next}
+	bspc node -v {-20 0,20 0,0 -20,0 20,-20 -20,20 -20,-20 20,20 20}

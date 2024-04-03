@@ -1,6 +1,6 @@
-set font "system-ui bold 10"
-set window-height   1058
-set window-width    960
+set font "FreeSans bold 10"
+set window-height   1057
+set window-width    838
 set guioptions none
 # color
 set recolor-lightcolor  "#fdf5e8"
