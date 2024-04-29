@@ -1,0 +1,26 @@
+#i3status-rust
+[theme.overrides]
+separator       = ""
+idle_fg         = "#deddda"
+good_fg         = "#deddda"
+warning_fg      = "#deddda"
+info_fg         = "#deddda"
+critical_fg     = "#f66151"
+
+[[block]]
+block           = "focused_window"
+format          = "$title.str(min_w:214)    |"
+
+[[block]]
+block           = "battery"
+model           = "SR Real Battery"
+format          = "$percentage   "
+empty_format    = "$percentage   "
+full_format     = "$percentage   "
+interval        = 60
+critical        = 10
+
+[[block]]
+block           = "time"
+format          = "$timestamp.datetime(f:'%R   %d/%m')  "
+interval        = 60

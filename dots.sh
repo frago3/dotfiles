@@ -5,7 +5,6 @@ $HOME/.dotfiles
 $HOME/.dotfiles/.config
 $HOME/.dotfiles/.local
 $HOME/.dotfiles/.local/share
-$HOME/.dotfiles/Imágenes
 "
 IGNORE="
 $HOME/.dotfiles/dots.sh
@@ -54,10 +53,10 @@ for target in $TARGETS; do link_name=${target/.dotfiles\//}
 
     case $1 in
 
-        stow) stow;;
+        stow)    stow;;
 
-        delete) delete;;
+        delete)  delete;;
 
-        *) show;;
+        *)       show;;
     esac
 done

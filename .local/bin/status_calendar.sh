@@ -7,7 +7,7 @@ get_calendar()
 
     local calendar=$(cal --monday \
         | sed -e "s/\b$today\b/<span background='lightgrey' foreground='black'>&<\/span>/" \
-            -e '/^[[:space:]]*$/d')
+              -e '/^[[:space:]]*$/d')
 
     [ "$today" -ne 1 ] && {
 

@@ -5,7 +5,7 @@
 " Main settings
 " ------------------------------------------------------------------------------
 
-set vicmd=vim
+set vicmd=nvim
 
 " This makes vifm perform file operations on its own instead of relying on
 " standard utilities like `cp`.  While using `cp` and alike is a more universal
@@ -103,11 +103,8 @@ mark u /usr/
 " Spaces in an app name must be escaped, for example: QuickTime\ Player.app
 fileviewer <text/*> cat
 fileviewer <*/x-setupscript>,<*/javascript>,<*/json> cat
-" fileviewer  * echo
-fileviewer  * file --mime-type
-" filextype   <application/pdf> zathura --fork %c &
-" filextype   *.mp3,<audio/*> audacious &
-" filextype   <image/*> /home/fj/.local/bin/w_nsxiv.sh %d/%c &
+fileviewer  \.*,* echo
+" fileviewer  * file --mime-type
 
 " Open all other files with default system programs (you can also remove all
 " :file[x]type commands above to ensure they don't interfere with system-wide
