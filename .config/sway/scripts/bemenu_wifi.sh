@@ -1,70 +1,110 @@
 #!/bin/bash
-#
-# necesita wireless_tools
-device=wlan0
-connected_network="$(iwgetid -r)"
 
-_format() {
-    ##SSID name
-    #(psk|open|8021x)
+DEVICE=wlan0
+STATUS=''
+SSID=''
 
-    sed -e 's/[[:cntrl:]]\[[0-9;]*m//g' -e '1,4d' \
-        -e 's/^ *\(\S.*\S\) *\(psk\|open\|8021x\).*$/#\1\n\2/g'
+is_enable () {
+
+  [ "$(rfkill -J | jq -r '..|try select(.type=="wlan")|.soft')" == 'unblocked' ]
 }
 
-_choose_name() {
-    grep "^#" <<< "$1"| cut -c 2- | bemenu -p "$2"
+confirm() {
+
+  [ "$(printf 'no\nyes' | bemenu -p "$1. are you sure?")" = 'yes' ]
 }
 
-connect() {
-    local available_networks=$(iwctl station $device get-networks | _format)
-    local chosen=$(_choose_name "$available_networks" 'Available networks')
+toggle_wifi() {
+
+  grep -q 'wifi on' <<< "$STATUS" && {
+    confirm 'disable wifi' && rfkill block wlan && dunstify -u low 'Wifi disabled' && exit
+    return
+  }
+
+  confirm 'enablable wifi' && rfkill unblock wlan && dunstify -u low 'Wifi enablabled'
+}
+
+disconnect_from_network() {
+
+  [ "$SSID" ] && confirm "disconnect from $SSID" && {
+
+      iwctl station $DEVICE disconnect && dunstify -u low 'Wifi disconnected' && exit
+  }
+}
+
+format() {
+  # #SSID name
+  # psk|open|8021x
+  sed -e 's/[[:cntrl:]]\[[0-9;]*m//g' -e '1,4d' -e 's/^ *>* *\(\S.*\S\) *\(psk\|open\|8021x\).*$/#\1\n\2/g'
+}
+
+choose() {
+    grep "^#" <<< "$2"| cut -c 2- | bemenu -p "$1"
+}
+
+forget() {
+
+  local chosen
+  chosen=$(choose 'forget network' "$(iwctl known-networks list|format)")
+
+  [ "$chosen" ] && confirm "forget $chosen" && {
+      iwctl known-networks "$chosen" forget && dunstify -u low "$chosen forgotten"
+  }
+}
+
+connect_to_network(){
+
+    local available_networks chosen
+
+    available_networks=$(iwctl station $DEVICE get-networks|format)
+    chosen=$(choose 'available networks' "$available_networks")
+
     [ -z "$chosen" ] && return
 
-    # network starts with '> ' user is already on that network
-    [ "$chosen" = ">   $connected_network" ] && {
-        dunstify 'Connected'; return
-    }
+    # is already on that network
+    [ "$chosen" = "$SSID" ] && dunstify -u low 'Wifi connected' && exit
 
-    local security=$(grep -A 1 "$chosen" <<< "$available_networks" | tail -n 1)
+    local security
+    security=$(grep -A 1 "$chosen" <<< "$available_networks" | tail -n 1)
 
     # network is open or known
     if iwctl known-networks list | grep -q "$chosen" || [ "$security" = 'open' ]
     then
 
-        echo iwctl station $device connect "$chosen" && dunstify 'Connected'
+      iwctl station $DEVICE connect "$chosen" && dunstify -u low 'Wifi connected' && exit
 
     elif [ "$security" = psk ] || [ "$security" = "8021x" ]
     then
 
-        local passd=$(bemenu -p 'password' -x indicator<<< "")
-        [ -n "$passd" ] && iwctl --passphrase "$passd" station $device connect "$chosen" && dunstify 'Connected' || dunstify 'Operation failed'
+      local passd
+      passd=$(bemenu -p 'password' <<< '')
+
+      [ "$passd" ] && iwctl --passphrase "$passd" station $DEVICE connect "$chosen" &&
+          dunstify -u low 'Wifi connected' ||
+          dunstify -u low 'Operation failed' && exit
     fi
 }
 
-_confirm() {
-    [ "$(printf 'No\nYes' | bemenu -p "$1")" = 'Yes' ]
-}
+while true
+do
 
-disconnect() {
-    [ "$connected_network" ] && _confirm "disconnect from $connected_network" && {
+  is_enable && {
 
-        iwctl station $device disconnect && dunstify 'Disconnected'
-    }
-}
+    SSID=$(iwctl station "$DEVICE" show|grep 'Connected network'|cut -c35-|sed 's/ *$//')
 
-forget() {
-    local known_networks=$(iwctl known-networks list | _format)
-    local chosen=$(_choose_name "$known_networks" 'forget network')
+    [ "$SSID" ] && 
+       STATUS="wifi on: $SSID" ||
+       STATUS="wifi on"  
+  } || STATUS="wifi off"
 
-    [ "$chosen" ] && _confirm "forget $chosen" && {
-        iwctl known-networks "$chosen" forget && dunstify 'Forgotten'
-    }
-}
+  case $(printf "connect\ndisconnect\nforget\ntoggle"|bemenu -p "$STATUS") in
 
-case $(printf "connect\ndisconnect\nforget" | bemenu -p 'wifi') in
-    'connect') connect ;;
-    'disconnect') disconnect ;;
-    'forget') forget ;;
-    *) exit 0 ;;
-esac
+      'toggle')         toggle_wifi ;;
+      'connect')        connect_to_network ;;
+      'disconnect')     disconnect_from_network ;;
+      'forget')         forget ;;
+      *)                break ;;
+
+  esac
+
+done

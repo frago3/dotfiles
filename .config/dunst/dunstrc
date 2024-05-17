@@ -63,9 +63,10 @@
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
-    font = "FreeSans bold 10"
-    # format = "%s<span font="monospace 10" foreground="white">%b</span>"
-    format = "%s%b"
+    font = "System-ui Bold 10"
+    # format = "%s<tt>%b</tt>"
+    format = "%s<span font="monospace bold 10">%b</span>"
+    # format = "%s%b"
     vertical_alignment = center
 
     # Show age of message if message is older than show_age_threshold
@@ -102,14 +103,6 @@
     # Maximum amount of notifications kept in history
     history_length = 20
 
-    ### Misc/Advanced ###
-
-    # dmenu path.
-    dmenu = /usr/bin/dmenu -p dunst:
-
-    # Browser for opening urls in context menu.
-    browser = /usr/bin/xdg-open
-
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = false
 
@@ -119,11 +112,6 @@
     # Define the class of the windows spawned by dunst
     class = Dunst
 
-    # Define the corner radius of the notification window
-    # in pixel size. If the radius is 0, you have no rounded
-    # corners.
-    # The radius will be automatically lowered if it exceeds half of the
-    # notification height to avoid clipping text and/or icons.
     corner_radius = 0
 
     # Ignore the dbus closeNotification message.
@@ -176,8 +164,8 @@
     #default_icon = /path/to/icon
 
 [urgency_critical]
-    foreground = "#deddda"
-    background = "#f66151"
+    foreground = "#f6f5f4"
+    background = "#c01c28"
     timeout = 0
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon

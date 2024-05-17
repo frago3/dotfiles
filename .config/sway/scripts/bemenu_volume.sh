@@ -3,7 +3,9 @@
 while true
 do
 
-    case $(echo -e "up\ndown\nmute" | bemenu -p "volume $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d' ' -f2-)" -I ${index:-0}) in
+    case $(echo -e "up\ndown\nmute" | 
+                bemenu -p "volume $(wpctl get-volume @DEFAULT_AUDIO_SINK@ |
+                cut -d' ' -f2-)" -I ${index:-0}) in
         'up')
             index=0
             wpctl set-volume --limit 1.1 @DEFAULT_AUDIO_SINK@ 6%+ ;;

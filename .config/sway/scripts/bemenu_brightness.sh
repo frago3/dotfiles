@@ -5,7 +5,8 @@ value=$(brightnessctl -m)
 while true
 do
 
-    case $(echo -e "increase\ndecrease\nminimum\nrestore" | bemenu -p "brightness $(cut -d',' -f4 <<< "$value")" -I ${index:-0}) in
+    case $(echo -e "increase\ndecrease\nminimum\nrestore" |
+        bemenu -p "brightness $(cut -d',' -f4 <<< "$value")" -I ${index:-0}) in
 
         'increase') 
             index=0

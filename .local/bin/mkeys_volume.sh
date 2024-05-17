@@ -11,4 +11,4 @@ case $1 in
         exit ;;
 esac
 
-dunstify --replace=4 --urgency=low "$(wpctl get-volume @DEFAULT_AUDIO_SINK@)"
+dunstify -r 1 -u low "$(wpctl get-volume @DEFAULT_AUDIO_SINK@)"

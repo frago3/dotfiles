@@ -14,4 +14,4 @@ case $1 in
         exit ;;
 esac
 
-dunstify --replace=4 --urgency=low "Brightness: $(cut -d',' -f4 <<< "$value")"
+dunstify -r 1 -u low "Brightness: $(cut -d',' -f4 <<< "$value")"

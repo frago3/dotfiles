@@ -5,11 +5,11 @@ idle_fg         = "#deddda"
 good_fg         = "#deddda"
 warning_fg      = "#deddda"
 info_fg         = "#deddda"
-critical_fg     = "#f66151"
+critical_fg     = "#FF7362"
 
 [[block]]
 block           = "focused_window"
-format          = "$title.str(min_w:214)    |"
+format          = "$title.str(min_w:220)   |"
 
 [[block]]
 block           = "battery"
@@ -17,8 +17,9 @@ model           = "SR Real Battery"
 format          = "$percentage   "
 empty_format    = "$percentage   "
 full_format     = "$percentage   "
-interval        = 60
+interval        = 30
 critical        = 10
+# empty_threshold = 10
 
 [[block]]
 block           = "time"

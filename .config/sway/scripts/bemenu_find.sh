@@ -1,23 +1,24 @@
 #!/bin/bash
 
-file=$(fd -c never -LaH -E .cache/ -E .mozilla/ -E .dotfiles/ . "$HOME" | bemenu -p 'find')
-[ "$file" ] && {
+file=$( (fd -cnever . ~/ & fd -Hcnever . ~/.dotfiles/)|bemenu -p 'find') || exit
 
-    case "$(file --mime-type -Lb "$file")" in
+case "$(file --mime-type -Lb "$file")" in
 
-        text/x-shellscript|text/plain|text/xml|application/javascript|application/json)
-            coproc foot -D "$(dirname $file)" vi "$file" ;;
-        
-        inode/directory)
-            cd "$file"; coproc foot ;;
+    text/*|application/javascript|application/json)
+        (foot -D "$(dirname $file)" vi "$file" &) ;;
+    
+    inode/directory)
+        cd "$file"; (foot &) ;;
 
-        image/png|image/gif|image/jpeg|image/jpg|image/bmp)
-            coproc imv-dir "$file" ;;
-            
-        application/pdf|application/epub+zip)
-            coproc zathura "$file" ;;
+    application/pdf|application/epub+zip)
+        (zathura "$file" &) ;;
 
-        *)
-            exit ;;
-    esac
-}
+    image/*)
+        (imv-dir "$file" &) ;;
+
+    video/*|audio/*)
+        (mpv "$file" &) ;;
+
+    *)
+        exit ;;
+esac

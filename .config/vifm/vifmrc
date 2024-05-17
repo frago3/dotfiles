@@ -101,9 +101,8 @@ mark u /usr/
 " The command macros like %f, %F, %d, %D may be used in the commands.
 " The %a macro is ignored.  To use a % you must put %%.
 " Spaces in an app name must be escaped, for example: QuickTime\ Player.app
-fileviewer <text/*> cat
-fileviewer <*/x-setupscript>,<*/javascript>,<*/json> cat
-fileviewer  \.*,* echo
+fileviewer <text/*>,<*/x-setupscript>,<*/javascript>,<*/json> cat
+fileviewer \.*,* echo
 " fileviewer  * file --mime-type
 
 " Open all other files with default system programs (you can also remove all
@@ -113,6 +112,9 @@ fileviewer  \.*,* echo
 " for unknown file types.
 " For *nix:
 " filetype * xdg-open
+filextype <image/*> imv-dir %f &
+filextype <video/*> mpv --terminal=no %f &
+filextype <application/pdf>,<application/epub+zip> zathura 2>/dev/null %f &
 
 " ------------------------------------------------------------------------------
 " Panel configuration examples

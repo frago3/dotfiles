@@ -1,0 +1,68 @@
+#!/bin/bash
+
+# alias fp='pacman -Qeq | fzf --bind="right:preview: pacman -Qi {}"'
+fz() {
+
+  local file
+  file=$( (fd -cnever . ~/ & fd -cnever -H . ~/.dotfiles/) | fzf) || return
+  case "$(file --mime-type -Lb "$file")" in
+
+    inode/directory)
+      cd "$file" ;;
+
+    text/*|application/javascript|application/json)
+      cd "$(dirname "$file")" && vi "$file" ;;
+
+    image/*)
+      cd "$(dirname "$file")" && (imv-dir "$file" &); break ;;
+
+    *) echo "$file" ;;
+  esac
+}
+
+f() {
+
+  [ -d "$1" ] && cd "$1"
+
+  while true
+  do
+    # local file=$(command ls -pav --group-directories-first --color=always | fzf --ansi --prompt="  $PWD " \
+    local file
+    file=$(command ls -pav --group-directories-first|fzf --prompt="  $PWD " \
+      --bind='tab:accept,right:preview:
+          case $(file --mime-type -Lb {}) in
+            inode/directory)
+              command ls -v --group-directories-first --color=always {} ;;
+
+            text/*|application/javascript|application/json)
+              cat {} ;;
+
+            *) file --mime-type -Lb {} ;;
+          esac') || break
+
+    case $(file --mime-type -Lb "$file") in
+
+      inode/directory)
+        cd "$file" ;;
+
+      text/*|application/javascript|application/json)
+        vi "$file"; break ;;
+
+      image/*)
+        (imv-dir "$file" &); break ;;
+
+      *) break ;;
+    esac
+  done
+}
+
+__history__() {
+  READLINE_LINE=$(history|fzf --tac|cut -c8-) || return
+  [ "$READLINE_POINT" ] || echo "$READLINE_LINE" && READLINE_POINT=0x7fffffff
+}
+bind -m emacs-standard -x '"\C-r": __history__'
+
+color() {
+  local p; p=$(slurp -p) || return
+  grim -g "$p" -t ppm -|convert - -format '%[pixel:p{0,0}]' txt:-|awk '{if(NR==2)print $3}'
+}

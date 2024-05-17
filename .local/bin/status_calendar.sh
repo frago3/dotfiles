@@ -19,4 +19,5 @@ get_calendar()
     echo "$calendar"
 }
 
-dunstify --replace=4 '' "<tt>$(get_calendar)</tt>"
+
+dunstify -r 1 '' "$(get_calendar)"

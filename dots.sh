@@ -28,7 +28,7 @@ get_dots() {
 TARGETS="$(filter "$(get_dots)")"
 
 print() {
-    printf "%-46s %s\n" $1 "$2"
+    printf "%-46s %s\n" "$1" "$2"
 }
 
 show() {
