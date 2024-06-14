@@ -2,11 +2,10 @@
 
 export LESS='FRSXMK --mouse --tilde'
 export SYSTEMD_LESS='FRSXMK --mouse --tilde'
-export QT_QPA_PLATFORMTHEME=qt5ct
-export QT_QPA_PLATFORM=wayland
+export BEMENU_OPTS="--fn 'system-ui Bold 10' -l13 -B1 -H22 -wibC --hf #ffffff --tf #deddda --af #c0bfbc --nf #c0bfbc --cf #000000 --hb #212121 --tb #000000 --ab #000000 --nb #000000 --fb #000000 --bdr #000000"
 export XDG_CURRENT_DESKTOP=sway
-export MOZ_ENABLE_WAYLAND=1
-export BEMENU_OPTS="--fn 'System-ui Bold 10' -l13 -B1 -H22 -wbiCT --tf #deddda --af #c0bfbc --nf #c0bfbc --hf #ffffff --hb #191919 --tb #000000 --nb #000000 --ab #000000 --fb #000000 --cf #000000 --bdr #000000"
+export QT_QPA_PLATFORMTHEME=qt6ct
+export ELECTRON_OZONE_PLATFORM_HINT=wayland
 
 # exec sway "$@"
 exec sway "$@" > /dev/null 2>&1

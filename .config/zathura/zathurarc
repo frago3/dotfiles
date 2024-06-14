@@ -1,19 +1,20 @@
 set font "System-ui Bold 10"
-set window-height   1068
-set window-width    938
+set window-height 1060
+set window-width 938
 set guioptions none
 # color
-set recolor-lightcolor  "#fdf5e8"
+# set recolor-lightcolor  "#fdf7ec"
+set recolor-lightcolor  "#FBF7F0"
 set recolor-darkcolor   "#000000"
 set recolor
-set [fullscreen] recolor
+# set [fullscreen] recolor
+# map [fullscreen] r recolor
+# map [fullscreen] f toggle_fullscreen
+# map [fullscreen] <C-r> rotate
 
 map r recolor
-map [fullscreen] r recolor
 map f toggle_fullscreen
-map [fullscreen] f toggle_fullscreen
 map <C-r> rotate
-map [fullscreen] <C-r> rotate
 # set selection-clipboard clipboard
 set window-title-basename   true
 set window-title-page       true
@@ -22,27 +23,27 @@ set database sqlite
 
 map b toggle_statusbar
 
-set index-fg                    "#c0bfbc"
-set index-bg                    "#000000"
-set inputbar-fg                 "#c0bfbc"
-set inputbar-bg                 "#000000"
 set statusbar-fg                "#c0bfbc"
 set statusbar-bg                "#000000"
+set index-bg                    "#000000"
+set index-fg                    "#c0bfbc"
+set index-active-bg             "#212121"
+set index-active-fg             "#ffffff"
+set inputbar-fg                 "#c0bfbc"
+set inputbar-bg                 "#000000"
 
 set completion-bg               "#000000"
 set completion-fg               "#c0bfbc"
 set completion-group-bg         "#000000"
 set completion-group-fg         "grey"
-set completion-highlight-bg     "#191919"
+set completion-highlight-bg     "#212121"
 set completion-highlight-fg     "#ffffff"
 set notification-bg             "#000000"
 set notification-fg             "#c0bfbc"
 set notification-error-bg       "#000000"
+set notification-error-fg       "#FF0000"
 set notification-warning-bg     "#000000"
+set notification-warning-fg     "#FF0000"
 
-set index-bg                    "#000000"
-set index-fg                    "#c0bfbc"
-set index-active-bg             "#191919"
-set index-active-fg             "#ffffff"
 set render-loading-bg           "#c0bfbc"
 set render-loading-fg           "#000000"

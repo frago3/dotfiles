@@ -1,7 +1,6 @@
 #!/bin/bash
 
-ps_cpu()
-{
+ps_cpu() {
      ps -eo comm:20,pcpu,pmem --sort=-%cpu | grep -v '0.0  0.0'
 }
 

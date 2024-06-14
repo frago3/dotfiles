@@ -18,10 +18,7 @@ move(){
 
 case $1 in
   -topleft)       move 0 18 ;;
-  
   -topright)      move $(x_pos) 18 ;;
-
   -bottomleft)    move 0 $(y_pos) ;;
-
   -bottomright)   move $(xy_pos) ;;
 esac

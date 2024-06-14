@@ -1,0 +1,21 @@
+[Default Applications]
+text/plain=featherpad.desktop;
+text/x-log=featherpad.desktop;
+application/x-shellscript=featherpad.desktop;
+application/x-shellscript=featherpad.desktop;
+image/webp=imv-dir.desktop
+image/png=imv-dir.desktop
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;org.pwmt.zathura-pdf-poppler.desktop;
+
+[Added Associations]
+image/jpeg=imv-dir.desktop;imv.desktop;
+text/plain=featherpad.desktop;
+text/x-log=featherpad.desktop;
+video/mp4=mpv.desktop;io.github.celluloid_player.Celluloid.desktop;
+image/svg+xml=imv-dir.desktop;
+image/webp=imv-dir.desktop;
+image/png=imv-dir.desktop;
+image/gif=imv-dir.desktop;
+
+[Removed Associations]
+text/plain=userapp-foot nvim-Q712M2.desktop;userapp-foot neovim %-YCOYM2.desktop;userapp-foot -a foof -e vim-1N8WM2.desktop;
