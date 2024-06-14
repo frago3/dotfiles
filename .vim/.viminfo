@@ -190,10 +190,10 @@ $
 	                esac' ) || break
 |3,0,0,1,7,0,1718128703,"        local file; file=$(command ls -pav --group-directories-first | fzf --prompt=\"$PWD \" \\","        --bind='tab:accept,right:preview:","                case $(file --mime-type -Lb {}) in","                    inode/directory) command ls -v --group-directories-first --color=always {} ;;","                    text/*|application/javascript|application/json) cat {} ;;","                    *) file --mime-type -Lb {} ;;",>34
 |<"                esac' ) || break"
-""1	LINE	0
+"1	LINE	0
 		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
 	|3,1,36,0,1,0,1718245641,"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"
-|3,1,1,1,2,0,1718375826,"	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","|3,1,36,0,1,0,1718245641,\"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\""
+|3,0,1,1,2,0,1718375826,"	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","|3,1,36,0,1,0,1718245641,\"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\""
 "2	LINE	0
 		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
 |3,0,2,1,1,0,1718375811,"	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"
@@ -221,37 +221,79 @@ $
 "z	CHAR	0
 	Qq
 |3,0,35,0,1,0,1717357552,"Qq"
-"-	CHAR	0
-	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
-|3,0,36,0,1,0,1718245641,"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"
+""-	CHAR	0
+	/
+|3,1,36,0,1,0,1718375880,"/"
 
 # File marks:
-'0  224  0  ~/.dotfiles/.vim/.viminfo
-|4,48,224,0,1718375829,"~/.dotfiles/.vim/.viminfo"
-'1  2  0  ~/Documentos/notas/popins.md
-|4,49,2,0,1718375719,"~/Documentos/notas/popins.md"
-'2  1  0  ~/.dotfiles/.bash_profile
-|4,50,1,0,1718375633,"~/.dotfiles/.bash_profile"
-'3  1  0  ~/.dotfiles/.gitignore
-|4,51,1,0,1718375614,"~/.dotfiles/.gitignore"
+'0  2  0  ~/.dotfiles/.gitignore
+|4,48,2,0,1718375976,"~/.dotfiles/.gitignore"
+'1  224  0  ~/.dotfiles/.vim/.viminfo
+|4,49,224,0,1718375829,"~/.dotfiles/.vim/.viminfo"
+'2  2  0  ~/Documentos/notas/popins.md
+|4,50,2,0,1718375719,"~/Documentos/notas/popins.md"
+'3  1  0  ~/.dotfiles/.bash_profile
+|4,51,1,0,1718375633,"~/.dotfiles/.bash_profile"
 '4  1  0  ~/.dotfiles/.gitignore
-|4,52,1,0,1718375297,"~/.dotfiles/.gitignore"
-'5  240  1  ~/.viminfo
-|4,53,240,1,1718375247,"~/.viminfo"
+|4,52,1,0,1718375614,"~/.dotfiles/.gitignore"
+'5  1  0  ~/.dotfiles/.gitignore
+|4,53,1,0,1718375614,"~/.dotfiles/.gitignore"
 '6  1  0  ~/.dotfiles/.gitignore
-|4,54,1,0,1718375106,"~/.dotfiles/.gitignore"
+|4,54,1,0,1718375297,"~/.dotfiles/.gitignore"
 '7  1  0  ~/.dotfiles/.gitignore
-|4,55,1,0,1718375106,"~/.dotfiles/.gitignore"
-'8  1  0  /tmp/vifm.rename-O5hd4z
-|4,56,1,0,1718374991,"/tmp/vifm.rename-O5hd4z"
-'9  1  0  ~/.config/sway-mimeapps.list
-|4,57,1,0,1718373599,"~/.config/sway-mimeapps.list"
+|4,55,1,0,1718375297,"~/.dotfiles/.gitignore"
+'8  240  1  ~/.viminfo
+|4,56,240,1,1718375247,"~/.viminfo"
+'9  1  0  ~/.dotfiles/.gitignore
+|4,57,1,0,1718375106,"~/.dotfiles/.gitignore"
 
 # Jumplist (newest first):
+-'  2  0  ~/.dotfiles/.gitignore
+|4,39,2,0,1718375976,"~/.dotfiles/.gitignore"
+-'  1  0  ~/.dotfiles/.gitignore
+|4,39,1,0,1718375847,"~/.dotfiles/.gitignore"
+-'  224  0  ~/.dotfiles/.vim/.viminfo
+|4,39,224,0,1718375829,"~/.dotfiles/.vim/.viminfo"
 -'  224  0  ~/.dotfiles/.vim/.viminfo
 |4,39,224,0,1718375829,"~/.dotfiles/.vim/.viminfo"
 -'  1118  0  ~/.dotfiles/.vim/.viminfo
 |4,39,1118,0,1718375803,"~/.dotfiles/.vim/.viminfo"
+-'  1118  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1118,0,1718375803,"~/.dotfiles/.vim/.viminfo"
+-'  1122  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1122,0,1718375801,"~/.dotfiles/.vim/.viminfo"
+-'  1126  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1126,0,1718375801,"~/.dotfiles/.vim/.viminfo"
+-'  1130  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1130,0,1718375801,"~/.dotfiles/.vim/.viminfo"
+-'  1134  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1134,0,1718375801,"~/.dotfiles/.vim/.viminfo"
+-'  1191  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1191,0,1718375801,"~/.dotfiles/.vim/.viminfo"
+-'  1195  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1195,0,1718375801,"~/.dotfiles/.vim/.viminfo"
+-'  1201  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1201,0,1718375801,"~/.dotfiles/.vim/.viminfo"
+-'  1205  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1205,0,1718375801,"~/.dotfiles/.vim/.viminfo"
+-'  1212  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1212,0,1718375801,"~/.dotfiles/.vim/.viminfo"
+-'  1220  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1220,0,1718375801,"~/.dotfiles/.vim/.viminfo"
+-'  1227  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1227,0,1718375801,"~/.dotfiles/.vim/.viminfo"
+-'  1243  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1243,0,1718375801,"~/.dotfiles/.vim/.viminfo"
+-'  1284  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1284,0,1718375801,"~/.dotfiles/.vim/.viminfo"
+-'  1326  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1326,0,1718375801,"~/.dotfiles/.vim/.viminfo"
+-'  1333  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1333,0,1718375801,"~/.dotfiles/.vim/.viminfo"
+-'  1356  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1356,0,1718375801,"~/.dotfiles/.vim/.viminfo"
+-'  1384  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1384,0,1718375801,"~/.dotfiles/.vim/.viminfo"
 -'  1122  0  ~/.dotfiles/.vim/.viminfo
 |4,39,1122,0,1718375801,"~/.dotfiles/.vim/.viminfo"
 -'  1126  0  ~/.dotfiles/.vim/.viminfo
@@ -300,14 +342,40 @@ $
 |4,39,1520,0,1718375800,"~/.dotfiles/.vim/.viminfo"
 -'  1556  1  ~/.dotfiles/.vim/.viminfo
 |4,39,1556,1,1718375800,"~/.dotfiles/.vim/.viminfo"
+-'  1457  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1457,0,1718375800,"~/.dotfiles/.vim/.viminfo"
+-'  1465  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1465,0,1718375800,"~/.dotfiles/.vim/.viminfo"
+-'  1506  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1506,0,1718375800,"~/.dotfiles/.vim/.viminfo"
+-'  1510  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1510,0,1718375800,"~/.dotfiles/.vim/.viminfo"
+-'  1514  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1514,0,1718375800,"~/.dotfiles/.vim/.viminfo"
+-'  1520  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1520,0,1718375800,"~/.dotfiles/.vim/.viminfo"
+-'  1556  1  ~/.dotfiles/.vim/.viminfo
+|4,39,1556,1,1718375800,"~/.dotfiles/.vim/.viminfo"
 -'  244  0  ~/.dotfiles/.vim/.viminfo
 |4,39,244,0,1718375794,"~/.dotfiles/.vim/.viminfo"
+-'  244  0  ~/.dotfiles/.vim/.viminfo
+|4,39,244,0,1718375794,"~/.dotfiles/.vim/.viminfo"
+-'  1  0  ~/.dotfiles/.vim/.viminfo
+|4,39,1,0,1718375753,"~/.dotfiles/.vim/.viminfo"
 -'  1  0  ~/.dotfiles/.vim/.viminfo
 |4,39,1,0,1718375753,"~/.dotfiles/.vim/.viminfo"
 -'  2  0  ~/Documentos/notas/popins.md
 |4,39,2,0,1718375719,"~/Documentos/notas/popins.md"
 -'  2  0  ~/Documentos/notas/popins.md
 |4,39,2,0,1718375719,"~/Documentos/notas/popins.md"
+-'  2  0  ~/Documentos/notas/popins.md
+|4,39,2,0,1718375719,"~/Documentos/notas/popins.md"
+-'  2  0  ~/Documentos/notas/popins.md
+|4,39,2,0,1718375719,"~/Documentos/notas/popins.md"
+-'  1  0  ~/.dotfiles/.bash_profile
+|4,39,1,0,1718375633,"~/.dotfiles/.bash_profile"
+-'  1  0  ~/.dotfiles/.bash_profile
+|4,39,1,0,1718375633,"~/.dotfiles/.bash_profile"
 -'  1  0  ~/.dotfiles/.bash_profile
 |4,39,1,0,1718375633,"~/.dotfiles/.bash_profile"
 -'  1  0  ~/.dotfiles/.bash_profile
@@ -372,84 +440,24 @@ $
 |4,39,240,1,1718375247,"~/.viminfo"
 -'  240  1  ~/.viminfo
 |4,39,240,1,1718375247,"~/.viminfo"
--'  1  0  ~/.viminfo
-|4,39,1,0,1718375238,"~/.viminfo"
--'  1  0  ~/.viminfo
-|4,39,1,0,1718375238,"~/.viminfo"
--'  1  0  ~/.viminfo
-|4,39,1,0,1718375238,"~/.viminfo"
--'  1  0  ~/.viminfo
-|4,39,1,0,1718375238,"~/.viminfo"
--'  1  0  ~/.viminfo
-|4,39,1,0,1718375238,"~/.viminfo"
--'  1  0  ~/.viminfo
-|4,39,1,0,1718375238,"~/.viminfo"
--'  1  0  ~/.viminfo
-|4,39,1,0,1718375238,"~/.viminfo"
--'  1  0  ~/.viminfo
-|4,39,1,0,1718375238,"~/.viminfo"
--'  1  0  ~/.viminfo
-|4,39,1,0,1718375238,"~/.viminfo"
--'  1  0  ~/.viminfo
-|4,39,1,0,1718375238,"~/.viminfo"
--'  1  0  ~/.viminfo
-|4,39,1,0,1718375238,"~/.viminfo"
--'  1  0  ~/.viminfo
-|4,39,1,0,1718375238,"~/.viminfo"
--'  1  0  ~/.viminfo
-|4,39,1,0,1718375238,"~/.viminfo"
--'  1  0  ~/.viminfo
-|4,39,1,0,1718375238,"~/.viminfo"
--'  1  0  ~/.viminfo
-|4,39,1,0,1718375238,"~/.viminfo"
--'  1  0  ~/.viminfo
-|4,39,1,0,1718375238,"~/.viminfo"
--'  1  0  ~/.viminfo
-|4,39,1,0,1718375238,"~/.viminfo"
--'  1  0  ~/.viminfo
-|4,39,1,0,1718375238,"~/.viminfo"
--'  1  0  ~/.viminfo
-|4,39,1,0,1718375238,"~/.viminfo"
--'  1  0  ~/.viminfo
-|4,39,1,0,1718375238,"~/.viminfo"
--'  1  0  ~/.dotfiles/.gitignore
-|4,39,1,0,1718375106,"~/.dotfiles/.gitignore"
--'  1  0  ~/.dotfiles/.gitignore
-|4,39,1,0,1718375106,"~/.dotfiles/.gitignore"
--'  1  0  ~/.dotfiles/.gitignore
-|4,39,1,0,1718375106,"~/.dotfiles/.gitignore"
--'  1  0  ~/.dotfiles/.gitignore
-|4,39,1,0,1718375106,"~/.dotfiles/.gitignore"
--'  1  0  ~/.dotfiles/.gitignore
-|4,39,1,0,1718375106,"~/.dotfiles/.gitignore"
--'  1  0  ~/.dotfiles/.gitignore
-|4,39,1,0,1718375106,"~/.dotfiles/.gitignore"
--'  1  0  ~/.dotfiles/.gitignore
-|4,39,1,0,1718375106,"~/.dotfiles/.gitignore"
--'  1  0  ~/.dotfiles/.gitignore
-|4,39,1,0,1718375106,"~/.dotfiles/.gitignore"
--'  1  0  ~/.dotfiles/.gitignore
-|4,39,1,0,1718375106,"~/.dotfiles/.gitignore"
--'  1  0  ~/.dotfiles/.gitignore
-|4,39,1,0,1718375106,"~/.dotfiles/.gitignore"
--'  1  0  ~/.dotfiles/.gitignore
-|4,39,1,0,1718375106,"~/.dotfiles/.gitignore"
--'  1  0  ~/.dotfiles/.gitignore
-|4,39,1,0,1718375106,"~/.dotfiles/.gitignore"
--'  1  0  /tmp/vifm.rename-O5hd4z
-|4,39,1,0,1718374991,"/tmp/vifm.rename-O5hd4z"
--'  1  0  /tmp/vifm.rename-O5hd4z
-|4,39,1,0,1718374991,"/tmp/vifm.rename-O5hd4z"
--'  1  0  /tmp/vifm.rename-O5hd4z
-|4,39,1,0,1718374991,"/tmp/vifm.rename-O5hd4z"
--'  1  0  /tmp/vifm.rename-O5hd4z
-|4,39,1,0,1718374991,"/tmp/vifm.rename-O5hd4z"
--'  1  0  /tmp/vifm.rename-O5hd4z
-|4,39,1,0,1718374991,"/tmp/vifm.rename-O5hd4z"
--'  1  0  /tmp/vifm.rename-O5hd4z
-|4,39,1,0,1718374991,"/tmp/vifm.rename-O5hd4z"
+-'  240  1  ~/.viminfo
+|4,39,240,1,1718375247,"~/.viminfo"
+-'  240  1  ~/.viminfo
+|4,39,240,1,1718375247,"~/.viminfo"
+-'  240  1  ~/.viminfo
+|4,39,240,1,1718375247,"~/.viminfo"
+-'  240  1  ~/.viminfo
+|4,39,240,1,1718375247,"~/.viminfo"
 
 # History of marks within files (newest to oldest):
+
+> ~/.dotfiles/.gitignore
+	*	1718375975	0
+	"	2	0
+	^	2	1
+	.	2	0
+	+	1	0
+	+	2	0
 
 > ~/.dotfiles/.vim/.viminfo
 	*	1718375828	0
@@ -459,10 +467,6 @@ $
 
 > ~/.dotfiles/.bash_profile
 	*	1718375631	0
-	"	1	0
-
-> ~/.dotfiles/.gitignore
-	*	1718375593	0
 	"	1	0
 
 > ~/Documentos/notas/popins.md
