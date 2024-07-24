@@ -1,11 +1,11 @@
 #!/bin/bash
 
-get() {
-    fd -cnever -e pdf -e mp4 -e png -e jpg . ~/ &
-    fd -cnever -td -E node_modules . ~/ &
+_find() {
+    fd -cnever -e pdf . ~/ &
+    fd -cnever -td -d5 . ~/ &
 }
 
-file=$( get|sort|bemenu -p 'find' ) || exit
+file=$(_find | sort | cut -c10- | bemenu -p 'find') || exit
 
 case "$(file --mime-type -Lb "$file")" in
 
@@ -21,13 +21,13 @@ case "$(file --mime-type -Lb "$file")" in
         (zathura "$file" &)
         ;;
 
-    image/*)
-        (imv-dir "$file" &)
-        ;;
+    # image/*)
+    #     (imv-dir "$file" &)
+    #     ;;
 
-    video/*|audio/*)
-        (mpv "$file" &)
-        ;;
+    # video/*|audio/*)
+    #     (mpv "$file" &)
+    #     ;;
 
     *) exit
         ;;

@@ -20,9 +20,10 @@ alias da='du -sh'
 alias man='man --locale=es_CL.UTF-8'
 alias pss='ps -eo pid,user,comm,pcpu,pmem --sort=-pcpu|grep -v "0.0  0.0"'
 alias py='python'
+alias npm='pnpm'
 alias yt='yt-dlp -f "wv*+wa/w"'
 alias yta='yt-dlp -f "wv*+wa/w" --extract-audio'
 
 alias pacq='pacman -Qq|fzf --bind="right:preview(pacman -Qi {})"'
-# translatetospanish() { trans :es -show-languages no "'$*'"; }
+tl() { trans :es -show-languages no "'$*'"; }
 # alias tl='translatetospanish'

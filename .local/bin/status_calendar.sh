@@ -3,21 +3,19 @@
 get_calendar()
 {
 
-    local today calendar pastdays
+    local today calendar
 
-    today=$(date '+%e' | tr -d ' ')
-    calendar=$(cal --monday \
-        | sed -e "s/\b$today\b/<span background='lightgrey' foreground='black'>&<\/span>/" \
-              -e '/^[[:space:]]*$/d')
+    calendar=$(cal --monday|sed '/^[[:space:]]*$/d')
+    today=$(date '+%e'|tr -d ' ')
 
-    [ "$today" -ne 1 ] && {
+    if [ "$today" -gt 1 ]
+    then
+        sed -E -e "s/\b($(seq -s '|' $((today - 1))))\b/<span foreground='grey' strikethrough='true'>&<\/span>/g" \
+           -e "s/\b$today\b/<span background='lightgrey' foreground='black'>&<\/span>/" <<< "$calendar"
+    else
+        sed -e "s/\b$today\b/<span background='lightgrey' foreground='black'>&<\/span>/" <<< "$calendar"
+    fi
 
-        pastdays=$(seq -s '|' $((today -1)) )
-        calendar=$(sed -E "s/\b($pastdays)\b/<span foreground='grey' strikethrough='true'>&<\/span>/g" <<< "$calendar")
-    }
-
-    echo "$calendar"
 }
-
 
 dunstify -r 1 '' "$(get_calendar)"

@@ -23,9 +23,11 @@ add_uptime() {
 add_mem() {
     # MemUsed = Memtotal + Shmem - MemFree - Buffers - Cached - SReclaimable
     add $(awk '
-        /^MemTotal/     {u+=$2}
-        /^MemAvailable/ {u-=$2}
-        END {printf "%s %.1fGi\n", "MemUsed", u/1048576}' /proc/meminfo)
+        /^MemTotal/     {used+=$2}
+        /^MemAvailable/ {used-=$2}
+        END {
+            printf "%s %.1fGi\n", "MemUsed", used/1048576
+        }' /proc/meminfo)
 }
 
 add_battery() {
@@ -35,7 +37,8 @@ add_battery() {
 
 add_coretemp() {
     local temp_dir=/sys/class/hwmon/hwmon4
-    [ 'coretemp' != $(< $temp_dir/name) ] && return
+
+    [ 'coretemp' = $(< $temp_dir/name) ] &&
 
     add $(awk '{ t += $1 }
         END { printf "%s %.1f°C\n", "CoreTemp", t/NR/1000 }' $temp_dir/temp*_input)

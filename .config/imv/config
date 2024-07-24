@@ -4,7 +4,8 @@
 # Suppress built-in key bindings, and specify them explicitly in this
 # config file.
 width = 1280
-height = 943
+height = 1062
+# height = 943
 background = 000000
 scaling_mode = shrink
 suppress_default_binds = true
@@ -24,8 +25,8 @@ gg = goto 1
 # Panning
 <Ctrl+Down>   = pan 0 -50
 <Ctrl+Up>     = pan 0 50
-<Ctrl+Left>   = pan -50 0
-<Ctrl+Right>  = pan 50 0
+<Ctrl+Left>   = pan 50 0
+<Ctrl+Right>  = pan -50 0
 
 # Zooming
 <plus> = zoom 4

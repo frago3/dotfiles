@@ -22,3 +22,6 @@ critical        = 10
 [[block]]
 block           = "time"
 format          = "   $timestamp.datetime(f:'%R   %d/%m')  "
+# [[block.click]]
+# button = "left"
+# cmd = "~/.local/bin/status_calendar.sh"

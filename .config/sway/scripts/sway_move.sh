@@ -2,6 +2,7 @@
 
 # SCREEN_WIDTH=1920
 # SCREEN_HEIGHT=1080
+
 x_pos(){
   swaymsg -t get_tree | jq -r '..|try select(.focused == true)|1920 - .rect.width'
 }
