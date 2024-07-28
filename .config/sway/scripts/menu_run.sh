@@ -1,2 +1,7 @@
 #!/bin/bash
-bemenu-run
+
+command ls /usr/bin/ | 
+bemenu -p run | {
+    IFS= read -r cmd
+    [ $cmd ] && ($cmd &)
+}

@@ -10,7 +10,7 @@ get_calendar()
 
     if [ "$today" -gt 1 ]
     then
-        sed -E -e "s/\b($(seq -s '|' $((today - 1))))\b/<span foreground='grey' strikethrough='true'>&<\/span>/g" \
+        sed -E -e "s/\b($(seq -s '|' $((today - 1))))\b/<span foreground='grey'>&<\/span>/g" \
            -e "s/\b$today\b/<span background='lightgrey' foreground='black'>&<\/span>/" <<< "$calendar"
     else
         sed -e "s/\b$today\b/<span background='lightgrey' foreground='black'>&<\/span>/" <<< "$calendar"

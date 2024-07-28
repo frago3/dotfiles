@@ -1,5 +1,7 @@
 #!/bin/bash
 
+killall -q bemenu && exit
+
 _find() {
     fd -cnever -e pdf . ~/ &
     fd -cnever -td -d5 . ~/ &

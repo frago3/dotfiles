@@ -1,4 +1,6 @@
-# !/bin/bash
+#!/bin/bash
+
+killall -q bemenu ||
 
 swaymsg -t get_tree |
     jq -r '.. | objects | select(.type == "workspace") | "\(.name)  " + ( .. | objects | select(has("app_id")) | "\(.app_id) - \(.name) \(.id)")' |

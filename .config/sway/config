@@ -1,5 +1,4 @@
 ### Output configuration
-# output eDP-1 resolution 1920x1080 position 0,0 scale 1
 output eDP-1 resolution 1920x1080
 output eDP-1 bg "#574C91" solid_color
 
@@ -11,6 +10,7 @@ input type:touchpad {
   dwt disabled
   tap enabled
   natural_scroll enabled
+  accel_profile adaptive
 }
 
 xwayland disable
