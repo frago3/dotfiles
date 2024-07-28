@@ -1,1 +1,2 @@
-GNU Stow
+# GNU Stow
+stow -S .
