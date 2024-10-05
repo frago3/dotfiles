@@ -9,10 +9,10 @@ critical_fg     = "#FF3A3A"
 
 [[block]]
 block           = "focused_window"
-format          = "$title.str(min_w:220,max_w:245)    |"
-[[block.click]]
-button          = "left"
-cmd             = "~/.config/sway/scripts/menu_windows.sh"
+format          = "$title.str(min_w:220)    |"
+# [[block.click]]
+# button          = "left"
+# cmd             = "~/.config/sway/scripts/menu_windows.sh"
 
 [[block]]
 block           = "battery"

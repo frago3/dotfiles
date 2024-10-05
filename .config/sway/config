@@ -4,13 +4,14 @@ output eDP-1 bg "#574C91" solid_color
 
 ### Input configuration
 input type:keyboard {
-  xkb_layout latam
+    xkb_layout latam
 }
 input type:touchpad {
-  dwt disabled
-  tap enabled
-  natural_scroll enabled
-  accel_profile adaptive
+    dwt disabled
+    tap enabled
+    natural_scroll enabled
+    pointer_accel 0.25
+    scroll_factor 0.50
 }
 
 xwayland disable
@@ -18,37 +19,45 @@ default_border pixel 1
 default_floating_border pixel 1
 
 # floating_maximum_size 1920 x 1062
-floating_maximum_size 1920 x 1062
-for_window [app_id="wev|imv|mpv|zathura|featherpad|pcmanfm-qt"] floating enable
+for_window [app_id="wev|imv|mpv|zathura|pcmanfm-qt|featherpad"] floating enable
 for_window [title="(?:Open|Save|Create) (?:File|Folder|As)"] floating enable
 for_window [title="Picture in picture|Task Manager"] floating enable
 
 ## Theme
 set $base #000000
 set $text #deddda
-set $txt1 #5e5c64
-set $urgt #FF0000
+# set $txt1 #5e5c64
+# set $urgt #FF0000
 
-# target                 brder bg    text
+# # target                 brder bg    text
 client.focused           $base $base $text
 client.focused_inactive  $base $base $base
 client.unfocused         $base $base $base
 
-
-bar {
-  font pango:system-ui Bold 10
-  position top
-  height 18
-  status_command /usr/bin/i3status-rs ~/.config/sway/status.toml
-
-  colors {
-    # background
-    statusline           $text
-    focused_workspace    $base $base $text
-    inactive_workspace   $base $base $txt1
-    binding_mode         $base $base $text
-    urgent_workspace     $base $base $urgt
-  }
+bar { 
+     swaybar_command waybar
 }
+# bar {
+#     font pango:system-ui Bold 10
+#     height 18
+#     position top
+#     # mode overlay
+#     # workspace_buttons no
+#     status_command /usr/bin/i3status-rs ~/.config/sway/status.toml
+
+#     bindsym button1 exec ~/.config/sway/scripts/menu_windows.sh
+#     bindsym button4 none
+#     bindsym button5 none
+#     bindsym button6 none
+#     bindsym button7 none
+
+#     colors {
+#         statusline           $text
+#         focused_workspace    $base $base $text
+#         inactive_workspace   $base $base $txt1
+#         binding_mode         $base $base $text
+#         urgent_workspace     $base $base $urgt
+#     }
+# }
 
 include ~/.config/sway/config.d/*

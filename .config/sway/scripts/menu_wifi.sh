@@ -12,7 +12,7 @@ is_enable () {
 
 confirm() {
 
-    [ "$( printf 'no\nyes'|bemenu -p "$1. are you sure?" )" = 'yes' ]
+    [ "$( printf 'no\nyes'|bemenu -p "$1" )" = 'yes' ]
 }
 
 toggle_wifi() {
@@ -27,7 +27,6 @@ toggle_wifi() {
 disconnect_from_network() {
 
     [ "$SSID" ] && confirm "disconnect from $SSID" && {
-
         iwctl station $DEVICE disconnect && dunstify -u low 'Wifi disconnected' && exit
     }
 }

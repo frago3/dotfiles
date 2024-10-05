@@ -1,27 +1,19 @@
 set font "System-ui Bold 10"
-set window-height 1060
+set window-height 1078
 set window-width 938
-set guioptions none
+
+# map r set recolor
 # color
 # set recolor-lightcolor  "#fdf7ec"
 set recolor-lightcolor  "#FBF7F0"
 set recolor-darkcolor   "#000000"
 set recolor
-# set [fullscreen] recolor
-# map [fullscreen] r recolor
-# map [fullscreen] f toggle_fullscreen
-# map [fullscreen] <C-r> rotate
-
-map r recolor
-map f toggle_fullscreen
-map <C-r> rotate
+set guioptions none
 # set selection-clipboard clipboard
 set window-title-basename   true
 set window-title-page       true
 set statusbar-basename      true
 set database sqlite
-
-map b toggle_statusbar
 
 set statusbar-fg                "#c0bfbc"
 set statusbar-bg                "#000000"

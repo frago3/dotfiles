@@ -8,6 +8,8 @@
     offset = 10x12
 
     notification_limit = 6
+    show_age_threshold = -1
+
 
     progress_bar = false
     separator_height = 0
@@ -27,8 +29,9 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     font = "System-ui Bold 10"
-    # format = "%s<tt>%b</tt>"
-    format = "%s<span font="monospace bold 10">%b</span>"
+    format = "%s<tt>%b</tt>"
+    # format = "%s<span font="monospace bold 10">%b</span>"
+    # format = "%s<span font="monospace 10">%b</span>"
     # format = "%s%b"
     icon_position = off
 

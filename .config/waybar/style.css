@@ -1,0 +1,14 @@
+* {
+    font-family: system-ui;
+    /* font-family: roboto; */
+    font-weight: bold;
+    font-size: 13.3px;
+    min-height: 10px;
+}
+window#waybar {
+    background-color: #000000;
+    color: #deddda;
+}
+#clock {
+    margin-right: 8px;
+}

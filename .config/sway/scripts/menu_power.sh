@@ -1,7 +1,7 @@
 #!/bin/bash
 
 confirm() {
-    [ "$(printf 'no\nyes' | bemenu -p "$1. are you sure?")" = 'yes' ]
+    [ "$(printf 'no\nyes' | bemenu -p "$1")" = 'yes' ]
 }
 
 case $(printf "suspend\nshutdown\nreboot\nexit" | bemenu -p 'power') in

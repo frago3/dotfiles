@@ -1,0 +1,20 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 19, // Waybar height (to be removed for auto height)
+    "mode": "overlay",
+    "margin-left": 1788,
+    "spacing": 11,
+    "modules-right": [ "battery", "clock" ],
+    "clock": {
+        "bat": "BAT1",
+        "tooltip": false,
+        "format": "{:%R   %d/%m}"
+    },
+    "battery": {
+        "tooltip": false,
+        "interval": 60,
+        "format": "{capacity}%"
+    }
+}

@@ -6,14 +6,14 @@
 
 PS1='[\[\e[1;34m\]\W\[\e[m\]]\\$ '
 
-source ~/.local/bin/fnrc
+source ~/.local/bin/fun.sh
 
 [ -n "$VIFM" ] && PS1="fm $PS1"
 alias ff='vifm'
 alias ls='ls --group-directories-first -v --color=auto'
-alias ll='ls -l'
+alias ll='ls -lh'
 alias lss='ls -1'
-alias cd..='cd ..'
+alias ..='cd ..'
 alias grep='grep --color=auto'
 alias ip='ip -color'
 alias da='du -sh'

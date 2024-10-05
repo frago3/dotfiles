@@ -3,7 +3,7 @@
 killall -q bemenu && exit
 
 _find() {
-    fd -cnever -e pdf . ~/ &
+    fd -cnever -e pdf . ~/Documentos/ &
     fd -cnever -td -d5 . ~/ &
 }
 

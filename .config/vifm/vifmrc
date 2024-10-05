@@ -102,9 +102,7 @@ mark u /usr/
 " The %a macro is ignored.  To use a % you must put %%.
 " Spaces in an app name must be escaped, for example: QuickTime\ Player.app
 fileviewer <text/*>,<*/x-setupscript>,<*/javascript>,<*/json> cat
-fileviewer \.*,* echo
-" fileviewer  * file --mime-type
-
+fileviewer *,.* file -b %c
 " Open all other files with default system programs (you can also remove all
 " :file[x]type commands above to ensure they don't interfere with system-wide
 " settings).  By default all unknown files are opened with 'vi[x]cmd'
@@ -112,7 +110,7 @@ fileviewer \.*,* echo
 " for unknown file types.
 " For *nix:
 " filetype * xdg-open
-filextype <image/*> imv-dir %f &
+filextype <image/*> swayimg %f &
 filextype <video/*> mpv --terminal=no %f &
 filextype <application/pdf>,<application/epub+zip> zathura 2>/dev/null %f &
 

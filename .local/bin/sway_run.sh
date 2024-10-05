@@ -7,7 +7,7 @@ export XDG_CURRENT_DESKTOP=sway
 export QT_QPA_PLATFORMTHEME=qt6ct
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
 
-exec sway "$@"
-# exec sway "$@" > /dev/null 2>&1
+# exec sway "$@"
+exec sway "$@" > /dev/null 2>&1
 # exec sway "$@" > ~/sway.log 2>&1
 # exec systemd-cat --identifier=sway sway "$@"
