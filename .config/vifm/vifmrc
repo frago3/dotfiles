@@ -110,7 +110,7 @@ fileviewer *,.* file -b %c
 " for unknown file types.
 " For *nix:
 " filetype * xdg-open
-filextype <image/*> swayimg %f &
+filextype <image/*> imv-dir %f &
 filextype <video/*> mpv --terminal=no %f &
 filextype <application/pdf>,<application/epub+zip> zathura 2>/dev/null %f &
 
@@ -161,15 +161,19 @@ nnoremap q ZQ
 nnoremap . za
 nnoremap b '
 
+map p <Nop>
+map P <Nop>
+map g <Nop>
+map G <Nop>
 map d <Nop>
 map D <Nop>
 map y <Nop>
 map Y <Nop>
 map c <Nop>
 map C <Nop>
+map z <Nop>
 map Z <Nop>
 map ! <Nop>
-
 "
 " ------------------------------------------------------------------------------
 " Various customization examples

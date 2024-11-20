@@ -1,18 +1,12 @@
 [options]
-
-height = 1080
-# Suppress built-in key bindings, and specify them explicitly in this
-# config file.
+height = 1060
 suppress_default_binds = true
-
-[aliases]
-# Define aliases here. Any arguments passed to an alias are appended to the
-# command.
-# alias = command to run
+scaling_mode = shrink
 
 [binds]
 # Define some key bindings
 q = quit
+<Escape> = quit
 y = exec echo working!
 
 # Image navigation

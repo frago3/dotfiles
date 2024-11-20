@@ -1,16 +1,15 @@
 #!/bin/bash
 
-# SCREEN_WIDTH=1920
-# SCREEN_HEIGHT=1080
+# 1920x1080
 
 x_pos(){
   swaymsg -t get_tree | jq -r '..|try select(.focused == true)|1920 - .rect.width'
 }
 y_pos(){
-  swaymsg -t get_tree | jq -r '..|try select(.focused == true)|1080 - .rect.height'
+  swaymsg -t get_tree | jq -r '..|try select(.focused == true)|1060 - .rect.height'
 }
 xy_pos(){
-  swaymsg -t get_tree | jq -r '..|try select(.focused == true)|.rect|"\(1920 - .width) \(1080 - .height)"'
+  swaymsg -t get_tree | jq -r '..|try select(.focused == true)|.rect|"\(1920 - .width) \(1060 - .height)"'
 }
 
 move(){

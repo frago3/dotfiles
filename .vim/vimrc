@@ -28,15 +28,14 @@ nmap <C-S-Left>         :bprevious<CR>
 nmap <silent><C-Left>   :tabprevious<CR>
 nmap <silent><C-Right>  :tabnext<CR>
 nmap <C-s>              :update<CR>
-imap <C-s>              <Esc>:update<cr>
+imap <C-s>              <Esc>:update<cr>g
 nmap <silent><F2>       :set number!<CR>
 
 " filetype on
 let mapleader=' '
-nmap <leader>n        :noh<CR>
-nmap <leader>ee       :Explore<CR>
-nmap <leader>te       :Texplore<CR>
-nmap <leader>tt       :tabnew<CR>
-
-nmap <leader><leader> :ls<CR>:buffer 
-nmap <leader>bd       :bwipeout<CR>
+nmap <leader>n          :noh<CR>
+nmap <leader>ee         :Explore<CR>
+nmap <leader>te         :Texplore<CR>
+nmap <leader>tt         :tabnew<CR>
+nmap <leader><leader>   :ls<CR>:buffer 
+nmap <leader>bd         :bwipeout<CR>

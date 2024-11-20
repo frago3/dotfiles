@@ -16,7 +16,8 @@ case "$(file --mime-type -Lb "$file")" in
     #     ;;
 
     inode/directory)
-        cd "$file" && (pcmanfm-qt &)
+        # cd "$file" && (pcmanfm-qt &)
+        cd "$file" && (foot vifm &)
         ;;
 
     application/pdf|application/epub+zip)

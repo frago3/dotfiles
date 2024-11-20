@@ -2,7 +2,7 @@
 (set-face-attribute 'default nil :font "Iosevka Aile")
 (set-face-attribute 'tab-bar nil :font "Iosevka Aile")
 (setq-default line-spacing 4)
-
+;; (load-theme 'tango t)
 ;; CONFIG
 (set-face-attribute 'fringe nil :background nil)
 (global-visual-line-mode t)
@@ -18,8 +18,8 @@
 
 ;; HOOKS
 (add-hook 'org-mode-hook 'org-indent-mode)
-(add-hook 'text-mode-hook (lambda () (text-scale-set 3)))
-(add-hook 'prog-mode-hook (lambda () (text-scale-set 3)))
+(add-hook 'text-mode-hook (lambda () (text-scale-set 2)))
+(add-hook 'prog-mode-hook (lambda () (text-scale-set 2)))
 
 ;;; PACKAGES
 ;;; Set up package.el to work with MELPA

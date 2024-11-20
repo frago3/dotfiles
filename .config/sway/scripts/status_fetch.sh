@@ -35,14 +35,14 @@ add_battery() {
     add $(< $battery/status) "$(< $battery/capacity)%"
 }
 
-add_coretemp() {
-    local temp_dir=/sys/class/hwmon/hwmon3
+# add_coretemp() {
+#     local temp_dir=/sys/class/hwmon/hwmon4
 
-    [ 'coretemp' = $(< $temp_dir/name) ] &&
+#     [ 'coretemp' = $(< $temp_dir/name) ] &&
 
-    add $(awk '{ t += $1 }
-        END { printf "%s %.1f°C\n", "CoreTemp", t/NR/1000 }' $temp_dir/temp*_input)
-}
+#     add $(awk '{ t += $1 }
+#         END { printf "%s %.1f°C\n", "CoreTemp", t/NR/1000 }' $temp_dir/temp*_input)
+# }
 
 buf=$(printf "%-13s%s" "OS" "GNU/Linux")
 add_kernel

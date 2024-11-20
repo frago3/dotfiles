@@ -1,0 +1,8 @@
+;;; -*- coding: utf-8; mode: lisp-data -*-
+(("/home/fj/Documentos/org/fifa.txt" . 178)
+ ("/home/fj/.dotfiles/.emacs.d/init.el" . 151)
+ ("/home/fj/Documentos/org/chile.org" . 1004)
+ ("/home/fj/Documentos/org/debian.org" . 235)
+ ("/home/fj/Documentos/org/coreutils.org" . 2105)
+ ("/home/fj/Documentos/org/"
+  (dired-filename . "/home/fj/Documentos/org/chile.org")))

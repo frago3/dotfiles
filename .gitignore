@@ -1,0 +1,8 @@
+.emacs.d/eln-cache/ 
+.emacs.d/elpa/ 
+.emacs.d/auto-save-list/ 
+.emacs.d/history
+.vim/.viminfo
+.vim/.netrwhist
+.vim/.viminfo
+

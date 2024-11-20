@@ -1,20 +1,29 @@
 // -*- mode: jsonc -*-
 {
-    // "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 19, // Waybar height (to be removed for auto height)
-    "mode": "overlay",
-    "margin-left": 1788,
-    "spacing": 11,
-    "modules-right": [ "battery", "clock" ],
-    "clock": {
-        "bat": "BAT1",
-        "tooltip": false,
-        "format": "{:%R   %d/%m}"
+    "layer": "top",
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    // "mode": "overlay",
+    // "margin-left": 1785,
+    "height": 20, // Waybar height (to be removed for auto height)
+    "spacing": 13,
+    "modules-left": [ "sway/workspaces" ],
+    "sway/workspaces": {
+        "format": "{index}",
+        "disable-scroll": true
     },
+    "modules-center": [ "sway/window" ],
+    "sway/window": {
+        "format": "  {title}"
+    },
+    "modules-right": [ "battery", "clock" ],
     "battery": {
         "tooltip": false,
         "interval": 60,
         "format": "{capacity}%"
+    },
+    "clock": {
+        "bat": "BAT1",
+        "tooltip": false,
+        "format": "{:%R   %d/%m}"
     }
 }

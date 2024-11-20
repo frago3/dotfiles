@@ -1,18 +1,17 @@
 set font "System-ui Bold 10"
-set window-height 1078
+# set window-height 1060
+set window-height 1060
 set window-width 938
 
 # map r set recolor
-# color
-# set recolor-lightcolor  "#fdf7ec"
+# set selection-clipboard clipboard
 set recolor-lightcolor  "#FBF7F0"
 set recolor-darkcolor   "#000000"
 set recolor
+set window-title-basename true
+set window-title-page true
+set statusbar-basename true
 set guioptions none
-# set selection-clipboard clipboard
-set window-title-basename   true
-set window-title-page       true
-set statusbar-basename      true
 set database sqlite
 
 set statusbar-fg                "#c0bfbc"
