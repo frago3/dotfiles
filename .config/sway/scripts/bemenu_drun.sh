@@ -4,10 +4,10 @@ killall -q bemenu && exit
 
 apps="\
 brightness.sh
-chromium
 code
 emacs
 foot
+firefox
 power.sh
 pcmanfm-qt
 qbittorrent
