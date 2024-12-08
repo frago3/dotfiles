@@ -5,9 +5,9 @@ killall -q bemenu && exit
 apps="\
 brightness.sh
 code
+chromium
 emacs
 foot
-firefox
 power.sh
 pcmanfm-qt
 qbittorrent
@@ -15,6 +15,7 @@ qpwgraph
 run.sh
 volume.sh
 wifi.sh
+wireshark
 "
 
 echo -en "$apps" | bemenu -p 'menu' | {

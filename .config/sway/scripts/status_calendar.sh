@@ -20,7 +20,7 @@ get_calendar()
             sed -E -e "s/\b($(seq -s '|' $((today - 1))))\b/<span foreground='grey'>&<\/span>/g" \
             -e "s/\b$today\b/<span background='white' foreground='black'>&<\/span>/"
     }
-    # mes proximo
+    # mes próximo
     tail -n8 <<< "$calendar"
 }
 

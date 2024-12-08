@@ -365,7 +365,7 @@ if s:t_Co >= 256
     hi TabLine         ctermfg=gray       ctermbg=NONE    cterm=NONE
     hi TabLineSel      ctermfg=black      ctermbg=gray    cterm=bold
     hi TabLineFill     ctermfg=NONE       ctermbg=NONE    cterm=NONE
-    hi StatusLine      ctermfg=white      ctermbg=NONE    cterm=bold
+    hi StatusLine      ctermfg=white      ctermbg=NONE    cterm=NONE
     hi StatusLineNC    ctermfg=gray       ctermbg=NONE    cterm=NONE
     hi LineNr          ctermfg=darkgray   ctermbg=NONE    cterm=NONE
     hi Normal          ctermbg=NONE       cterm=NONE

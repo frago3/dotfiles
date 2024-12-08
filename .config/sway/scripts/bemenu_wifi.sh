@@ -4,15 +4,9 @@ DEVICE=wlan0
 STATUS=''
 SSID=''
 
-is_enable () {
-
-  # [ "$(rfkill -J | jq -r '..|try select(.type=="wlan")|.soft')" == 'unblocked' ]
-    [ $( rfkill|awk '/wlan /{print $4}' ) == 'unblocked' ]
-}
-
 confirm() {
 
-    [ "$( printf 'no\nyes'|bemenu -p "$1" )" = 'yes' ]
+    [ "$(printf 'no\nyes'|bemenu -p "$1")" = 'yes' ]
 }
 
 toggle_wifi() {
@@ -88,10 +82,10 @@ connect_to_network(){
 while true
 do
 
-  is_enable && {
+  [ $(rfkill|awk '/wlan /{print $4}') == 'unblocked' ] && {
 
     # SSID=$(iwctl station "$DEVICE" show|grep 'Connected network'|cut -c35-|sed 's/ *$//')
-    SSID=$(iwctl station "$DEVICE" show|awk '/Connected /{ gsub(/.*network *| *$/,""); print}')
+    SSID=$(iwctl station "$DEVICE" show|awk '/Connected network/{ gsub(/.*network *| *$/,""); print}')
 
     [ "$SSID" ] && 
        STATUS="wifi on: $SSID" ||

@@ -18,7 +18,7 @@ f() {
             --bind='tab:accept,right:preview:
                     case $(file --mime-type -Lb {}) in
                         inode/directory) command ls -Av --group-directories-first --color=always {} ;;
-                        text/*|application/x-setupscript|application/javascript|application/json) cat {} ;;
+                        text/*|application/x-setupscript|application/javascript|application/json|inode/x-empty) cat {} ;;
                         *) file --mime-type -Lb {} ;;
                     esac' ) || break
 
