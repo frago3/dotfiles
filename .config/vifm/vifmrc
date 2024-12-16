@@ -55,6 +55,7 @@ colorscheme custom custom8
 " :mark mark /full/directory/path [filename]
 
 mark c ~/.config/
+mark d ~/Downloads/
 mark e /etc/
 mark h ~/
 mark l ~/.local/

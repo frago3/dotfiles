@@ -1,0 +1,6 @@
+[Unit]
+Description=Verifica el estado de la batería y envía notificaciones
+
+[Service]
+Type=oneshot
+ExecStart=%h/.config/sway/scripts/check-battery.sh

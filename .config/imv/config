@@ -33,6 +33,7 @@ gg = goto 1
 # Other commands
 x = close
 f = fullscreen
+<Return> = fullscreen
 d = overlay
 p = exec echo $imv_current_file
 c = center

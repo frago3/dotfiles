@@ -8,6 +8,7 @@
     "spacing": 13,
     "modules-left": [ "sway/workspaces" ],
     "sway/workspaces": {
+        "window-rewrite": {},
         "format": "{index}",
         "disable-scroll": true
     },

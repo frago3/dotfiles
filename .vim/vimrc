@@ -24,9 +24,9 @@ set viminfo='100,<50,s10,h,n~/.vim/.viminfo
 let g:netrw_banner=0
 
 " Cursor - switch between line and full
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q"
+" let &t_SI = "\<Esc>[6 q"
+" let &t_SR = "\<Esc>[4 q"
+" let &t_EI = "\<Esc>[2 q"
 
 nmap <C-S-Right>        :bnext<CR>
 nmap <C-S-Left>         :bprevious<CR>

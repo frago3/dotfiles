@@ -27,6 +27,6 @@ for_window [title="(?:Open|Save|Create) (?:File|Folder|As)"] floating enable
 for_window [title="Preferences|File Properties"] floating enable
 for_window [title="Picture in picture|Task Manager"] floating enable
 
-bar swaybar_command waybar
+exec waybar -c ~/.config/sway/waybar/config.jsonc -s ~/.config/sway/waybar/style.css
 
 include ~/.config/sway/config.d/*
