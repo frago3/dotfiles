@@ -4,7 +4,7 @@ killall -q bemenu && exit
 
 _find() {
     fd -cnever -e pdf . ~/Documentos/ &
-    fd -cnever -td -d5 . ~/ &
+    fd -cnever -td -d5 -E Public . ~/ &
 }
 
 file=$(_find | sort | cut -c10- | bemenu -p 'find') || exit

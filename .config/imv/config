@@ -1,51 +1,47 @@
 [options]
-height = 1060
 suppress_default_binds = true
-scaling_mode = shrink
+height          = 1060
+scaling_mode    = shrink
 
 [binds]
-# Define some key bindings
-q = quit
-<Escape> = quit
-y = exec echo working!
+q               = quit
+<Escape>        = quit
+y               = exec echo working!
 
-# Image navigation
-<Left> = prev
-<Right> = next
-gg = goto 1
-<Shift+G> = goto -1
+<Left>          = prev
+<Right>         = next
+gg              = goto 1
+<Shift+G>       = goto -1
 
-# Panning
-<Ctrl+Down> = pan 0 -50
-<Ctrl+Up> = pan 0 50
-<Ctrl+Left> = pan 50 0
-<Ctrl+Right> = pan -50 0
+<Ctrl+Down>     = pan 0 -50
+<Ctrl+Up>       = pan 0 50
+<Ctrl+Left>     = pan 50 0
+<Ctrl+Right>    = pan -50 0
 
 # Zooming
-<Up> = zoom 2
-<Down> = zoom -2
-# <Shift+Up> = zoom 1
-# <Shift+Down> = zoom -1
+<Up>            = zoom 2
+<Down>          = zoom -2
+<Shift+Up>      = zoom 1
+<Shift+Down>    = zoom -1
 
 # Rotate Clockwise by 90 degrees
-<Ctrl+r> = rotate by 90
+<Ctrl+r>        = rotate by 90
 
 # Other commands
-x = close
-f = fullscreen
-<Return> = fullscreen
-d = overlay
-p = exec echo $imv_current_file
-c = center
-s = scaling next
-<Shift+S> = upscaling next
-a = zoom actual
-r = reset
+x               = close
+f               = fullscreen
+<Return>        = fullscreen
+p               = exec echo $imv_current_file
+c               = center
+s               = scaling next
+<Shift+S>       = upscaling next
+a               = zoom actual
+r               = reset
 
 # Gif playback
-<period> = next_frame
-<space> = toggle_playing
+<period>        = next_frame
+<space>         = toggle_playing
 
 # Slideshow control
-t = slideshow +1
-<Shift+T> = slideshow -1
+t               = slideshow +1
+<Shift+T>       = slideshow -1

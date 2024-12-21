@@ -1,8 +1,8 @@
 #!/bin/bash
 
 _find() {
-    fd -Hcnever -td -E .git . ~/.dotfiles/ &
-    fd -cnever -td -d5 . ~/ &
+    fd -Hcnever -td -d4 -E .git . ~/.dotfiles/ &
+    fd -cnever -td -d5 -E Public . ~/ &
 }
 d() {
     local dir
@@ -14,7 +14,7 @@ f() {
     while true
     do
         local file
-        file=$(command ls -pav --group-directories-first |tail -n+2| fzf --prompt="$PWD " \
+        file=$(command ls -pav --group-directories-first |tail -n+2| fzf --prompt="${PWD##*/} " \
             --bind='tab:accept,right:preview:
                     case $(file --mime-type -Lb {}) in
                         inode/directory)

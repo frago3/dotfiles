@@ -1,5 +1,6 @@
 [Unit]
 Description=Verifica el estado de la batería y envía notificaciones
+ConditionEnvironment=WAYLAND_DISPLAY
 
 [Service]
 Type=oneshot

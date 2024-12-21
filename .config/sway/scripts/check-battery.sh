@@ -9,4 +9,4 @@ else
     [ $capacity -ge 85 ] && dunstify -r 1 -u critical 'FULL BATTERY'
 fi
 
-exit 1
+exit 0
