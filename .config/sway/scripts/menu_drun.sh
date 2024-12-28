@@ -23,6 +23,6 @@ echo -en "$apps" | bemenu -p 'menu' | {
     IFS= read -r cmd
 
     [ $cmd ] && [[ $cmd =~ \.sh$ ]] &&
-        ($HOME/.config/sway/scripts/bemenu_$cmd &) ||
+        ($HOME/.config/sway/scripts/menu_$cmd &) ||
         ($cmd &)
 }

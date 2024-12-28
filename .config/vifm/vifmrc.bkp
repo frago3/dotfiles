@@ -1,0 +1,210 @@
+" vim: filetype=vim :
+" vim: syntax=vim :
+
+" ------------------------------------------------------------------------------
+" Main settings
+" ------------------------------------------------------------------------------
+
+set vicmd=vi
+
+" This makes vifm perform file operations on its own instead of relying on
+" standard utilities like `cp`.  While using `cp` and alike is a more universal
+" solution, it's also much slower when processing large amounts of files and
+" doesn't support progress measuring.
+set syscalls
+only
+" set trash
+set notrash
+" set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
+"             \phistory,fhistory,dirstack,registers,bookmarks,bmarks
+set history=100
+set nofollowlinks
+set sortnumbers
+set undolevels=100
+set vimhelp
+set norunexec
+set wildmenu
+set wildstyle=bar
+set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
+set ignorecase
+set smartcase
+set nohlsearch
+set incsearch
+set scrolloff=4
+set wrap!
+set previewoptions=graphicsdelay:50000,maxtreedepth:2
+set sort=iname
+
+" Don't do too many requests to slow file systems
+if !has('win')
+    set slowfs=curlftpfs
+endif
+
+set sizefmt=units:iec,nospace
+set timefmt='%y/%m/%d %H:%M'
+" set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
+set statusline=" %=%T %8u/%-7g %A %4E %13d "
+
+" List of color schemes to try (picks the first one supported by the terminal)
+colorscheme custom custom8
+
+" ------------------------------------------------------------------------------
+" Bookmarks
+" ------------------------------------------------------------------------------
+
+" :mark mark /full/directory/path [filename]
+
+mark c ~/.config/
+mark d ~/Downloads/
+mark e /etc/
+mark h ~/
+mark l ~/.local/
+mark u /usr/
+
+" ------------------------------------------------------------------------------
+" Commands
+" ------------------------------------------------------------------------------
+
+" :com[mand][!] command_name action
+"
+" These are some of the macros that can be used in the action part:
+"  %a for user arguments
+"  %c for current file under the cursor
+"  %C for current file under the cursor of inactive pane
+"  %f for selected file(s)
+"  %F for selected file(s) of inactive pane
+"  %b is the same as %f %F
+"  %d for current directory name
+"  %D for current directory name of inactive pane
+"  %r{x} for list of files in register {x}
+"  %m runs the command in a menu window
+"  %u uses command's output to build a file list
+"  see `:help vifm-macros` and `:help vifm-filename-modifiers` for more
+
+" command! df df -h %m 2> /dev/null
+" command! diff vim -d %f %F
+" command! zip zip -r %c.zip %f
+" command! run !! ./%f
+" command! make !!make %a
+" command! mkcd :mkdir %a | cd %a
+" command! vgrep vim "+grep %a"
+" command! reload :write | restart full
+
+" ------------------------------------------------------------------------------
+" File types association
+" ------------------------------------------------------------------------------
+
+" :filetype pattern1,pattern2 defaultprogram,program2
+" :fileviewer pattern1,pattern2 consoleviewer
+"
+" The first entry is the default program to be used with a matching file.
+" The other programs for the file type can be accessed via :file command.
+" The command macros like %f, %F, %d, %D may be used in the commands.
+" The %a macro is ignored.  To use a % you must put %%.
+" Spaces in an app name must be escaped, for example: QuickTime\ Player.app
+fileviewer <text/*>,<*/x-setupscript>,<*/javascript>,<*/json> cat
+" fileviewer *,.* file -b %c
+" fileviewer *,.* ls
+" fileviewer */,.*/ ls --group-directories-first --classify 
+" Open all other files with default system programs (you can also remove all
+" :file[x]type commands above to ensure they don't interfere with system-wide
+" settings).  By default all unknown files are opened with 'vi[x]cmd'
+" uncommenting one of lines below will result in ignoring 'vi[x]cmd' option
+" for unknown file types.
+" For *nix:
+" filetype * xdg-open
+filextype <image/*> imv-dir %f &
+filextype <video/*> mpv --terminal=no %f &
+filextype <application/pdf>,<application/epub+zip> zathura 2>/dev/null %f &
+
+" ------------------------------------------------------------------------------
+" Panel configuration examples
+" ------------------------------------------------------------------------------
+
+" Customize view columns a bit (enable ellipsis for truncated file names)
+" set viewcolumns=-{name}..,5{}.
+" set viewcolumns=-{name},16{mtime}.,12{perms},6{size}
+" Show vertical border
+" set fillchars=vborder:│
+" Filter-out build and temporary files
+" filter! {*.lo,*.o,*.d,*.class,*.pyc,*.pyo,.*~}
+
+" ------------------------------------------------------------------------------
+" Sample keyboard mappings
+" ------------------------------------------------------------------------------
+
+" Start shell in current directory
+nnoremap s :shell<cr>
+
+" Display sorting dialog
+nnoremap S :sort<cr>
+
+" Toggle visibility of preview window
+nnoremap w :view<cr>
+vnoremap w :view<cr>gv
+
+" Example of standard two-panel file managers mappings
+" nnoremap <f3> :!less %f<cr>
+" nnoremap <f4> :edit<cr>
+" nnoremap <f5> :copy<cr>
+" nnoremap <f6> :move<cr>
+" nnoremap <f7> :mkdir<space>
+" nnoremap <f8> :delete<cr>
+
+" Midnight commander alike mappings
+" Open current directory in the other pane
+nnoremap <a-i> :sync<cr>
+" Open directory under cursor in the other pane
+nnoremap <a-o> :sync %c<cr>
+" Swap panes
+nnoremap <c-u> <c-w>x
+
+" nnn
+nnoremap q ZQ
+nnoremap . za
+nnoremap b '
+
+map p <Nop>
+map P <Nop>
+map g <Nop>
+map G <Nop>
+map d <Nop>
+map D <Nop>
+map y <Nop>
+map Y <Nop>
+map c <Nop>
+map C <Nop>
+map z <Nop>
+map Z <Nop>
+map ! <Nop>
+"
+" ------------------------------------------------------------------------------
+" Various customization examples
+" ------------------------------------------------------------------------------
+
+" Use ag (the silver searcher) instead of grep
+" set grepprg='ag --line-numbers %i %a %s'
+
+" Add additional place to look for executables
+" let $PATH = $HOME.'/bin/fuse:'.$PATH
+
+" Block particular shortcut
+" nnoremap <left> <nop>
+
+" Export IPC name of current instance as environment variable and use it to
+" communicate with the instance later.
+"
+" It can be used in some shell script that gets run from inside vifm, for
+" example, like this:
+"     vifm --server-name "$VIFM_SERVER_NAME" --remote +"cd '$PWD'"
+"
+" let $VIFM_SERVER_NAME = v:servername
+
+" Activate screen/tmux support
+" screen!
+
+" ------------------------------------------------------------------------------
+" Icon decorations example
+" ------------------------------------------------------------------------------
+
+" https://github.com/cirala/vifm_devicons

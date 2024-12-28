@@ -1,34 +1,36 @@
+# vim: filetype=sh :
+# vim: syntax=sh :
 #!/bin/bash
 
-_find() {
+__home_directories() {
     fd -Hcnever -td -d4 -E .git . ~/.dotfiles/ &
     fd -cnever -td -d5 -E Public . ~/ &
 }
-d() {
+_fzf_home_directories() {
     local dir
-    dir=$(_find |fzf) && cd "$dir"
+    dir=$(__home_directories |fzf) && cd "$dir"
 }
 
-f() {
+_fzf_ls() {
     [ -d "$1" ] && cd "$1"
     while true
     do
         local file
         file=$(command ls -pav --group-directories-first |tail -n+2| fzf --prompt="${PWD##*/} " \
-            --bind='tab:accept,right:preview:
+            --bind='right:preview:
                     case $(file --mime-type -Lb {}) in
                         inode/directory)
                             command ls -Av --group-directories-first --color=always {} ;;
-                        text/*|application/x-setupscript|application/javascript|application/json|inode/x-empty)
+                        text/*|*/x-setupscript|*/javascript|*/json|inode/x-empty)
                             cat {} ;;
                         *)
                             file --mime-type -Lb {} ;;
-                    esac' ) || break
+                    esac' )
 
         case $(file --mime-type -Lb "$file") in
             inode/directory)
                 cd "$file" ;;
-            text/*|application/x-setupscript|application/javascript|application/json)
+            text/*|*/x-setupscript|*/javascript|*/json)
                 vi "$file"; break ;;
             image/*)
                 (imv-dir "$file" &); break ;;
@@ -45,8 +47,7 @@ _history() {
 }
 bind -m emacs-standard -x '"\C-r": _history'
 
-color() {
-    local p
-    p=$(slurp -p) && 
+_color_picker() {
+    local p; p=$(slurp -p) &&
     grim -g "$p" -t ppm - | magick - -format '%[pixel:p{0,0}]' txt:- | awk '{if(NR==2)print $3}'
 }

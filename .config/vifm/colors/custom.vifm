@@ -39,7 +39,7 @@ hi OtherLine     cterm=bold         ctermfg=none     ctermbg=none
 hi Selected      cterm=bold         ctermfg=3        ctermbg=none
 
 hi StatusLine    cterm=none         ctermfg=7        ctermbg=none
-hi SuggestBox    cterm=none         ctermfg=8        ctermbg=none
+hi SuggestBox    cterm=bold         ctermfg=8        ctermbg=none
 hi CmdLine       cterm=none         ctermfg=7        ctermbg=none
 hi WildMenu      cterm=reverse,bold ctermfg=7        ctermbg=none
 
