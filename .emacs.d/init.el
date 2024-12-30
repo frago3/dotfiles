@@ -3,7 +3,7 @@
 (set-face-attribute 'tab-bar nil :font "Iosevka Aile")
 (set-face-attribute 'minibuffer-prompt nil :font "Iosevka Aile")
 
-(setq-default line-spacing 4)
+(setq-default line-spacing 2)
 ;; (load-theme 'tango t)
 ;; CONFIG
 (set-face-attribute 'fringe nil :background nil)
@@ -22,8 +22,6 @@
 (add-hook 'minibuffer-setup-hook (lambda () (text-scale-set 0)))
 (add-hook 'after-change-major-mode-hook (lambda () (text-scale-set 2)))
 (add-hook 'org-mode-hook 'org-indent-mode)
-; (add-hook 'text-mode-hook (lambda () (text-scale-set 2)))
-; (add-hook 'prog-mode-hook (lambda () (text-scale-set 2)))
 
 ;;; PACKAGES
 ;;; Set up package.el to work with MELPA

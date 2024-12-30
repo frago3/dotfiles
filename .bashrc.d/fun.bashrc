@@ -10,7 +10,6 @@ _fzf_home_directories() {
     local dir
     dir=$(__home_directories |fzf) && cd "$dir"
 }
-
 _fzf_ls() {
     [ -d "$1" ] && cd "$1"
     while true
@@ -26,7 +25,6 @@ _fzf_ls() {
                         *)
                             file --mime-type -Lb {} ;;
                     esac' )
-
         case $(file --mime-type -Lb "$file") in
             inode/directory)
                 cd "$file" ;;

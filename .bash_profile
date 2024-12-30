@@ -4,7 +4,6 @@
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-# export FZF_DEFAULT_OPTS="--layout=reverse --no-info --no-separator --no-scrollbar --preview-window=border-none,70% --color=gutter:-1,hl:15:bold,hl+:15"
 export FZF_DEFAULT_OPTS="--layout=reverse --no-info --no-separator --no-scrollbar --preview-window=border-none,70% --color=gutter:-1,hl:15:bold,hl+:15"
 alias start='~/.local/bin/wayland.sh'
 #

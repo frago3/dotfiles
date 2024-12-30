@@ -12,7 +12,7 @@ case $(printf "suspend\nshutdown\nreboot\nexit" | bemenu -p 'power') in
         confirm 'shutdown' && sudo systemctl poweroff ;;
 
     'suspend')
-        sudo systemctl suspend ;;
+        (hyprlock -q &) && systemctl suspend ;;
 
     'exit')
         confirm 'exit' && swaymsg exit ;;

@@ -13,15 +13,11 @@ input type:touchpad {
 
 xwayland disable
 floating_maximum_size 1920 x 1060
-# floating_maximum_size 1920 x 1064
 
 # default_border          pixel 1
 # default_floating_border pixel 1
 default_border          none
 default_floating_border none
-# client.focused          #000000 #000000 #000000
-# client.unfocused        #000000 #000000 #000000
-# client.focused_inactive #000000 #000000 #000000 
 
 for_window [title="(?:Open|Save|Create) (?:File|Folder|As)"] floating enable
 for_window [title="Preferences|File Properties"] floating enable

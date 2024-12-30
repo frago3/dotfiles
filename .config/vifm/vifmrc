@@ -210,10 +210,8 @@ fileviewer {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
 
 " Web
 filextype {*.xhtml,*.html,*.htm},<text/html>
-        \ {Open with qutebrowser}
-        \ qutebrowser %f %i,
-        \ {Open with firefox}
-        \ firefox %f &,
+        \ {Open with chromium}
+        \ chromium %f &,
 filetype {*.xhtml,*.html,*.htm},<text/html> links, lynx
 
 " Object
@@ -435,7 +433,7 @@ vnoremap w :view<cr>gv
 nnoremap ,w :set wrap!<cr>
 
 " nnn
-nnoremap q ZQ
+nnoremap q :exit<cr>
 nnoremap . za
 nnoremap b '
 
