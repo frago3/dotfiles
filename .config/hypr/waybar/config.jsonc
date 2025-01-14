@@ -1,0 +1,33 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top",
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 20, // Waybar height (to be removed for auto height)
+    "spacing": 13,
+    "modules-left": [ "hyprland/workspaces", "hyprland/submap" ],
+    "modules-center": [ "hyprland/window" ],
+    "modules-right": [ "battery", "clock" ],
+    "hyprland/workspaces": {
+        "show-special": true,
+        "format": "{name}"
+    },
+    "hyprland/submap": {
+        "format": "{}",
+        "max-length": 8,
+        "tooltip": false
+    },
+    "hyprland/window": {
+        "format": " {title}",
+        "max-length": 200
+    },
+    "battery": {
+        "tooltip": false,
+        "interval": 60,
+        "format": "{capacity}%"
+    },
+    "clock": {
+        "bat": "BAT1",
+        "tooltip": false,
+        "format": "{:%R   %d/%m}"
+    }
+}

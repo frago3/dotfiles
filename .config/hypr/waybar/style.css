@@ -1,0 +1,37 @@
+* {
+    font-family: system-ui;
+    font-weight: 600;
+    font-size: 13.2px;
+    min-height: 10px;
+    padding: 0;
+}
+#waybar {
+    background-color: #000000;
+    color: #deddda;
+}
+#submap {
+    margin-top: 3px;
+    background: none;
+    border: none;
+}
+#workspaces button {
+    margin-top: 3px;
+    color: #515151;
+    background: none;
+    border: none;
+}
+#workspaces button.visible {
+    color: #deddda;
+}
+
+#window {
+    margin-top: 3px;
+}
+
+#battery {
+    margin-top: 3px;
+}
+#clock {
+    margin-top: 3px;
+    margin-right: 8px;
+}

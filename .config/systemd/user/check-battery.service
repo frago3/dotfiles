@@ -4,4 +4,4 @@ ConditionEnvironment=WAYLAND_DISPLAY
 
 [Service]
 Type=oneshot
-ExecStart=%h/.config/sway/scripts/check-battery.sh
+ExecStart=%h/.local/bin/check-battery.sh
