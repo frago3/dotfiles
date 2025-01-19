@@ -2,7 +2,7 @@ filetype plugin indent on
 syntax on
 autocmd BufReadPost * if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit' | exe "normal! g`\"" | endif
 
-" set background=dark
+set background=dark
 color lunaperche
 
 set nobackup
@@ -28,6 +28,7 @@ let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
+nnoremap Q <nop>
 nmap <C-S-Right>        :bnext<CR>
 nmap <C-S-Left>         :bprevious<CR>
 nmap <silent><C-Left>   :tabprevious<CR>

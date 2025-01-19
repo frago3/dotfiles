@@ -24,5 +24,4 @@ for_window [title="Preferences|File Properties"] floating enable
 for_window [title="Picture in picture|Task Manager"] floating enable
 
 exec waybar -c ~/.config/sway/waybar/config.jsonc -s ~/.config/sway/waybar/style.css
-
 include ~/.config/sway/config.d/*
