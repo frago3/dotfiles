@@ -1,0 +1,7 @@
+GNU Stow
+stow -S .
+
+Intel Corporation Alder Lake-UP3 GT2 [Iris Xe Graphics]
+    vulkan-intel
+    intel-media-driver
+    intel-compute-runtime
