@@ -1,0 +1,15 @@
+configuration {
+    modes: [drun,window];
+	display-drun: "Drun  ";
+	display-window: "Window  ";
+
+	terminal: "xterm";
+
+	hover-select: true;
+	me-select-entry: "";
+	me-accept-entry: "MousePrimary";
+    /* window { */
+    /*     hide-active-window: true; */
+    /* } */
+}
+@theme "theme.rasi"

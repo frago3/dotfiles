@@ -1,0 +1,44 @@
+" -1 Default = none
+" 0  Black
+" 1  Red
+" 2  Green
+" 3  Yellow
+" 4  Blue
+" 5  Magenta
+" 6  Cyan
+" 7  White
+"
+hi clear
+
+" UI elements
+hi Border        cterm=none      ctermfg=white       ctermbg=Black
+hi CmdLine       cterm=none      ctermfg=white       ctermbg=Black
+hi CurrLine      cterm=reverse      ctermfg=white   ctermbg=Black
+
+hi ErrorMsg      cterm=bold      ctermfg=Red         ctermbg=Black
+hi JobLine       cterm=none      ctermfg=Red         ctermbg=Black
+hi LineNr        cterm=none      ctermfg=white       ctermbg=Black
+hi OtherLine     cterm=bold      ctermfg=none        ctermbg=Black
+
+hi OtherLine     cterm=bold      ctermfg=none        ctermbg=Black
+hi Selected      cterm=bold      ctermfg=Yellow      ctermbg=Black
+hi StatusLine    cterm=none      ctermfg=white       ctermbg=Black
+hi SuggestBox    cterm=none      ctermfg=white       ctermbg=Black
+hi TopLine       cterm=bold      ctermfg=Black       ctermbg=Black
+hi TopLineSel    cterm=bold      ctermfg=White       ctermbg=Black
+hi WildMenu      cterm=reverse,bold   ctermfg=none   ctermbg=none
+hi Win           cterm=none      ctermfg=white       ctermbg=Black
+
+
+" Filetypes
+hi Directory     cterm=bold      ctermfg=Blue        ctermbg=none
+hi Link          cterm=bold      ctermfg=Cyan        ctermbg=none
+hi Executable    cterm=bold      ctermfg=Green       ctermbg=none
+" hi BrokenLink    cterm=italic    ctermfg=9         ctermbg=52
+" hi CmpMismatch   cterm=italic    ctermfg=9         ctermbg=52
+" hi Device        cterm=italic    ctermfg=1         ctermbg=default
+" hi Fifo          cterm=italic    ctermfg=14        ctermbg=default
+" hi HardLink      cterm=bold      ctermfg=3         ctermbg=default
+" hi Socket        cterm=italic    ctermfg=13        ctermbg=default
+
+finish

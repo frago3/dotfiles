@@ -1,0 +1,38 @@
+* {
+	text-color: #c0bfbc;
+	background-color: #000000;
+
+	text-prompt: #808080;
+	text-selected-color: #ffffff;
+	background-selected-color: #212121;
+
+	font: "system-ui bold 10";
+	blink: false;
+	highlight: none;
+	width: 990;
+}
+window {
+	padding: 6px;
+}
+inputbar {
+	padding: 3px 3px 5px;
+}
+prompt {
+	text-color: @text-prompt;
+	font: "system-ui italic bold 10";
+}
+// listview {
+// 	lines: 9;
+// 	columns: 2;
+// }
+element-text {
+	padding: 2px 4px;
+}
+element-text selected {
+	text-color: @text-selected-color;
+	background-color: @background-selected-color;
+	font-style: italic;
+}
+
+// --hf #ffffff --tf #deddda --af #c0bfbc --nf #c0bfbc --cf #000000
+// --hb #212121 --tb #000000 --ab #000000 --nb #000000 --fb #000000 --bdr #000000"

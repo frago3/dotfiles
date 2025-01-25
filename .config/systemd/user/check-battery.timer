@@ -1,0 +1,11 @@
+[Unit]
+Description=Ejecuta check-battery.service cada 3 minutos
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=3min
+Unit=check-battery.service
+
+[Install]
+WantedBy=timers.target
+

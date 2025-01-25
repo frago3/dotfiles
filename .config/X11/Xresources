@@ -1,0 +1,47 @@
+XTerm.termName:                 xterm-256color
+XTerm.vt100.visualBell:         false
+XTerm*BorderWidth: 5
+XTerm.vt100.geometry:           114x85
+
+XTerm.vt100.faceName:           monospace:size=11
+XTerm.vt100.selectToClipboard:  true
+XTerm.vt100.highlightSelection: true
+XTerm.vt100.metaSendsEscape:    true
+
+Xcursor.theme: Adwaita
+
+XTerm.vt100.faceSize1: 10
+XTerm.vt100.faceSize2: 11
+XTerm.vt100.faceSize3: 12
+XTerm.vt100.faceSize4: 13
+XTerm.vt100.faceSize5: 14
+XTerm.vt100.faceSize6: 15
+XTerm.vt100.faceSize7: 16
+XTerm.vt100.translations:   #override \n\
+        Ctrl Alt<Key> minus:   smaller-vt-font() \n\
+        Ctrl Alt<Key> plus:    larger-vt-font() \n\
+        Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+        Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
+! <key>home: string(0x1b) string("[1~") \n\
+! <key>end: string(0x1b) string("[4~") \n
+! <Key>BackSpace:     string(0x7f) \n\
+! <Key>Delete:        string(0x1b) string("[3~") \n\
+! <Key>Home:          string("\033[1~") \n\
+! <Key>End:           string("\033[4~")
+
+
+Nsxiv.window.background: #000000
+Nsxiv.window.foreground: #d3d3d3
+Nsxiv.bar.font: system-ui:bold:size=10
+
+Xft.dpi:        96
+Xft.antialias:  1
+Xft.hinting:    1
+Xft.hintstyle:  hintfull
+Xft.lcdfilter:  lcddefault
+Xft.rgba:       rgb
+
+! Fondo y texto
+XTerm*background: black
+XTerm*foreground: #d0d0d0
+XTerm*cursorColor: #9fd5f5

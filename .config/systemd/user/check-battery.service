@@ -1,0 +1,7 @@
+[Unit]
+Description=Verifica el estado de la batería y envía notificaciones
+ConditionEnvironment=DISPLAY
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/check-battery.sh
