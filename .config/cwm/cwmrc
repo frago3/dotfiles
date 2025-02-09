@@ -1,0 +1,80 @@
+# vim: set ft=conf :
+
+ignore polybar
+ignore dunst
+unbind-key              "all"
+unbind-mouse            "all"
+gap                     0 19 0 0
+borderwidth             0
+sticky                  yes
+snapdist                15
+fontname                "Roboto SemiCondensed:pixelsize=14:medium"
+color font              "#e7e7e5"
+color menubg            "#000000"
+
+bind-key 4-r            menu-drun.sh
+bind-key 4-p            menu-find.sh
+bind-key 4-Tab          menu-window.sh
+
+bind-key CMS-r          restart
+bind-key CS-q           window-close
+bind-key 4-Return       window-vtile
+bind-key 4-KP_End       window-maximize
+bind-key 4-BackSpace    "dunstctl close"
+
+bind-key 4-q            "xterm -e tmux"
+bind-key 4-w            chromium
+bind-key S4-w           "chromium --incognito"
+bind-key 4-e            pcmanfm-qt
+
+bind-key M-Tab          window-cycle
+bind-key MS-Tab         window-rcycle
+
+bind-key 4-1            group-toggle-1
+bind-key 4-2            group-toggle-2
+bind-key 4-3            group-toggle-3
+bind-key 4-4            group-toggle-4
+bind-key 4-5            group-toggle-5
+bind-key 4-6            group-toggle-6
+bind-key 4-7            group-toggle-7
+bind-key 4-8            group-toggle-8
+bind-key 4-9            group-toggle-9
+
+bind-key 4S-1           window-movetogroup-1
+bind-key 4S-2           window-movetogroup-2
+bind-key 4S-3           window-movetogroup-3
+bind-key 4S-4           window-movetogroup-4
+bind-key 4S-5           window-movetogroup-5
+bind-key 4S-6           window-movetogroup-6
+bind-key 4S-7           window-movetogroup-7
+bind-key 4S-8           window-movetogroup-8
+bind-key 4S-9           window-movetogroup-9
+
+bind-mouse 4-1          window-move
+
+moveamount 9
+
+bind-key 4S-Left        window-move-left-big
+bind-key 4S-Right       window-move-right-big
+bind-key 4S-Up          window-move-up-big
+bind-key 4S-Down        window-move-down-big
+
+bind-key 4S-KP_5        window-center.sh
+bind-key 4S-KP_Prior    window-snap-up-right
+bind-key 4S-KP_Home     window-snap-up-left
+bind-key 4S-KP_Next     window-snap-down-right
+bind-key 4S-KP_End      window-snap-down-left
+
+bind-key MS-Left        window-resize-left-big
+bind-key MS-Right       window-resize-right-big
+bind-key MS-Up          window-resize-up-big
+bind-key MS-Down        window-resize-down-big
+
+bind-key 4-KP_Prior     group-rcycle
+bind-key 4-KP_Next      group-cycle
+
+bind-key XF86AudioMute          "mkeys-volume.sh -mute"
+bind-key XF86AudioLowerVolume   "mkeys-volume.sh -down"
+bind-key XF86AudioRaiseVolume   "mkeys-volume.sh -up"
+bind-key XF86MonBrightnessDown  "mkeys-light.sh -down"
+bind-key XF86MonBrightnessUp    "mkeys-light.sh -up"

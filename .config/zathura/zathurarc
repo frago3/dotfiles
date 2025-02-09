@@ -1,5 +1,5 @@
-set font "System-ui Bold 10"
-set window-height 1060
+set font "Iosevka Aile Medium 10"
+set window-height 1061
 set window-width 938
 
 # set selection-clipboard clipboard

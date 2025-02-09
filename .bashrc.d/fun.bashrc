@@ -3,8 +3,8 @@
 #!/bin/bash
 
 __home_directories() {
-    fd -Hcnever -td -d4 -E .git . ~/.config/ &
-    fd -cnever -td -d5 -E Public . ~/ &
+    fd -Lcnever -td -d3 . ~/.config/ &
+    fd -cnever -td -d4 . ~/ &
 }
 _fzf_home_directories() {
     local dir

@@ -20,7 +20,8 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set viminfo='100,<50,s10,h,n~/.vim/.viminfo
-
+set number
+set relativenumber
 let g:netrw_banner=0
 
 " Cursor - switch between line and full
@@ -35,7 +36,6 @@ nmap <silent><C-Left>   :tabprevious<CR>
 nmap <silent><C-Right>  :tabnext<CR>
 nmap <C-s>              :update<CR>
 imap <C-s>              <Esc>:update<cr>g
-nmap <silent><F2>       :set number! relativenumber!<CR>
 
 " filetype on
 let mapleader=' '
