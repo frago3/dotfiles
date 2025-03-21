@@ -1,0 +1,35 @@
+* {
+    font-family: "Roboto SemiCondensed Medium";
+    font-weight: 400;
+    font-size: 14px;
+    min-height: 14px;
+    border: none;
+    box-shadow: none;
+    transition: none;
+}
+
+window#waybar {
+    color: #ffffff;
+    background-color: black;
+}
+#workspaces button {
+    color: #626262;
+}
+#workspaces button.focused {
+    color: #ffffff;
+}
+button:hover {
+    box-shadow: inherit;
+    text-shadow: none;
+    background: none;
+}
+
+#clock{
+    margin: 0 8px 0 0;
+}
+#workspaces button,
+#window,
+#battery,
+#clock{
+    padding: 3px 0 0 0;
+}

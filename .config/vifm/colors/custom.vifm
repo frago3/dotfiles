@@ -1,0 +1,58 @@
+" vim: filetype=vifm :
+
+" -1    None
+"  0	Black
+"  1	Red
+"  2	Green
+"  3	Yellow
+"  4	Blue
+"  5	Magenta
+"  6	Cyan
+"  7	White
+"  8	Bright Black
+"  9	Bright Red
+"  10	Bright Green
+"  11	Bright Yellow
+"  12	Bright Blue
+"  13	Bright Magenta
+"  14	Bright Cyan
+"  15	Bright White
+" bold underline reverse or inverse standout italic combine none
+
+" hi clear
+
+" UI elements
+hi ErrorMsg      cterm=bold         ctermfg=1        ctermbg=none
+hi JobLine       cterm=none         ctermfg=5        ctermbg=1
+hi LineNr        cterm=none         ctermfg=8        ctermbg=none
+
+hi TabLine       cterm=none         ctermfg=8        ctermbg=none
+hi TabLineSel    cterm=bold         ctermfg=7        ctermbg=none
+
+hi Border        cterm=none         ctermfg=8        ctermbg=none
+hi Win           cterm=none         ctermfg=252      ctermbg=none
+hi TopLine       cterm=none         ctermfg=8        ctermbg=none
+hi TopLineSel    cterm=none         ctermfg=252      ctermbg=none
+
+hi CurrLine      cterm=bold         ctermfg=none     ctermbg=234
+hi OtherLine     cterm=bold         ctermfg=none     ctermbg=none
+hi Selected      cterm=bold         ctermfg=3        ctermbg=none
+
+hi StatusLine    cterm=none         ctermfg=7        ctermbg=none
+hi SuggestBox    cterm=bold         ctermfg=8        ctermbg=none
+hi CmdLine       cterm=none         ctermfg=7        ctermbg=none
+hi WildMenu      cterm=reverse,bold ctermfg=252      ctermbg=none
+
+" Filetypes
+hi Directory     cterm=bold         ctermfg=4        ctermbg=none
+hi Link          cterm=bold         ctermfg=6        ctermbg=none
+hi Socket        cterm=bold         ctermfg=5        ctermbg=none
+hi Executable    cterm=bold         ctermfg=2        ctermbg=none
+
+hi BrokenLink    cterm=italic       ctermfg=7        ctermbg=1
+hi CmpMismatch   cterm=italic       ctermfg=7        ctermbg=1
+hi Device        cterm=bold         ctermfg=3        ctermbg=none
+hi Fifo          cterm=none         ctermfg=3        ctermbg=none
+hi HardLink      cterm=bold         ctermfg=3        ctermbg=none
+
+finish

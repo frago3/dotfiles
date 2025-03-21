@@ -1,0 +1,24 @@
+// -*- mode: jsonc -*-
+{
+    "position": "bottom",
+    "layer": "top",
+    "spacing": 12,
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["battery", "clock"],
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "format": "{index}"
+    },
+    "sway/window": {
+        "max-length": 190,
+        "tooltip": false
+    },
+    "battery": {
+        "format": "{capacity}%",
+        "tooltip": false
+    },
+    "clock": {
+        "format": "{:%H:%M    %d/%m}"
+    }
+}

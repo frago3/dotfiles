@@ -1,0 +1,160 @@
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+
+xwayland disable
+for_window [app_id=".*"] floating enable
+
+### Output configuration
+output * bg ~/.local/share/wallpapers/Australia_5.jpg center
+
+### Idle configuration
+default_border none
+default_floating_border none
+floating_maximum_size 1920 x 1060
+
+### Input configuration
+input type:touchpad tap enabled
+input type:touchpad natural_scroll enabled
+input type:keyboard xkb_layout latam
+
+### Key bindings
+#
+# Basics:
+#
+    # Start a terminal
+    bindsym Mod4+q          exec alacritty
+    bindsym Mod4+w          exec brave
+    bindsym Mod4+Shift+w    exec brave brave --incognito
+    bindsym Mod4+r          exec menu.sh
+    bindsym Mod4+Shift+r    exec menu-run.sh
+    bindsym Mod4+e          exec pcmanfm-qt
+
+    # Kill focused window
+    bindsym Ctrl+Shift+q kill
+    bindsym Mod4+BackSpace exec dunstctl close
+
+    floating_modifier Mod4 normal
+
+    # Reload the configuration file
+    bindsym Mod4+Shift+c reload
+#
+# Moving around:
+#
+    # Or use Mod5+[up|down|left|right]
+    bindsym Mod4+Left       focus left
+    bindsym Mod4+Down       focus down
+    bindsym Mod4+Up         focus up
+    bindsym Mod4+Right      focus right
+    bindsym Mod4+Tab        exec menu-windows.sh
+    bindsym Alt+Tab         exec sway_focus-last.sh
+
+#
+# Workspaces:
+#
+    # Switch to workspace
+    bindsym Mod4+1 workspace number 1
+    bindsym Mod4+2 workspace number 2
+    bindsym Mod4+3 workspace number 3
+    bindsym Mod4+4 workspace number 4
+    bindsym Mod4+5 workspace number 5
+    bindsym Mod4+6 workspace number 6
+    bindsym Mod4+7 workspace number 7
+    bindsym Mod4+8 workspace number 8
+    bindsym Mod4+9 workspace number 9
+    bindsym Mod4+0 workspace number 10
+    # Move focused container to workspace
+    bindsym Mod4+Shift+1 move container to workspace number 1
+    bindsym Mod4+Shift+2 move container to workspace number 2
+    bindsym Mod4+Shift+3 move container to workspace number 3
+    bindsym Mod4+Shift+4 move container to workspace number 4
+    bindsym Mod4+Shift+5 move container to workspace number 5
+    bindsym Mod4+Shift+6 move container to workspace number 6
+    bindsym Mod4+Shift+7 move container to workspace number 7
+    bindsym Mod4+Shift+8 move container to workspace number 8
+    bindsym Mod4+Shift+9 move container to workspace number 9
+    bindsym Mod4+Shift+0 move container to workspace number 10
+    # Note: workspaces can have any name you want, not just numbers.
+    # We just use 1-10 as the default.
+    bindsym Ctrl+Alt+left       workspace prev
+    bindsym Ctrl+Alt+right      workspace next
+    bindsym Ctrl+Alt+KP_Home    exec sway_new-workspace.sh
+    bindsym Ctrl+Alt+KP_Next    exec sway_move-focused.sh -next
+    bindsym Ctrl+Alt+KP_Prior   exec sway_move-focused.sh -prev
+
+    bindgesture swipe:down      exec sway_focus-last.sh
+    bindgesture swipe:right     workspace prev
+    bindgesture swipe:left      workspace next
+#
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # Mod4+b or Mod4+v, for horizontal and vertical splits
+    # respectively.
+    # bindsym Mod4+b splith
+    # bindsym Mod4+v splitv
+
+    # Switch the current container between different layout styles
+    # bindsym Mod4+s layout stacking
+    # bindsym Mod4+e layout toggle split
+
+    # Toggle the current focus between tiling and floating mode
+    # bindsym Mod4+Shift+space floating toggle
+    bindsym Mod4+KP_End floating toggle
+    bindsym Mod4+Escape focus mode_toggle
+
+#
+# Scratchpad:
+#
+    # bindsym Alt+s move scratchpad
+    # bindsym Alt+Tab scratchpad show, focus
+#
+# Resizing containers:
+#
+
+    bindsym Alt+Shift+Left      resize shrink width     110px 
+    bindsym Alt+Shift+Down      resize grow height      110px 
+    bindsym Alt+Shift+Up        resize shrink height    110px 
+    bindsym Alt+Shift+Right     resize grow width       110px
+
+    bindsym Mod4+Shift+Left     move left               55px
+    bindsym Mod4+Shift+Down     move down               55px
+    bindsym Mod4+Shift+Up       move up                 55px
+    bindsym Mod4+Shift+Right    move right              55px
+    bindsym Mod4+Shift+Escape   move position center
+    bindsym Mod4+Shift+KP_Home  exec sway_snap.sh -topleft
+    bindsym Mod4+Shift+KP_End   exec sway_snap.sh -bottomleft
+    bindsym Mod4+Shift+KP_Prior exec sway_snap.sh -topright
+    bindsym Mod4+Shift+KP_Next  exec sway_snap.sh -bottomright
+
+#
+# Utilities:
+#
+    # # Special keys to adjust volume via PulseAudio
+    bindsym --locked XF86AudioMute              exec mkeys_volume.sh -mute
+    bindsym --locked XF86AudioLowerVolume       exec mkeys_volume.sh -down
+    bindsym --locked XF86AudioRaiseVolume       exec mkeys_volume.sh -up
+    # # Special keys to adjust brightness via brightnessctl
+    bindsym --locked XF86MonBrightnessDown      exec mkeys_light.sh -down 
+    bindsym --locked XF86MonBrightnessUp        exec mkeys_light.sh -up
+    # # Special key to take a screenshot with grim
+    # bindsym Print exec grim
+
+mode "status" {
+    bindsym c               exec status-calendar.sh; mode "default"
+    bindsym f               exec status-fetch.sh;    mode "default"
+    bindsym p               exec status-ps.sh;       mode "default"
+    bindsym o               exec status-core.sh;     mode "default"
+    bindsym w               exec status-wifi.sh;     mode "default"
+    bindsym BackSpace       mode "default";          exec dunstctl close
+    bindsym Mod4+BackSpace  mode "default";          exec dunstctl close
+}
+bindsym Mod4+p mode "status"; exec dunstify -r 1 "c f p o w"
+
+bar {
+    swaybar_command waybar
+}
+
+include ~/.config/sway/config.d/*

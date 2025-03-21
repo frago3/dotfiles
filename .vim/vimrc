@@ -1,0 +1,48 @@
+filetype plugin indent on
+syntax on
+autocmd BufReadPost * if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit' | exe "normal! g`\"" | endif
+
+set background=dark
+color lunaperche
+
+set nobackup
+set noswapfile
+set noundofile
+set nowrap
+set showtabline=2
+set wildmenu
+set wildmode=list:longest
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+set mouse=a
+set hlsearch
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set viminfo='100,<50,s10,h,n~/.vim/.viminfo
+set number
+set relativenumber
+set laststatus=0
+let g:netrw_banner=0
+
+" Cursor - switch between line and full
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
+
+nnoremap Q <nop>
+nmap <C-S-Right>        :bnext<CR>
+nmap <C-S-Left>         :bprevious<CR>
+nmap <silent><C-Left>   :tabprevious<CR>
+nmap <silent><C-Right>  :tabnext<CR>
+nmap <C-s>              :update<CR>
+imap <C-s>              <Esc>:update<cr>g
+
+" filetype on
+let mapleader=' '
+nmap <Esc><Esc>         :noh<CR>
+nmap <leader>ee         :Explore<CR>
+nmap <leader>te         :Texplore<CR>
+nmap <leader>tt         :tabnew<CR>
+nmap <leader><leader>   :ls<CR>:buffer 
+nmap <leader>bd         :bwipeout<CR>
