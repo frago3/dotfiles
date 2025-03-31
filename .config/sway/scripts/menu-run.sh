@@ -1,4 +1,3 @@
 #!/bin/bash
 
-bemenu-run -p run
-# dmenu_path | dmenu -p run "$@" | ${SHELL:-"/bin/sh"}
+command ls /usr/bin/ | fuzzel -dp 'drun ' | xargs -r setsid 

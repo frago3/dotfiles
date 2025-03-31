@@ -1,6 +1,6 @@
-7zip
 adw-gtk-theme
 alacritty
+alsa-utils
 base
 base-devel
 bash-completion
@@ -11,12 +11,15 @@ dunst
 efibootmgr
 emacs-wayland
 fd
+featherpad
+fuzzel
 fzf
 git
 gnu-free-fonts
 grim
 gst-plugin-pipewire
 htop
+hyprlock
 imv
 intel-compute-runtime
 intel-media-driver
@@ -28,6 +31,7 @@ libpulse
 linux
 linux-firmware
 man-db
+mpv
 nwg-look
 pcmanfm-qt
 pipewire
@@ -43,6 +47,7 @@ supercollider
 sway
 swaybg
 tmux
+unzip
 vifm
 vim
 vulkan-intel
@@ -51,6 +56,7 @@ wev
 wireplumber
 yay-bin
 yay-bin-debug
+yt-dlp
 zathura
 zathura-pdf-mupdf
 zed

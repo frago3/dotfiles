@@ -189,10 +189,10 @@ filextype {*.djvu},<image/vnd.djvu>
 " Audio
 filetype {*.wav},<audio/x-wav>
        \ aplay -q %f &,
-" filetype {*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus,
-"          \*.aac,*.mpga},
-"         \<audio/*>
-"        \ mpv --terminal=no %f &,
+filetype {*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus,
+         \*.aac,*.mpga},
+        \<audio/*>
+       \ mpv --player-operation-mode=pseudo-gui -- %f &,
 fileviewer {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus,
            \*.aac,*.mpga},
           \<audio/*>
@@ -248,7 +248,8 @@ filextype {*.svg,*.svgz},<image/svg+xml>
 filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
         \ imv-dir %f 2>/dev/null &,
 fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
-         \ identify %f &,
+         \ file %f &,
+         " \ identify %f &,
 
 " OpenRaster
 " filextype *.ora
@@ -315,31 +316,31 @@ fileviewer *.tar.zst,*.tzst tar -t --zstd -f %c
 fileviewer {*.tar},<application/x-tar> tar -tf %c
 
 " Rar2FsMount and rar archives
-filetype {*.rar},<application/x-rar>
-       \ {Mount with rar2fs}
-       \ FUSE_MOUNT|rar2fs %SOURCE_FILE %DESTINATION_DIR,
-fileviewer {*.rar},<application/x-rar> unrar v %c
+" filetype {*.rar},<application/x-rar>
+"        \ {Mount with rar2fs}
+"        \ FUSE_MOUNT|rar2fs %SOURCE_FILE %DESTINATION_DIR,
+" fileviewer {*.rar},<application/x-rar> unrar v %c
 
 " IsoMount
-filetype {*.iso},<application/x-iso9660-image>
-       \ {Mount with fuseiso}
-       \ FUSE_MOUNT|fuseiso %SOURCE_FILE %DESTINATION_DIR,
+" filetype {*.iso},<application/x-iso9660-image>
+"        \ {Mount with fuseiso}
+"        \ FUSE_MOUNT|fuseiso %SOURCE_FILE %DESTINATION_DIR,
 
 " SshMount
-filetype *.ssh
-       \ {Mount with sshfs}
-       \ FUSE_MOUNT2|sshfs %PARAM %DESTINATION_DIR %FOREGROUND,
+" filetype *.ssh
+"        \ {Mount with sshfs}
+"        \ FUSE_MOUNT2|sshfs %PARAM %DESTINATION_DIR %FOREGROUND,
 
 " FtpMount
-filetype *.ftp
-       \ {Mount with curlftpfs}
-       \ FUSE_MOUNT2|curlftpfs -o ftp_port=-,,disable_eprt %PARAM %DESTINATION_DIR %FOREGROUND,
+" filetype *.ftp
+"        \ {Mount with curlftpfs}
+"        \ FUSE_MOUNT2|curlftpfs -o ftp_port=-,,disable_eprt %PARAM %DESTINATION_DIR %FOREGROUND,
 
 " Fuse7z and 7z archives
-filetype {*.7z},<application/x-7z-compressed>
-       \ {Mount with fuse-7z}
-       \ FUSE_MOUNT|fuse-7z %SOURCE_FILE %DESTINATION_DIR,
-fileviewer {*.7z},<application/x-7z-compressed> 7z l %c
+" filetype {*.7z},<application/x-7z-compressed>
+"        \ {Mount with fuse-7z}
+"        \ FUSE_MOUNT|fuse-7z %SOURCE_FILE %DESTINATION_DIR,
+" fileviewer {*.7z},<application/x-7z-compressed> 7z l %c
 
 " Office files
 " filextype {*.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx,*.ppt},

@@ -30,17 +30,17 @@ hi TabLine       cterm=none         ctermfg=8        ctermbg=none
 hi TabLineSel    cterm=bold         ctermfg=7        ctermbg=none
 
 hi Border        cterm=none         ctermfg=8        ctermbg=none
-hi Win           cterm=none         ctermfg=252      ctermbg=none
+hi Win           cterm=none         ctermfg=15       ctermbg=none "252
 hi TopLine       cterm=none         ctermfg=8        ctermbg=none
-hi TopLineSel    cterm=none         ctermfg=252      ctermbg=none
+hi TopLineSel    cterm=none         ctermfg=15       ctermbg=none
 
 hi CurrLine      cterm=bold         ctermfg=none     ctermbg=234
 hi OtherLine     cterm=bold         ctermfg=none     ctermbg=none
 hi Selected      cterm=bold         ctermfg=3        ctermbg=none
 
-hi StatusLine    cterm=none         ctermfg=7        ctermbg=none
+hi StatusLine    cterm=none         ctermfg=15       ctermbg=none
 hi SuggestBox    cterm=bold         ctermfg=8        ctermbg=none
-hi CmdLine       cterm=none         ctermfg=7        ctermbg=none
+hi CmdLine       cterm=none         ctermfg=15       ctermbg=none
 hi WildMenu      cterm=reverse,bold ctermfg=252      ctermbg=none
 
 " Filetypes

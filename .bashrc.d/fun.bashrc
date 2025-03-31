@@ -3,10 +3,10 @@
 #!/bin/bash
 
 __home_directories() {
-    # fd -cnever -td -d4 . ~/
-    # fd -cnever -td -HE .git -E share/ . ~/.dotfiles/
-    find ~/ -maxdepth 3 -type d -not -path "*/.*"
-    find ~/.dotfiles/ -type d -not -path "*.local/share/*" -not -path "*.git/*"
+    fd -cnever -td -d4 . ~/
+    fd -cnever -H -td -d3 -E .git . ~/.dotfiles
+    # find ~/ -maxdepth 3 -type d -not -path "*/.*"
+    # find ~/.dotfiles/ -maxdepth 3 -type d -not -path "*.git/"
 }
 _fzf_home_directories() {
     local dir
@@ -32,8 +32,6 @@ _fzf_ls() {
                 cd "$file" ;;
             text/*|*/x-setupscript|*/javascript|*/json)
                 vi "$file"; break ;;
-            image/*)
-                (imv-dir "$file" &); break ;;
             *)
                 break ;;
         esac
@@ -46,3 +44,8 @@ _history() {
     [ "$READLINE_POINT" ] || echo "$READLINE_LINE" && READLINE_POINT=0x7fffffff
 }
 bind -m emacs-standard -x '"\C-r": _history'
+
+color() {
+    local p; p="$(slurp -p)" || return
+    grim -g "$p" -t ppm - | magick - -format '#%[hex:p{0,0}]\n' info:
+}

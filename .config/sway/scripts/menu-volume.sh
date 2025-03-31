@@ -4,17 +4,18 @@ while true
 do
 
     case $(echo -e "up\ndown\nmute" |
-        bemenu -p "volume $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d' ' -f2-)" -I ${index:-0}) in
+        fuzzel -dp "volume $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d' ' -f2-) " --select=${index:-0}) in
+
         'up')
-            index=0
+            index=up
             wpctl set-volume --limit 1.1 @DEFAULT_AUDIO_SINK@ 6%+ ;;
 
         'down')
-            index=1
+            index=down
             wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- ;;
 
         'mute')
-            index=2
+            index=mute
             wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle ;;
 
         *)

@@ -6,22 +6,22 @@ while true
 do
 
     case $(echo -e "increase\ndecrease\nminimum\nrestore" |
-        bemenu -p "brightness $(cut -d',' -f4 <<< "$value")" -I ${index:-0}) in
+        fuzzel -dp "brightness $(cut -d',' -f4 <<< "$value") " --select=${index:-0}) in
 
         'increase') 
-            index=0
+            index=increase
             value=$(brightnessctl -m set +1%) ;;
 
         'decrease') 
-            index=1
+            index=decrease
             value=$(brightnessctl -mn set 1%-) ;;
 
         'minimum')
-            index=2
+            index=minimum
             value=$(brightnessctl -m set 1) ;;
 
         'restore')
-            index=3
+            index=restore
             value=$(brightnessctl -m set 6%) ;;
 
         *) exit ;;

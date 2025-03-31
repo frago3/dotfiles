@@ -25,7 +25,8 @@ input type:keyboard xkb_layout latam
 # Basics:
 #
     # Start a terminal
-    bindsym Mod4+q          exec alacritty
+    bindsym Mod4+q          exec alacritty -e tmux
+    bindsym Mod4+Shift+q    exec alacritty
     bindsym Mod4+w          exec brave
     bindsym Mod4+Shift+w    exec brave brave --incognito
     bindsym Mod4+r          exec menu.sh
@@ -35,6 +36,7 @@ input type:keyboard xkb_layout latam
     # Kill focused window
     bindsym Ctrl+Shift+q kill
     bindsym Mod4+BackSpace exec dunstctl close
+    bindsym Mod4+l exec hyprlock -q
 
     floating_modifier Mod4 normal
 
@@ -84,6 +86,7 @@ input type:keyboard xkb_layout latam
     bindsym Ctrl+Alt+KP_Next    exec sway_move-focused.sh -next
     bindsym Ctrl+Alt+KP_Prior   exec sway_move-focused.sh -prev
 
+    bindgesture swipe:up        exec menu-windows.sh
     bindgesture swipe:down      exec sway_focus-last.sh
     bindgesture swipe:right     workspace prev
     bindgesture swipe:left      workspace next
