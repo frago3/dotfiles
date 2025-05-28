@@ -6,6 +6,7 @@
 # config file.
 suppress_default_binds = true
 height = 1060
+width = 1200
 scaling_mode = shrink
 # width = <width>
 
@@ -20,30 +21,22 @@ q = quit
 y = exec echo working!
 
 # Image navigation
-<Left> = prev
-<bracketleft> = prev
-<Right> = next
-<bracketright> = next
-gg = goto 1
-<Shift+G> = goto -1
+<Left>          = prev
+<bracketleft>   = prev
+<Right>         = next
+<bracketright>  = next
+gg              = goto 1
+<Shift+G>       = goto -1
 
 # Panning
-# j = pan 0 -50
-# k = pan 0 50
-# h = pan 50 0
-# l = pan -50 0
-<Ctrl+Down> = pan 0 -50
-<Ctrl+Up> = pan 0 50
-<Ctrl+Left> = pan 50 0
-<Ctrl+Right> = pan -50 0
+<Ctrl+Down>     = pan 0 -50
+<Ctrl+Up>       = pan 0 50
+<Ctrl+Left>     = pan 50 0
+<Ctrl+Right>    = pan -50 0
 
 # Zooming
-<Up> = zoom 1
-<Shift+plus> = zoom 1
-i = zoom 1
-<Down> = zoom -1
-<minus> = zoom -1
-o = zoom -1
+<Up>            = zoom 2
+<Down>          = zoom -2
 
 # Rotate Clockwise by 90 degrees
 <Ctrl+r> = rotate by 90

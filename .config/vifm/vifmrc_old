@@ -1,4 +1,5 @@
-" vim: filetype=vifm :
+" vim: filetype=vim :
+" vim: syntax=vim :
 " Sample configuration file for vifm (last updated: 18 December, 2024)
 " You can edit this file by hand.
 " The " character at the beginning of a line comments out the line.
@@ -116,7 +117,7 @@ endif
 set grepprg="grep -n -H -I -r -s %i %a %s"
 
 " List of color schemes to try (picks the first one supported by the terminal)
-colorscheme custom Default
+colorscheme Default-256 Default
 
 " ------------------------------------------------------------------------------
 " Bookmarks

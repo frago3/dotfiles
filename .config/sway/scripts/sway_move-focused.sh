@@ -12,4 +12,5 @@ case "$1" in
     -prev)
         [ $workspace -lt 2 ] || move $(expr $workspace - 1) ;;
     *)
+        exit ;;
 esac

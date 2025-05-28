@@ -186,7 +186,8 @@ if s:t_Co >= 256
     hi CocSearch ctermfg=222 ctermbg=NONE cterm=NONE
   else
     " Light background
-    hi Normal ctermfg=16 ctermbg=231 cterm=NONE
+    " hi Normal ctermfg=16 ctermbg=231 cterm=NONE
+    hi Normal ctermfg=NONE ctermbg=NONE cterm=NONE
     hi Statusline ctermfg=231 ctermbg=16 cterm=bold
     hi StatuslineNC ctermfg=231 ctermbg=243 cterm=NONE
     hi VertSplit ctermfg=243 ctermbg=243 cterm=NONE

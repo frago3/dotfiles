@@ -1,49 +1,44 @@
+#!/bin/bash
 # vim: filetype=sh :
 # vim: syntax=sh :
-#!/bin/bash
 
-__home_directories() {
-    fd -cnever -td -d4 . ~/
-    fd -cnever -H -td -d3 -E .git . ~/.dotfiles
-    # find ~/ -maxdepth 3 -type d -not -path "*/.*"
-    # find ~/.dotfiles/ -maxdepth 3 -type d -not -path "*.git/"
-}
 _fzf_home_directories() {
     local dir
-    dir=$(__home_directories |fzf) && cd "$dir"
+    dir=$(fd -cnever -t directory -d4 -H -E .cache -E .git -E BraveSoftware . ~/ | fzf --tac ) && cd "$dir"
 }
+
 _fzf_ls() {
+
     [ -d "$1" ] && cd "$1"
     while true
     do
         local file
-        file=$(command ls -pav --group-directories-first |tail -n+2| fzf --prompt="${PWD##*/} " \
+        file=$(command ls -pav --group-directories-first --color |tail -n+2| fzf --ansi --prompt="${PWD##*/} " \
             --bind='right:preview:
                     case $(file --mime-type -Lb {}) in
                         inode/directory)
                             command ls -Av --group-directories-first --color=always {} ;;
-                        text/*|*/x-setupscript|*/javascript|*/json|inode/x-empty)
+                        text/*|*/x-setupscript|*/javascript|*/json)
                             cat {} ;;
                         *)
                             file --mime-type -Lb {} ;;
-                    esac' )
+                    esac')
         case $(file --mime-type -Lb "$file") in
             inode/directory)
                 cd "$file" ;;
             text/*|*/x-setupscript|*/javascript|*/json)
-                vi "$file"; break ;;
+                eval "vi $file"; break ;;
             *)
                 break ;;
         esac
     done
 }
 
-_history() {
-    # READLINE_LINE=$(history|fzf --tac|cut -c8-) || return
-    READLINE_LINE=$(history|cut -c8-|awk '!x[$0]++'|fzf --tac) || return
-    [ "$READLINE_POINT" ] || echo "$READLINE_LINE" && READLINE_POINT=0x7fffffff
+_fzf_history() {
+    READLINE_LINE=$(history | cut -c8- | awk '!x[$0]++' | fzf --tac) || return
+    READLINE_POINT=${#READLINE_LINE}
 }
-bind -m emacs-standard -x '"\C-r": _history'
+bind -m emacs-standard -x '"\C-r": _fzf_history'
 
 color() {
     local p; p="$(slurp -p)" || return

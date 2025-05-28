@@ -22,5 +22,5 @@ calendar()
     tail -n8 <<< "$calendar"
 }
 
-# get_calendar
+# calendar
 dunstify -r 1 '' "$(calendar)"

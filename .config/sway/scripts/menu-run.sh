@@ -1,3 +1,4 @@
 #!/bin/bash
 
-command ls /usr/bin/ | fuzzel -dp 'drun ' | xargs -r setsid 
+# command ls /usr/bin/ | fuzzel -dp 'drun ' | xargs -r setsid 
+fuzzel

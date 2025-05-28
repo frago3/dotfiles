@@ -1,7 +1,10 @@
 #!/bin/bash
 
-command ls $HOME/.config/sway/scripts/menu-* |
-    awk -F- '{print $2}' |
-    fuzzel -dp 'menu ' |
-    xargs -r -I{} sh "menu-{}"
+killall -q fuzzel && exit
 
+s=(~/.config/sway/scripts/menu-*)
+
+printf '%s\n' ${s[@]##*/menu-} | fuzzel -d | {
+    IFS="" read -r line
+    [ $line ] && coproc (menu-$line)
+}

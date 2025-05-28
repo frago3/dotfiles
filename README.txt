@@ -1,63 +1,23 @@
-adw-gtk-theme
-alacritty
-alsa-utils
-base
-base-devel
-bash-completion
-bemenu-wayland
-brave-bin
-brightnessctl
-dunst
-efibootmgr
-emacs-wayland
-fd
-featherpad
-fuzzel
-fzf
-git
-gnu-free-fonts
-grim
-gst-plugin-pipewire
-htop
-hyprlock
-imv
-intel-compute-runtime
-intel-media-driver
-intel-ucode
-iwd
-jq
-libnotify
-libpulse
-linux
-linux-firmware
-man-db
-mpv
-nwg-look
-pcmanfm-qt
-pipewire
-pipewire-alsa
-pipewire-jack
-pipewire-pulse
-qt5-wayland
-qt6ct
-slurp
-sof-firmware
-stow
-supercollider
-sway
-swaybg
-tmux
-unzip
-vifm
-vim
-vulkan-intel
-waybar
-wev
-wireplumber
-yay-bin
-yay-bin-debug
-yt-dlp
-zathura
-zathura-pdf-mupdf
-zed
-zram-generator
+adw-gtk-theme		intel-media-driver	slurp
+alsa-utils		intel-ucode		sof-firmware
+base			iwd			stow
+base-devel		jq			supercollider
+bash-completion		libnotify		sway
+brave-bin		libpulse		swaybg
+brightnessctl		linux			tmux
+btop			linux-firmware		unzip
+dunst			man-db			vifm
+efibootmgr		mpv			vim
+fd			nmap			vulkan-intel
+foot			nwg-look		waybar
+fuzzel			openssh			wev
+fzf			pcmanfm-qt		wireplumber
+git			pipewire		yay-bin
+gnu-free-fonts		pipewire-alsa		yay-bin-debug
+grim			pipewire-jack		zathura
+gst-plugin-pipewire	pipewire-pulse		zathura-djvu
+htop			qpwgraph		zathura-pdf-mupdf
+hyprlock		qt5-wayland		zip
+imagemagick		qt6ct			zram-generator
+imv			qtractor
+intel-compute-runtime	rtkit

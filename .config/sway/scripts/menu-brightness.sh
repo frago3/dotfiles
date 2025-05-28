@@ -1,29 +1,19 @@
 #!/bin/bash
 
-value=$(brightnessctl -m)
+percent=$(brightnessctl -m)
 
 while true
 do
+    
+    index=$(echo -e "increase\ndecrease\nminimum\nrestore" |
+        fuzzel -dp "brightness $(cut -d',' -f4 <<< $percent) " --select-index=${index:-0} --index)
 
-    case $(echo -e "increase\ndecrease\nminimum\nrestore" |
-        fuzzel -dp "brightness $(cut -d',' -f4 <<< "$value") " --select=${index:-0}) in
+    case $index in
 
-        'increase') 
-            index=increase
-            value=$(brightnessctl -m set +1%) ;;
-
-        'decrease') 
-            index=decrease
-            value=$(brightnessctl -mn set 1%-) ;;
-
-        'minimum')
-            index=minimum
-            value=$(brightnessctl -m set 1) ;;
-
-        'restore')
-            index=restore
-            value=$(brightnessctl -m set 6%) ;;
-
+        0) percent=$(brightnessctl -m set +1%)  ;;
+        1) percent=$(brightnessctl -mn set 1%-) ;;
+        2) percent=$(brightnessctl -m set 1)    ;;
+        3) percent=$(brightnessctl -m set 6%)   ;;
         *) exit ;;
     esac
 

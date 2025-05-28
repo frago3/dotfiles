@@ -4,7 +4,7 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-xwayland disable
+# xwayland disable
 for_window [app_id=".*"] floating enable
 
 ### Output configuration
@@ -13,6 +13,8 @@ output * bg ~/.local/share/wallpapers/Australia_5.jpg center
 ### Idle configuration
 default_border none
 default_floating_border none
+# client.focused          #ffffff #ffffff #ffffff #ffffff #ffffff
+# client.focused_inactive #000000 #000000 #000000 #000000 #000000
 floating_maximum_size 1920 x 1060
 
 ### Input configuration
@@ -25,18 +27,19 @@ input type:keyboard xkb_layout latam
 # Basics:
 #
     # Start a terminal
-    bindsym Mod4+q          exec alacritty -e tmux
-    bindsym Mod4+Shift+q    exec alacritty
+    bindsym Mod4+q          exec foot tmux
+    bindsym Mod4+Shift+q    exec foot
     bindsym Mod4+w          exec brave
-    bindsym Mod4+Shift+w    exec brave brave --incognito
+    bindsym Mod4+Shift+w    exec brave --incognito
     bindsym Mod4+r          exec menu.sh
-    bindsym Mod4+Shift+r    exec menu-run.sh
+    bindsym Mod4+a          exec menu-run.sh
+    bindsym Mod4+s          exec menu-filebrowser.sh
     bindsym Mod4+e          exec pcmanfm-qt
 
-    # Kill focused window
-    bindsym Ctrl+Shift+q kill
-    bindsym Mod4+BackSpace exec dunstctl close
-    bindsym Mod4+l exec hyprlock -q
+    bindsym Ctrl+Shift+q    kill
+    bindsym Mod4+BackSpace  exec dunstctl close
+    bindsym Mod4+l          exec hyprlock -q
+    bindsym Mod4+return     exec sway_layout.sh
 
     floating_modifier Mod4 normal
 
@@ -50,8 +53,8 @@ input type:keyboard xkb_layout latam
     bindsym Mod4+Down       focus down
     bindsym Mod4+Up         focus up
     bindsym Mod4+Right      focus right
-    bindsym Mod4+Tab        exec menu-windows.sh
     bindsym Alt+Tab         exec sway_focus-last.sh
+    bindsym Ctrl+Alt+up     exec menu-windows.sh
 
 #
 # Workspaces:
@@ -86,7 +89,8 @@ input type:keyboard xkb_layout latam
     bindsym Ctrl+Alt+KP_Next    exec sway_move-focused.sh -next
     bindsym Ctrl+Alt+KP_Prior   exec sway_move-focused.sh -prev
 
-    bindgesture swipe:up        exec menu-windows.sh
+    # bindgesture swipe:4:up      exec menu.sh
+    bindgesture swipe:3:up      exec menu-windows.sh
     bindgesture swipe:down      exec sway_focus-last.sh
     bindgesture swipe:right     workspace prev
     bindgesture swipe:left      workspace next
@@ -105,8 +109,8 @@ input type:keyboard xkb_layout latam
 
     # Toggle the current focus between tiling and floating mode
     # bindsym Mod4+Shift+space floating toggle
-    bindsym Mod4+KP_End floating toggle
-    bindsym Mod4+Escape focus mode_toggle
+    # bindsym Mod4+KP_End floating toggle
+    # bindsym Mod4+Escape focus mode_toggle
 
 #
 # Scratchpad:
@@ -117,15 +121,15 @@ input type:keyboard xkb_layout latam
 # Resizing containers:
 #
 
-    bindsym Alt+Shift+Left      resize shrink width     110px 
-    bindsym Alt+Shift+Down      resize grow height      110px 
-    bindsym Alt+Shift+Up        resize shrink height    110px 
-    bindsym Alt+Shift+Right     resize grow width       110px
+    bindsym Alt+Shift+Down      resize grow height      106px 
+    bindsym Alt+Shift+Up        resize shrink height    106px 
+    bindsym Alt+Shift+Left      resize shrink width     120px 
+    bindsym Alt+Shift+Right     resize grow width       120px
 
-    bindsym Mod4+Shift+Left     move left               55px
-    bindsym Mod4+Shift+Down     move down               55px
-    bindsym Mod4+Shift+Up       move up                 55px
-    bindsym Mod4+Shift+Right    move right              55px
+    bindsym Mod4+Shift+Down     move down               53px
+    bindsym Mod4+Shift+Up       move up                 53px
+    bindsym Mod4+Shift+Left     move left               60px
+    bindsym Mod4+Shift+Right    move right              60px
     bindsym Mod4+Shift+Escape   move position center
     bindsym Mod4+Shift+KP_Home  exec sway_snap.sh -topleft
     bindsym Mod4+Shift+KP_End   exec sway_snap.sh -bottomleft
@@ -135,15 +139,16 @@ input type:keyboard xkb_layout latam
 #
 # Utilities:
 #
-    # # Special keys to adjust volume via PulseAudio
     bindsym --locked XF86AudioMute              exec mkeys_volume.sh -mute
     bindsym --locked XF86AudioLowerVolume       exec mkeys_volume.sh -down
     bindsym --locked XF86AudioRaiseVolume       exec mkeys_volume.sh -up
-    # # Special keys to adjust brightness via brightnessctl
     bindsym --locked XF86MonBrightnessDown      exec mkeys_light.sh -down 
     bindsym --locked XF86MonBrightnessUp        exec mkeys_light.sh -up
     # # Special key to take a screenshot with grim
     # bindsym Print exec grim
+    bindsym Shift+Print     exec sway_screenshot.sh -screen 
+    bindsym Ctrl+Print      exec sway_screenshot.sh -window
+
 
 mode "status" {
     bindsym c               exec status-calendar.sh; mode "default"

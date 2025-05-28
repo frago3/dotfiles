@@ -3,14 +3,17 @@ syntax on
 autocmd BufReadPost * if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit' | exe "normal! g`\"" | endif
 
 set background=dark
-color lunaperche
+
+if $TERM != 'linux'
+  color default
+endif
 
 set nobackup
 set noswapfile
 set noundofile
 set nowrap
+set linebreak
 set showtabline=2
-set wildmenu
 set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 set mouse=a
@@ -24,6 +27,12 @@ set number
 set relativenumber
 set laststatus=0
 let g:netrw_banner=0
+
+" inoremap ( ()<Esc>i
+" inoremap { {}<Esc>i
+" inoremap [ []<Esc>i
+" inoremap ' ''<Esc>i
+" inoremap " ""<Esc>i
 
 " Cursor - switch between line and full
 let &t_SI = "\<Esc>[6 q"
@@ -40,9 +49,10 @@ imap <C-s>              <Esc>:update<cr>g
 
 " filetype on
 let mapleader=' '
-nmap <Esc><Esc>         :noh<CR>
+nmap <leader>n          :noh<CR>
 nmap <leader>ee         :Explore<CR>
 nmap <leader>te         :Texplore<CR>
 nmap <leader>tt         :tabnew<CR>
 nmap <leader><leader>   :ls<CR>:buffer 
 nmap <leader>bd         :bwipeout<CR>
+

@@ -2,21 +2,24 @@
     font-family: "Roboto SemiCondensed Medium";
     font-weight: 400;
     font-size: 14px;
-    min-height: 14px;
+    min-height: 0;
     border: none;
     box-shadow: none;
     transition: none;
 }
 
 window#waybar {
-    color: #ffffff;
+    color: white;
     background-color: black;
+    /* margin: 20px; */
 }
 #workspaces button {
-    color: #626262;
+    color: #717171;
+    padding: 0;
+    margin: 0;
 }
 #workspaces button.focused {
-    color: #ffffff;
+    color: white;
 }
 button:hover {
     box-shadow: inherit;
@@ -25,11 +28,11 @@ button:hover {
 }
 
 #clock{
-    margin: 0 8px 0 0;
+    padding: 0 8px 0 0;
 }
 #workspaces button,
 #window,
 #battery,
 #clock{
-    padding: 3px 0 0 0;
+    margin: 3px 0 0 0;
 }

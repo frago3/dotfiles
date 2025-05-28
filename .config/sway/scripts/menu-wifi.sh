@@ -12,16 +12,16 @@ confirm() {
 toggle_wifi() {
 
     if [[ "$STATUS" =~ 'wifi on' ]]; then
-        confirm 'disable wifi' && rfkill block wlan && dunstify -u low 'Wifi disabled' && exit
+        confirm 'disable wifi' && rfkill block wlan && dunstify -u low 'Wifi disabled'
     else
-        confirm 'enablable wifi' && rfkill unblock wlan && dunstify -u low 'Wifi enablabled' && exit
+        confirm 'enablable wifi' && rfkill unblock wlan && dunstify -u low 'Wifi enablabled'
     fi
 }
 
 disconnect_from_network() {
 
     [ "$SSID" ] && confirm "disconnect from $SSID" && {
-    iwctl station $DEVICE disconnect && dunstify -u low 'Wifi disconnected' && exit
+        iwctl station $DEVICE disconnect && dunstify -u low 'Wifi disconnected'
     }
 }
 
@@ -29,8 +29,8 @@ format() {
     # #SSID name
     # psk|open|8021x
     sed -e 's/[[:cntrl:]]\[[0-9;]*m//g' \
-    -e '1,4d' \
-    -e 's/^ *>* *\(\S.*\S\) *\(psk\|open\|8021x\).*$/#\1\n\2/g'
+        -e '1,4d' \
+        -e 's/^ *>* *\(\S.*\S\) *\(psk\|open\|8021x\).*$/#\1\n\2/g'
 }
 
 choose() {
@@ -44,7 +44,7 @@ forget() {
     chosen=$(choose 'forget network' "$(iwctl known-networks list|format)") || return
 
     confirm "forget $chosen" && {
-    iwctl known-networks "$chosen" forget && dunstify -u low "$chosen forgotten"
+        iwctl known-networks "$chosen" forget && dunstify -u low "$chosen forgotten"
     }
 }
 
@@ -65,17 +65,17 @@ connect_to_network(){
     if iwctl known-networks list|grep -q "$chosen" || [ "$security" = 'open' ]
     then
 
-        iwctl station $DEVICE connect "$chosen" && dunstify -u low 'Wifi connected' && exit
+        iwctl station $DEVICE connect "$chosen" && dunstify -u low 'Wifi connected'
 
     elif [ "$security" = psk ] || [ "$security" = "8021x" ]
         then
 
             local passd
-            passd=$(fuzzel -dp 'password' <<< '') || return
+            passd=$(fuzzel -dp 'password ' <<< '') || return
 
             iwctl --passphrase "$passd" station $DEVICE connect "$chosen" &&
-            dunstify -u low 'Wifi connected' ||
-            dunstify -u low 'Operation failed' && exit
+                dunstify -u low 'Wifi connected' ||
+                dunstify -u low 'Operation failed'
         fi
 }
 
@@ -88,8 +88,7 @@ do
     SSID=$(iwctl station "$DEVICE" show|awk '/Connected network/{ gsub(/.*network *| *$/,""); print}')
 
     [ "$SSID" ] &&
-    STATUS="wifi on: $SSID" ||
-    STATUS="wifi on"
+        STATUS="wifi on $SSID" || STATUS="wifi on"
     } || STATUS="wifi off"
 
     case $(printf "connect\ndisconnect\nforget\ntoggle"|fuzzel -dp "$STATUS ") in
