@@ -10,7 +10,6 @@ PS1='[\[\e[1;34m\]\W\[\e[m\]]\\$ '
 
 [ -n "$VIFM" ] && PS1="fm $PS1"
 
-alias ff='vifm'
 alias ls='ls --group-directories-first -pv --color'
 alias l='ls -1'
 alias ll='ls -lh'
@@ -25,8 +24,10 @@ alias pss='ps -eo pid,user,comm,pcpu,pmem --sort=-pcpu|grep -v "0.0  0.0"'
 if [ "$XDG_CURRENT_DESKTOP" ]
 then
     source ~/.bashrc.d/fun.bashrc
-    alias f='_fzf_ls'
     alias d='_fzf_home_directories'
+    alias f='_fzf_ls'
+    alias ff='_vifm_cd'
+    bind -m emacs-standard -x '"\C-r": _fzf_history'
 else
     alias start='$HOME/.local/bin/wayland.sh'
 fi

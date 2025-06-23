@@ -1,16 +1,18 @@
 #!/bin/bash
 
-while true
-do
-    FILE="$(fd --color never | fuzzel -d --prompt="${PWD##*/} ")" || exit
+# while true
+# do
+#     FILE="$(fd --color never -E Music| fuzzel -d --prompt="${PWD##*/} ")" || exit
+#     [ -e "$FILE" ] || exit
+#     case $(file --mime-type -Lb "$FILE") in
+#         inode/directory)
+#             cd "$FILE" ;;
+#         *)
+#             coproc $(xdg-open "$FILE") ; exit ;;
+#     esac
+# done
 
-    [ -e "$FILE" ] || exit
+FILE="$(fd --color never -E cva '\.(jpg|jpeg|png|pdf)$' | fuzzel -d --prompt='file ' )" || exit
 
-    case $(file --mime-type -Lb "$FILE") in
-        inode/directory)
-            cd "$FILE" ;;
-        *)
-            coproc $(xdg-open "$FILE") ; exit ;;
-    esac
-done
+coproc $(xdg-open "$FILE")
 

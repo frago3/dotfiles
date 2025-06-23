@@ -1,23 +1,23 @@
-adw-gtk-theme		intel-media-driver	slurp
-alsa-utils		intel-ucode		sof-firmware
-base			iwd			stow
-base-devel		jq			supercollider
-bash-completion		libnotify		sway
-brave-bin		libpulse		swaybg
-brightnessctl		linux			tmux
-btop			linux-firmware		unzip
-dunst			man-db			vifm
-efibootmgr		mpv			vim
-fd			nmap			vulkan-intel
-foot			nwg-look		waybar
-fuzzel			openssh			wev
-fzf			pcmanfm-qt		wireplumber
-git			pipewire		yay-bin
-gnu-free-fonts		pipewire-alsa		yay-bin-debug
-grim			pipewire-jack		zathura
-gst-plugin-pipewire	pipewire-pulse		zathura-djvu
-htop			qpwgraph		zathura-pdf-mupdf
-hyprlock		qt5-wayland		zip
-imagemagick		qt6ct			zram-generator
-imv			qtractor
-intel-compute-runtime	rtkit
+alsa-utils		intel-ucode		rtkit
+base			iwd			slurp
+base-devel		jq			sof-firmware
+bash-completion		libnotify		stow
+brave-bin		libpulse		sunvox
+brightnessctl		linux			sway
+btop			linux-firmware		swaybg
+dunst			man-db			tmux
+efibootmgr		mpv			unarchiver
+fd			nmap			vifm
+foot			nwg-look		vim
+fuzzel			openssh			vulkan-intel
+fzf			pcmanfm-qt		waybar
+git			pipewire		wev
+gnu-free-fonts		pipewire-alsa		wireplumber
+grim			pipewire-jack		xorg-xwayland
+gst-plugin-pipewire	pipewire-pulse		yay-bin
+htop			qbittorrent		zathura
+hyprlock		qpwgraph		zathura-djvu
+imagemagick		qt5-wayland		zathura-pdf-mupdf
+imv			qt6ct			zram-generator
+intel-compute-runtime	qtractor
+intel-media-driver	reaper
