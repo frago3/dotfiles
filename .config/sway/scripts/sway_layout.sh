@@ -13,13 +13,13 @@ case ${#con[@]} in
         setgeometry ${con[0]} 1920 1060 0 0
         ;;
     2)
-        setgeometry ${con[0]} 960 1060 0 0
-        setgeometry ${con[1]} 960 1060 960 0
+        setgeometry ${con[0]} 960 1060 960 0
+        setgeometry ${con[1]} 960 1060 0 0
         ;;
     3)
-        setgeometry ${con[0]} 960 1060 0 0
-        setgeometry ${con[1]} 960 530 960 0
-        setgeometry ${con[2]} 960 530 960 530
+        setgeometry ${con[0]} 960 1060 960 0
+        setgeometry ${con[1]} 960 530 0 0
+        setgeometry ${con[2]} 960 530 0 530
         ;;
     *)
         setgeometry ${con[0]} 960 1060 0 0

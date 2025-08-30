@@ -3,8 +3,8 @@
 # vim: syntax=sh :
 
 _fzf_home_directories() {
-    local dir
-    dir=$(fd -cnever -t directory -d4 -H -E .cache -E .git -E REAPER -E samples -E BraveSoftware . ~/ | fzf --tac ) && cd "$dir"
+    local DIR
+    DIR=$(fd -cnever -t directory -d4 -H -E samples -E .cache -E .git -E REAPER -E SuperCollider -E BraveSoftware . ~/ | fzf --tac ) && cd "$DIR"
 }
 
 _fzf_history() {
@@ -12,12 +12,12 @@ _fzf_history() {
     READLINE_POINT=${#READLINE_LINE}
 }
 
-_vifm_cd()
-{
-    local dst
-    dst="$(vifm --choose-dir - "$@")" || return 1
-    cd "$dst"
-}
+# _vifm_cd()
+# {
+#     local dst
+#     dst="$(vifm --choose-dir - "$@")" || return 1
+#     cd "$dst"
+# }
 
 _fzf_ls() {
     [ -d "$1" ] && cd "$1"

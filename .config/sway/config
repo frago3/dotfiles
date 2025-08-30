@@ -13,8 +13,6 @@ output * bg ~/.local/share/wallpapers/Australia_5.jpg center
 ### Idle configuration
 default_border none
 default_floating_border none
-# client.focused          #ffffff #ffffff #ffffff #ffffff #ffffff
-# client.focused_inactive #000000 #000000 #000000 #000000 #000000
 floating_maximum_size 1920 x 1060
 
 ### Input configuration
@@ -35,7 +33,7 @@ input type:keyboard xkb_layout latam
     bindsym Mod4+a          exec menu-run.sh
     bindsym Mod4+s          exec menu-filebrowser.sh
     bindsym Mod4+e          exec pcmanfm-qt
-
+    
     bindsym Ctrl+Shift+q    kill
     bindsym Mod4+BackSpace  exec dunstctl close
     bindsym Mod4+l          exec hyprlock -q

@@ -55,16 +55,12 @@ mark u /usr/
 " OLD
 fileviewer ../ echo >/dev/null
 fileviewer */,.*/ ls --group-directories-first --color
-" fileviewer {*.json,*.sh,*.toml,*.md,*.org,*.txt,*.conf,*.desktop} cat
-" fileviewer * file --mime-type -Lb
-" fileviewer * echo
-" filextype {*.pdf,*epub} xdg-open %c %i &
-" filextype <image/*> xdg-open %c %i &,
-" filextype <video/*> xdg-open %c %i &
 
-" Pdf
-filextype {*.pdf},<application/pdf> zathura %c %i,
-fileviewer {*.pdf},<application/pdf> pdftotext -nopgbrk %c -
+fileviewer {*.sunvox,*.pdf,*.epub} file %c
+
+" Pdf Epub
+filextype {*.pdf,*.epub},<application/pdf> zathura %c %i,
+" fileviewer {*.pdf},<application/pdf> pdftotext -nopgbrk %c -
 
 " PostScript
 filextype {*.ps,*.eps,*.ps.gz},<application/postscript>
@@ -86,6 +82,9 @@ filetype {*.mid,*.kar}
        \ timidity %f,
 
 " Audio
+filetype {*.sunvox},
+       \ {Play using sunvox}
+       \ sunvox %f 2>/dev/null &,
 filetype {*.mp3,*.flac},
        \ {Play using mpv}
        \ mpv --really-quiet  %f 2>/dev/null &,
@@ -160,7 +159,7 @@ filextype {*.sh3d}
         \ sweethome3d %c:p,
 filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
         \ {View in imv}
-        \ imv-dir %f,
+        \ imv-dir %f &,
 fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
          \ identify %f
 
@@ -279,6 +278,7 @@ filextype *.pro qtcreator %f &
 filextype */
         \ {View in thunar}
         \ Thunar %f &,
+
 " ------------------------------------------------------------------------------
 " Panel configuration examples
 " ------------------------------------------------------------------------------

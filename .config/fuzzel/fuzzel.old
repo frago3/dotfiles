@@ -1,22 +1,22 @@
 # output=<not set>
-font=Roboto Condensed:weight=medium:size=7.7
+# font=monospace
 # dpi-aware=auto
 # use-bold=no
-prompt="run "
+# prompt="> "
 # placeholder=
 # icon-theme=hicolor
-icons-enabled=no
+# icons-enabled=yes
 # hide-before-typing=no
 # fields=filename,name,generic
 # password-character=*
 # filter-desktop=no
-match-mode=exact
+# match-mode=fzf
 # sort-result=yes
 # match-counter=no
 # delayed-filter-ms=300
 # delayed-filter-limit=20000
 # show-actions=no
-terminal=foot 
+# terminal=$TERMINAL -e  # Note: you cannot actually use environment variables here
 # launch-prefix=<not set>
 # list-executables-in-path=no
 
@@ -24,43 +24,42 @@ terminal=foot
 # x-margin=0
 # y-margin=0
 # lines=15
-width=60
+# width=30
 # tabs=8
-horizontal-pad=12
-vertical-pad=4
-inner-pad=4
-
+# horizontal-pad=40
+# vertical-pad=8
+# inner-pad=0
 
 # image-size-ratio=0.5
 
-line-height=11
+# line-height=<use font metrics>
 # letter-spacing=0
 
 # layer=overlay
 # keyboard-focus=on-demand
 # exit-on-keyboard-focus-loss=yes
 
-cache=/dev/null
+# cache=<not set>
 
 # render-workers=<number of logical CPUs>
 # match-workers=<number of logical CPUs>
 
 [colors]
-background=000000ff
-text=d7d7d5ff
-prompt=d7d7d5ff
+# background=fdf6e3ff
+# text=657b83ff
+# prompt=586e75ff
 # placeholder=93a1a1ff
-input=d7d7d5ff
-match=ffffffff
-selection=212121ff
-selection-text=ffffffff
-selection-match=ffffffff
+# input=657b83ff
+# match=cb4b16ff
+# selection=eee8d5ff
+# selection-text=586e75ff
+# selection-match=cb4b16ff
 # counter=93a1a1ff
 # border=002b36ff
 
 [border]
-width=0
-radius=0
+# width=1
+# radius=10
 
 [dmenu]
 # mode=text  # text|index
@@ -116,4 +115,3 @@ radius=0
 # custom-17=Mod1+ampersand
 # custom-18=Mod1+asterix
 # custom-19=Mod1+parentleft
-

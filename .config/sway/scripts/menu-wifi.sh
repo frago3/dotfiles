@@ -10,7 +10,6 @@ confirm() {
 }
 
 toggle_wifi() {
-
     if [[ "$STATUS" =~ 'wifi on' ]]; then
         confirm 'disable wifi' && rfkill block wlan && dunstify -u low 'Wifi disabled'
     else
@@ -19,7 +18,6 @@ toggle_wifi() {
 }
 
 disconnect_from_network() {
-
     [ "$SSID" ] && confirm "disconnect from $SSID" && {
         iwctl station $DEVICE disconnect && dunstify -u low 'Wifi disconnected'
     }
@@ -39,7 +37,6 @@ choose() {
 }
 
 forget() {
-
     local chosen
     chosen=$(choose 'forget network' "$(iwctl known-networks list|format)") || return
 

@@ -1,23 +1,75 @@
-alsa-utils		intel-ucode		rtkit
-base			iwd			slurp
-base-devel		jq			sof-firmware
-bash-completion		libnotify		stow
-brave-bin		libpulse		sunvox
-brightnessctl		linux			sway
-btop			linux-firmware		swaybg
-dunst			man-db			tmux
-efibootmgr		mpv			unarchiver
-fd			nmap			vifm
-foot			nwg-look		vim
-fuzzel			openssh			vulkan-intel
-fzf			pcmanfm-qt		waybar
-git			pipewire		wev
-gnu-free-fonts		pipewire-alsa		wireplumber
-grim			pipewire-jack		xorg-xwayland
-gst-plugin-pipewire	pipewire-pulse		yay-bin
-htop			qbittorrent		zathura
-hyprlock		qpwgraph		zathura-djvu
-imagemagick		qt5-wayland		zathura-pdf-mupdf
-imv			qt6ct			zram-generator
-intel-compute-runtime	qtractor
-intel-media-driver	reaper
+7zip
+alsa-utils
+base
+base-devel
+bash-completion
+brave-bin
+brightnessctl
+btop
+dunst
+efibootmgr
+emacs-wayland
+fd
+foot
+fuseiso
+fuzzel
+fzf
+git
+gnu-free-fonts
+grim
+gst-plugin-pipewire
+htop
+hyprlock
+imagemagick
+imv
+intel-compute-runtime
+intel-media-driver
+intel-ucode
+iwd
+jq
+libgig
+libnotify
+libpulse
+libva-utils
+linux
+linux-firmware
+man-db
+mpv
+nmap
+nwg-look
+openssh
+pacman-contrib
+pcmanfm-qt
+pipewire
+pipewire-alsa
+pipewire-jack
+pipewire-pulse
+qbittorrent
+qpwgraph
+qt5-wayland
+qt6ct
+realtime-privileges
+reaper
+rtkit
+slurp
+sof-firmware
+sox
+stow
+sunvox
+supercollider
+sway
+swaybg
+tmux
+usbutils
+vifm
+vim
+vulkan-intel
+waybar
+wev
+wireplumber
+xorg-xwayland
+yay-bin
+zathura
+zathura-djvu
+zathura-pdf-mupdf
+zram-generator

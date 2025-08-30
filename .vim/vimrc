@@ -16,7 +16,6 @@ set linebreak
 set showtabline=2
 set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
-set mouse=a
 set hlsearch
 set expandtab
 set tabstop=4
@@ -27,23 +26,24 @@ set number
 set relativenumber
 set laststatus=0
 let g:netrw_banner=0
+set mouse=a
 
-" inoremap ( ()<Esc>i
-" inoremap { {}<Esc>i
-" inoremap [ []<Esc>i
-" inoremap ' ''<Esc>i
-" inoremap " ""<Esc>i
-
+" FOOT
 " Cursor - switch between line and full
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
+" Workaround bug in vim, where it incorrectly thinks modifyOtherKeys level 2 is enabled, even when it's not. The snippets below ensure modifyOtherKeys=2 is enabled. 
+let &t_TI = "\<Esc>[>4;2m"
+let &t_TE = "\<Esc>[>4;m"
+set ttimeoutlen=0
+
 
 nnoremap Q <nop>
 nmap <C-S-Right>        :bnext<CR>
 nmap <C-S-Left>         :bprevious<CR>
-nmap <silent><C-Left>   :tabprevious<CR>
-nmap <silent><C-Right>  :tabnext<CR>
+nmap <C-Right>          :tabnext<CR>
+nmap <C-Left>           :tabprevious<CR>
 nmap <C-s>              :update<CR>
 imap <C-s>              <Esc>:update<cr>g
 

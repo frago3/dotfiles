@@ -26,10 +26,8 @@ then
     source ~/.bashrc.d/fun.bashrc
     alias d='_fzf_home_directories'
     alias f='_fzf_ls'
-    alias ff='_vifm_cd'
+    alias ff='vifm'
     bind -m emacs-standard -x '"\C-r": _fzf_history'
-else
-    alias start='$HOME/.local/bin/wayland.sh'
 fi
 
 # pacs () { pacman -Ssq "$1"|fzf --bind="right:preview(pacman -Si {})"; }

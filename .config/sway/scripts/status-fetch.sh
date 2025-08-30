@@ -1,7 +1,7 @@
 #!/bin/bash
 
 add() {
-    buf="${buf}\n$(printf "%-13s%s" "$1" "$2")" 
+    BUF="${BUF}\n$(printf "%-13s%s" "$1" "$2")" 
 }
 
 add_kernel() {
@@ -42,11 +42,11 @@ add_coretemp() {
         END { printf "%s %.1f°C\n", "CoreTemp", t/NR/1000 }' $temp_dir/temp*_input)
 }
 
-buf=$(printf "%-13s%s" "OS" "GNU/Linux")
+BUF=$(printf "%-13s%s" "OS" "GNU/Linux")
 add_kernel
 add_uptime
 add_mem
 # add_coretemp
 add_battery
 
-dunstify -r 1 '' "$buf"
+dunstify -r 1 '' "$BUF"
