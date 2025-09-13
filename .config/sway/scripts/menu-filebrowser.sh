@@ -1,6 +1,20 @@
 #!/bin/bash
 
-FILE="$(fd --color never -E cva '\.(jpg|jpeg|png|pdf|epub|org)$' | fuzzel -dp 'file ' )" || exit
+FILE="$(fd --color never -E cva '\.(jpg|jpeg|png|pdf|epub|org)$' Documents/ Downloads/ Pictures/ Old/ | fuzzel -dp 'file ' )" || exit
 
-coproc $(xdg-open "$FILE")
+case $(file --mime-type -Lb "$FILE") in
+    */jpg|*/jpeg|*/png)
+        coproc (imv-dir "$FILE")
+        ;;
+    */epub+zip|*/pdf)
+        coproc (zathura "$FILE" 2> /dev/null)
+        ;;
+    text/plain)
+        coproc (emacs "$FILE")
+        ;;
+    *)
+        exit
+        ;;
+esac
+
 

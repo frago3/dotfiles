@@ -1,4 +1,4 @@
 #!/bin/bash
 
-last=$(swaymsg -t get_workspaces|jq '.[]|select(.focused==true)|.focus[1]')
-[ "$last" != 'null' ] && swaymsg "[con_id=$last]" focus
+LAST=$(swaymsg -t get_workspaces|jq '.[]|select(.focused==true)|.focus[1]')
+[ "$LAST" != 'null' ] && swaymsg "[con_id=$LAST]" focus
