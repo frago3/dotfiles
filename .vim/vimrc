@@ -44,8 +44,8 @@ nmap <C-S-Right>        :bnext<CR>
 nmap <C-S-Left>         :bprevious<CR>
 nmap <C-Right>          :tabnext<CR>
 nmap <C-Left>           :tabprevious<CR>
-nmap <C-s>              :update<CR>
-imap <C-s>              <Esc>:update<cr>g
+"nmap <C-s>              :update<CR>
+"imap <C-s>              <Esc>:update<cr>g
 
 " filetype on
 let mapleader=' '

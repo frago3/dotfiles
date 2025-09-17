@@ -36,7 +36,7 @@ set timefmt='%y/%m/%d %H:%M'
 set statusline=" %=%T %8u/%-7g %A %o %13d "
 
 " List of color schemes to try (picks the first one supported by the terminal)
-colorscheme custom
+colorscheme custom default 
 
 " ------------------------------------------------------------------------------
 " Bookmarks

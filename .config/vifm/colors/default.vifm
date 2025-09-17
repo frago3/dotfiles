@@ -1,3 +1,5 @@
+" vim: filetype=vim :
+" vim: syntax=vim :
 " You can edit this file by hand.
 " The " character at the beginning of a line comments out the line.
 " Blank lines are ignored.
@@ -46,56 +48,39 @@
 
 " highlight group cterm=attrs ctermfg=foreground_color ctermbg=background_color
 
-highlight clear
+" UI elements
+hi ErrorMsg      cterm=bold         ctermfg=1       ctermbg=none
+hi JobLine       cterm=none         ctermfg=5       ctermbg=1
+hi LineNr        cterm=none         ctermfg=none    ctermbg=none
 
-highlight Win cterm=none ctermfg=white ctermbg=black
-highlight Directory cterm=bold ctermfg=cyan ctermbg=default
-highlight Link cterm=bold ctermfg=yellow ctermbg=default
-highlight BrokenLink cterm=bold ctermfg=red ctermbg=default
-highlight HardLink cterm=none ctermfg=yellow ctermbg=default
-highlight Socket cterm=bold ctermfg=magenta ctermbg=default
-highlight Device cterm=bold ctermfg=red ctermbg=default
-highlight Fifo cterm=bold ctermfg=cyan ctermbg=default
-highlight Executable cterm=bold ctermfg=green ctermbg=default
-highlight Selected cterm=bold ctermfg=magenta ctermbg=default
-highlight CurrLine cterm=bold,reverse ctermfg=default ctermbg=default
-highlight TopLine cterm=none ctermfg=black ctermbg=white
-highlight TopLineSel cterm=bold ctermfg=black ctermbg=default
-highlight StatusLine cterm=bold ctermfg=black ctermbg=white
-highlight WildBox ctermfg=default ctermbg=default
-highlight WildMenu cterm=underline,reverse ctermfg=white ctermbg=black
-highlight CmdLine cterm=none ctermfg=white ctermbg=black
-highlight ErrorMsg cterm=none ctermfg=red ctermbg=black
-highlight Border cterm=none ctermfg=black ctermbg=white
-highlight OtherLine ctermfg=default ctermbg=default
-highlight JobLine cterm=bold,reverse ctermfg=black ctermbg=white
-highlight SuggestBox cterm=bold ctermfg=default ctermbg=default
-highlight CmpMismatch cterm=bold ctermfg=white ctermbg=red
-highlight CmpUnmatched cterm=bold ctermfg=white ctermbg=green
-highlight CmpBlank ctermfg=default ctermbg=default
-highlight AuxWin ctermfg=default ctermbg=default
-highlight TabLine cterm=none ctermfg=white ctermbg=black
-highlight TabLineSel cterm=bold,reverse ctermfg=default ctermbg=default
-highlight User1 ctermfg=default ctermbg=default
-highlight User2 ctermfg=default ctermbg=default
-highlight User3 ctermfg=default ctermbg=default
-highlight User4 ctermfg=default ctermbg=default
-highlight User5 ctermfg=default ctermbg=default
-highlight User6 ctermfg=default ctermbg=default
-highlight User7 ctermfg=default ctermbg=default
-highlight User8 ctermfg=default ctermbg=default
-highlight User9 ctermfg=default ctermbg=default
-highlight User10 ctermfg=default ctermbg=default
-highlight User11 ctermfg=default ctermbg=default
-highlight User12 ctermfg=default ctermbg=default
-highlight User13 ctermfg=default ctermbg=default
-highlight User14 ctermfg=default ctermbg=default
-highlight User15 ctermfg=default ctermbg=default
-highlight User16 ctermfg=default ctermbg=default
-highlight User17 ctermfg=default ctermbg=default
-highlight User18 ctermfg=default ctermbg=default
-highlight User19 ctermfg=default ctermbg=default
-highlight User20 ctermfg=default ctermbg=default
-highlight OtherWin ctermfg=default ctermbg=default
-highlight LineNr ctermfg=default ctermbg=default
-highlight OddLine ctermfg=default ctermbg=default
+hi TabLine       cterm=none         ctermfg=7       ctermbg=none
+hi TabLineSel    cterm=bold         ctermfg=7       ctermbg=none
+
+hi Border        cterm=none         ctermfg=0       ctermbg=none
+hi Win           cterm=none         ctermfg=none    ctermbg=none
+hi TopLine       cterm=none         ctermfg=0       ctermbg=none
+hi TopLineSel    cterm=bold         ctermfg=7      ctermbg=none
+
+hi CurrLine      cterm=bold,inverse ctermfg=none    ctermbg=none
+hi OtherLine     cterm=bold         ctermfg=none    ctermbg=none
+hi Selected      cterm=bold         ctermfg=3       ctermbg=none
+
+hi StatusLine    cterm=none         ctermfg=none    ctermbg=none
+hi SuggestBox    cterm=bold         ctermfg=7       ctermbg=none
+hi CmdLine       cterm=none         ctermfg=none    ctermbg=none
+" hi WildMenu      cterm=bold,inverse ctermfg=none    ctermbg=none
+hi WildMenu      cterm=bold         ctermfg=none    ctermbg=none
+
+" Filetypes
+hi Directory     cterm=bold         ctermfg=4       ctermbg=none
+hi Link          cterm=bold         ctermfg=6       ctermbg=none
+hi Socket        cterm=bold         ctermfg=5       ctermbg=none
+hi Executable    cterm=bold         ctermfg=2       ctermbg=none
+
+hi BrokenLink    cterm=italic       ctermfg=7       ctermbg=1
+hi CmpMismatch   cterm=italic       ctermfg=7       ctermbg=1
+hi Device        cterm=bold         ctermfg=3       ctermbg=none
+hi Fifo          cterm=none         ctermfg=3       ctermbg=none
+hi HardLink      cterm=bold         ctermfg=3       ctermbg=none
+
+finish

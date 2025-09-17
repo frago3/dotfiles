@@ -6,10 +6,11 @@ calendar()
     local TODAY CALENDAR
 
     CALENDAR=$(cal -3 --monday --columns 1 | sed "s/\b\([A-Z]\)[a-z]\b/<span foreground='gray'> \1<\/span>/g")
+    # CALENDAR=$(cal -3 --monday --columns 1)
     TODAY=$(date '+%e'|tr -d ' ')
     
     # mes pasado
-    head -n8 <<< "$CALENDAR" | sed -E "s/\b([0-9]|[0-9][0-9])\b/<span foreground='grey'>&<\/span>/g"
+    sed 8q <<< "$CALENDAR" | sed -E "s/\b([0-9]|[0-9][0-9])\b/<span foreground='grey'>&<\/span>/g"
 
     # mes actual
     [ "$TODAY" -eq 1 ] && {
@@ -21,7 +22,7 @@ calendar()
     }
 
     # mes próximo
-    tail -n8 <<< "$CALENDAR"
+    sed -n '16,24p' <<< "$CALENDAR"
 }
 
 dunstify -r 1 '' "$(calendar)"

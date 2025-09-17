@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILE="$(fd --color never -E cva '\.(jpg|jpeg|png|pdf|epub|org)$' Documents/ Downloads/ Pictures/ Old/ | fuzzel -dp 'file ' )" || exit
+FILE="$(fd --color never -E cva '\.(jpg|jpeg|png|pdf|epub)$' Documents/ Downloads/ Pictures/ Old/ | fuzzel -dp 'file ' )" || exit
 
 case $(file --mime-type -Lb "$FILE") in
     */jpg|*/jpeg|*/png)
@@ -8,9 +8,6 @@ case $(file --mime-type -Lb "$FILE") in
         ;;
     */epub+zip|*/pdf)
         coproc (zathura "$FILE" 2> /dev/null)
-        ;;
-    text/plain)
-        coproc (emacs "$FILE")
         ;;
     *)
         exit
