@@ -5,7 +5,7 @@
 " ------------------------------------------------------------------------------
 
 only
-set vicmd=vi
+set vicmd=nvim
 set syscalls
 set notrash
 set history=100
@@ -34,6 +34,7 @@ endif
 set timefmt='%y/%m/%d %H:%M'
 " set statusline=" %=%T %8u/%-7g %A %4E %13d "
 set statusline=" %=%T %8u/%-7g %A %o %13d "
+set viewcolumns=-{name}..,6{}.
 
 " List of color schemes to try (picks the first one supported by the terminal)
 colorscheme custom default 
@@ -41,8 +42,6 @@ colorscheme custom default
 " ------------------------------------------------------------------------------
 " Bookmarks
 " ------------------------------------------------------------------------------
-
-" :mark mark /full/directory/path [filename]
 
 mark h ~/
 mark c ~/.config/
@@ -265,19 +264,6 @@ filextype */
         \ Thunar %f &,
 
 " ------------------------------------------------------------------------------
-" Panel configuration examples
-" ------------------------------------------------------------------------------
-
-" Customize view columns a bit (enable ellipsis for truncated file names)
-" set viewcolumns=-{name}..,6{}.
-
-" Show vertical border
-" set fillchars=vborder:│
-
-" Filter-out build and temporary files
-" filter! {*.lo,*.o,*.d,*.class,*.pyc,*.pyo,.*~}
-
-" ------------------------------------------------------------------------------
 " Sample keyboard mappings
 " ------------------------------------------------------------------------------
 map Y <Nop>
@@ -313,4 +299,3 @@ nnoremap <a-o> :sync %c<cr>
 " Swap panes
 nnoremap <c-u> <c-w>x
 
-" https://github.com/cirala/vifm_devicons

@@ -1,5 +1,38 @@
 " vim: filetype=vim :
 
+"- Win - color of all windows (views, dialogs, menus) and default color for their content (e.g. regular files in views)
+"- AuxWin - color of auxiliary areas of windows
+"- OtherWin - color of inactive pane
+"- Border - color of vertical parts of the border
+"- TabLine - tab line color (for 'tabscope' set to "global")
+"- TabLineSel - color of the tip of selected tab (regardless of 'tabscope')
+"- TopLine - top line color of the other pane
+"- TopLineSel - top line color of the current pane
+"- CmdLine - the command line/status bar color
+"- ErrorMsg - color of error messages in the status bar
+"- StatusLine - color of the line above the status bar
+"- JobLine - color of job line that appears above the status line
+"- WildBox - color of the wild menu
+"- WildMenu - color of the selected wild menu item
+"- SuggestBox - color of key suggestion box
+"- CurrLine - line at cursor position in active view
+"- OtherLine - line at cursor position in inactive view
+"- OddLine - color of every second entry line in a pane
+"- LineNr - line number column of views
+"- Selected - color of selected files
+
+"- Directory - color of directories
+"- Link - color of symbolic links in the views
+"- BrokenLink - color of broken symbolic links
+"- HardLink - color of regular files with more than one hard link
+"- Socket - color of sockets
+"- Device - color of block and character devices
+"- Executable - color of executable files
+"- Fifo - color of fifo pipes
+"- CmpMismatch - color of mismatched files in side-by-side comparison by path
+"- CmpUnmatched - comparison file entry that has no pair in the other pane
+"- CmpBlank - entry placeholder in a compare view, paired with CmpUnmatched
+
 " -1    None
 "  0	Black
 "  1	Red
@@ -19,8 +52,6 @@
 "  15	Bright White
 " bold underline reverse or inverse standout italic combine none
 
-" hi clear
-
 " UI elements
 hi ErrorMsg      cterm=bold         ctermfg=1       ctermbg=none
 hi JobLine       cterm=none         ctermfg=5       ctermbg=1
@@ -34,7 +65,6 @@ hi Win           cterm=none         ctermfg=none    ctermbg=none
 hi TopLine       cterm=none         ctermfg=8       ctermbg=none
 hi TopLineSel    cterm=none         ctermfg=15      ctermbg=none
 
-"hi CurrLine      cterm=bold,inverse ctermfg=none    ctermbg=none
 hi CurrLine      cterm=bold         ctermfg=none    ctermbg=235
 hi OtherLine     cterm=bold         ctermfg=none    ctermbg=none
 hi Selected      cterm=bold         ctermfg=3       ctermbg=none
@@ -42,19 +72,17 @@ hi Selected      cterm=bold         ctermfg=3       ctermbg=none
 hi StatusLine    cterm=none         ctermfg=none    ctermbg=none
 hi SuggestBox    cterm=bold         ctermfg=8       ctermbg=none
 hi CmdLine       cterm=none         ctermfg=none    ctermbg=none
-"hi WildMenu      cterm=bold,inverse ctermfg=none    ctermbg=none
 hi WildMenu      cterm=bold         ctermfg=none    ctermbg=235
 
 " Filetypes
 hi Directory     cterm=bold         ctermfg=4       ctermbg=none
 hi Link          cterm=bold         ctermfg=6       ctermbg=none
-hi Socket        cterm=bold         ctermfg=5       ctermbg=none
-hi Executable    cterm=bold         ctermfg=2       ctermbg=none
-
 hi BrokenLink    cterm=italic       ctermfg=7       ctermbg=1
-hi CmpMismatch   cterm=italic       ctermfg=7       ctermbg=1
-hi Device        cterm=bold         ctermfg=3       ctermbg=none
-hi Fifo          cterm=none         ctermfg=3       ctermbg=none
 hi HardLink      cterm=bold         ctermfg=3       ctermbg=none
+hi Socket        cterm=bold         ctermfg=5       ctermbg=none
+hi Device        cterm=bold         ctermfg=3       ctermbg=none
+hi Executable    cterm=bold         ctermfg=2       ctermbg=none
+hi Fifo          cterm=none         ctermfg=3       ctermbg=none
+hi CmpMismatch   cterm=italic       ctermfg=7       ctermbg=1
 
 finish

@@ -8,3 +8,4 @@ coretemp() {
 }
 
 dunstify -r 1 "" "$(coretemp)"
+

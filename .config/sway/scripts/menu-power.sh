@@ -17,3 +17,4 @@ case $(echo -e "suspend\npoweroff\nreboot\nexit" | fuzzel -dp 'power ') in
     *)
         exit ;;
 esac
+

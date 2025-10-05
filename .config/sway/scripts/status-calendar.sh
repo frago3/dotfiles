@@ -5,7 +5,7 @@ calendar()
 
     local TODAY CALENDAR
 
-    CALENDAR=$(cal -3 --monday --columns 1 | sed "s/\b\([A-Z]\)[a-z]\b/<span foreground='gray'> \1<\/span>/g")
+    CALENDAR=$(cal -3 --columns 1 | sed "s/\b\([A-Z]\)[a-z]\b/<span foreground='gray'> \1<\/span>/g")
     # CALENDAR=$(cal -3 --monday --columns 1)
     TODAY=$(date '+%e'|tr -d ' ')
     
