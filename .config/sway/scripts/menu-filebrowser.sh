@@ -1,6 +1,7 @@
 #!/bin/bash
 
-FILE="$(fd --color never -E cva '\.(jpg|jpeg|png|pdf|epub)$' Documents/ Downloads/ Pictures/ Old/ | fuzzel -dp 'file ' )" || exit
+FILE="$(fd -c never -E cva '\.(jpg|jpeg|png|pdf|epub)$' Documents/ Downloads/ Pictures/ Old/ |
+    fuzzel -dp 'file ' )" || exit
 
 case $(file --mime-type -Lb "$FILE") in
     */jpg|*/jpeg|*/png)

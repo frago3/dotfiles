@@ -1,7 +1,6 @@
 // -*- mode: jsonc -*-
 {
     "position": "bottom",
-    "layer": "top",
     "height": 20,
     "spacing": 12,
     "modules-left": ["sway/workspaces"],
@@ -12,6 +11,7 @@
         "format": "{index}"
     },
     "sway/window": {
+        "swap-icon-label": false,
         "max-length": 190,
         "tooltip": false
     },

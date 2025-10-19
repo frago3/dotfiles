@@ -15,10 +15,10 @@ vim.opt.cursorlineopt="number"
 vim.opt.signcolumn="yes"
 vim.opt.showtabline=2
 vim.opt.laststatus=0
-vim.opt.completeopt="menuone,popup,noinsert"
 vim.opt.scrolloff=12
 vim.opt.wrap=false
--- treedepthstring
+vim.opt.completeopt="menuone,popup,noinsert,noselect"
+-- treedepthstring /usr/share/nvim/runtime/pack/dist/opt/netrw/autoload/netrw.vim
 vim.g.netrw_liststyle=3
 vim.g.netrw_banner=0
 vim.g.netrw_bufsettings="noma nomod nu rnu nobl nowrap ro"
@@ -34,7 +34,6 @@ vim.keymap.set("i", "<C-s>",            "<esc><cmd>update<cr>",     { noremap=tr
 
 vim.g.mapleader=" "
 vim.g.maplocalleader="\\"
-
 vim.keymap.set("n", "<leader>bw",       "<cmd>bwipeout<cr>",        { noremap=true, silent=true })
 vim.keymap.set("n", "<leader>t",        "<cmd>tabnew %<cr>",        { noremap=true, silent=true })
 vim.keymap.set("n", "<leader>f",        "<cmd>Exp<cr>",             { noremap=true, silent=true })
@@ -44,4 +43,4 @@ vim.cmd.color("lunaperche")
 require("core.lazy")
 
 -- LSP SERVER
-vim.lsp.enable({ "gopls" })
+-- vim.lsp.enable({ "gopls" })

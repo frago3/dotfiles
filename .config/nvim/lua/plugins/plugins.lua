@@ -20,7 +20,7 @@ return {
             -- See :h blink-cmp-config-keymap for defining your own keymap
             ---@module 'blink.cmp'
             ---@type blink.cmp.Config
-            keymap = { preset = 'enter' },
+            keymap = { preset = 'super-tab' },
             appearance = { nerd_font_variant = 'mono' },
             completion = { 
                 documentation = { 
@@ -38,7 +38,6 @@ return {
                             { "label", "kind", gap = 4 },
                             -- { "label", "label_description", gap = 1 },
                             -- { "kind" },
-                            
                         }
                     }
                 }
@@ -52,6 +51,5 @@ return {
         },
         opts_extend = { "sources.default" }
     },
-
 
 }

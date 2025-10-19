@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 1920x1080
+# 1920x1060
 
 x_pos(){
   swaymsg -t get_tree | jq -r '..|try select(.focused == true)|1920 - .rect.width'

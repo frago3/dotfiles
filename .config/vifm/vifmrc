@@ -61,7 +61,7 @@ fileviewer */,.*/ ls --group-directories-first --color
 fileviewer {*.sunvox,*.pdf,*.epub} file %c
 
 " Pdf Epub
-filextype {*.pdf,*.epub},<application/pdf> zathura %c %i,
+filextype {*.pdf,*.epub},<application/pdf> zathura %c %i &,
 " fileviewer {*.pdf},<application/pdf> pdftotext -nopgbrk %c -
 
 " PostScript
@@ -266,12 +266,12 @@ filextype */
 " ------------------------------------------------------------------------------
 " Sample keyboard mappings
 " ------------------------------------------------------------------------------
-map Y <Nop>
-map y <Nop>
-map P <Nop>
-map p <Nop>
-map D <Nop>
 map d <Nop>
+map D <Nop>
+map p <Nop>
+map P <Nop>
+map y <Nop>
+map Y <Nop>
 
 " Start shell in current directory
 nnoremap ! :shell<cr>
